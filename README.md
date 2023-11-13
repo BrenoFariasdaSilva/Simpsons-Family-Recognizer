@@ -90,7 +90,7 @@ make dependencies
 ```
 
 ### Dataset
-1. Download the dataset from Kaggle and place it in this project directory `(/Repository-Name)` and run the following command:
+1. Download the dataset from [Kaggle](https://www.kaggle.com/datasets/nelgiriyewithana/credit-card-fraud-detection-dataset-2023) and place it in this project directory `(/Repository-Name)` and run the following command:
 
 ```bash
 make dataset
