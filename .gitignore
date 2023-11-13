@@ -169,6 +169,13 @@ __pycache__/
 # Ignore the Windows .Desktop Files
 desktop.ini
 
+# Ignore the Compressed Files
+*.zip
+*.rar
+*.gz
+*.7z
+.tar.gz
+
 # Ignore the Data Directories
 Dados/
 Data/
