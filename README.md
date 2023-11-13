@@ -33,6 +33,7 @@ This project focuses on using the K-Nearest Neighbors (K-NN) algorithm to detect
 - [Credit Card Fraud 2023. ](#credit-card-fraud-2023-)
 	- [Table of Contents](#table-of-contents)
 	- [Introduction](#introduction)
+		- [K-Nearest Neighbors - K-NN](#k-nearest-neighbors---k-nn)
 		- [Dataset](#dataset)
 		- [Data Description](#data-description)
 	- [Requirements](#requirements)
@@ -47,6 +48,11 @@ This project focuses on using the K-Nearest Neighbors (K-NN) algorithm to detect
 
 
 ## Introduction
+
+### K-Nearest Neighbors - K-NN
+K-Nearest Neighbors (K-NN) is a simple and widely used machine learning algorithm that falls under the category of supervised learning. It is a non-parametric and instance-based method used for classification and regression tasks.  
+The fundamental idea behind K-NN is to make predictions based on the majority class or average value of the 'k' nearest data points in the feature space. In other words, the algorithm classifies or predicts the output of an instance by considering the labels of its nearest neighbors that are the data points closest to that instance in a cartesian plane.
+
 
 ### Dataset
 The dataset used for this project can be found on Kaggle [here](https://www.kaggle.com/datasets/nelgiriyewithana/credit-card-fraud-detection-dataset-2023).
