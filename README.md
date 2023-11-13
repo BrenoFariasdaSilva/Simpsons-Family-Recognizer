@@ -1,6 +1,20 @@
-## Overview
+<div align="center">
+  
+# [Credit Card Fraud 2023](https://github.com/BrenoFariasdaSilva/Credit-Card-Fraud-2023.git) <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg"  width="3%" height="3%">
+
+</div>
+
+<div align="center">
+
+<div align="center">
+  
+---
 
 This project focuses on using the K-Nearest Neighbors (K-NN) algorithm to detect credit card fraud. The dataset used for this project is sourced from Kaggle and contains anonymized credit card transactions labeled as either fraudulent or legitimate.
+  
+---
+
+</div>
 
 ## Dataset
 
