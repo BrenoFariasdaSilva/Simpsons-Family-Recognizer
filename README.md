@@ -16,6 +16,21 @@ This project focuses on using the K-Nearest Neighbors (K-NN) algorithm to detect
 
 </div>
 
+<div align="center">
+
+![GitHub Code Size in Bytes](https://img.shields.io/github/languages/code-size/BrenoFariasdaSilva/Credit-Card-Fraud-2023)
+![GitHub Last Commit](https://img.shields.io/github/last-commit/BrenoFariasdaSilva/Credit-Card-Fraud-2023)
+![GitHub](https://img.shields.io/github/license/BrenoFariasdaSilva/Credit-Card-Fraud-2023)
+![wakatime](https://wakatime.com/badge/github/BrenoFariasdaSilva/Credit-Card-Fraud-2023.svg)
+
+</div>
+
+<div align="center">
+  
+![RepoBeats Statistics](https://repobeats.axiom.co/api/embed/2a2bfd10cfdfee1520cda5c7aeb0a8555c58334a.svg "Repobeats analytics image")
+
+</div>
+
 ## Dataset
 
 The dataset used for this project can be found on Kaggle [here](https://www.kaggle.com/datasets/nelgiriyewithana/credit-card-fraud-detection-dataset-2023).
