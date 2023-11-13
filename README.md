@@ -48,6 +48,8 @@ This project focuses on using the K-Nearest Neighbors (K-NN) algorithm to detect
 
 
 ## Introduction
+Classification problems in AI involve assigning predefined labels or categories to input data based on its features. The goal is to train models that can generalize patterns from labeled examples to accurately predict the class of new, unseen instances.  
+In this project, we use the K-Nearest Neighbors (K-NN) algorithm to detect credit card fraud, but there are many others supervised learning algorithms that can be used to solve classification problems, such as Decision Trees, Support Vector Machines (SVM), Multilayer Perceptron (MLP), Random Forest, etc.  
 
 ### K-Nearest Neighbors - K-NN
 K-Nearest Neighbors (K-NN) is a simple and widely used machine learning algorithm that falls under the category of supervised learning. It is a non-parametric and instance-based method used for classification and regression tasks.  
@@ -59,7 +61,8 @@ The dataset used for this project can be found on Kaggle [here](https://www.kagg
 
 ### Data Description
 
-The dataset contains a mixture of legitimate and fraudulent transactions, with features that have been transformed to maintain confidentiality. Features include time, amount of the transaction, and anonymized numerical input variables.
+The dataset contains a mixture of legitimate and fraudulent transactions, with features that have been transformed to maintain confidentiality. Features include time, amount of the transaction, and anonymized numerical input variables, V1-V28. The target variable is a binary variable, Class, which denotes whether a transaction is fraudulent (1) or legitimate (0).  
+As for today, day 13/11/2023, the dataset contains 500k+ rows and 31 columns.
 
 ## Requirements
 
