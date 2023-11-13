@@ -1,6 +1,6 @@
 <div align="center">
   
-# [Credit Card Fraud 2023](https://github.com/BrenoFariasdaSilva/Credit-Card-Fraud-2023.git) <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg"  width="3%" height="3%">
+# [Credit Card Fraud 2023.](https://github.com/BrenoFariasdaSilva/Credit-Card-Fraud-2023.git) <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg"  width="3%" height="3%">
 
 </div>
 
@@ -29,18 +29,26 @@ This project focuses on using the K-Nearest Neighbors (K-NN) algorithm to detect
 
 </div>
 
-- [Credit Card Fraud 2023 ](#credit-card-fraud-2023-)
-	- [Dataset](#dataset)
+## Table of Contents
+- [Credit Card Fraud 2023. ](#credit-card-fraud-2023-)
+	- [Table of Contents](#table-of-contents)
+	- [Introduction](#introduction)
+		- [Dataset](#dataset)
 		- [Data Description](#data-description)
 	- [Requirements](#requirements)
 	- [Setup](#setup)
+		- [Clone the repository](#clone-the-repository)
+		- [Dependencies](#dependencies)
+		- [Dataset](#dataset-1)
+	- [Usage](#usage)
 	- [Results](#results)
+	- [Contributing](#contributing)
 	- [License](#license)
-	- [Acknowledgments](#acknowledgments)
 
 
-## Dataset
+## Introduction
 
+### Dataset
 The dataset used for this project can be found on Kaggle [here](https://www.kaggle.com/datasets/nelgiriyewithana/credit-card-fraud-detection-dataset-2023).
 
 ### Data Description
@@ -57,25 +65,28 @@ The dataset contains a mixture of legitimate and fraudulent transactions, with f
 
 ## Setup
 
-1. Clone the repository:
+### Clone the repository
+1. Clone the repository with the following command:
 
-   ```bash
-   git clone https://github.com/BrenoFariasdaSilva/Credit-Card-Fraud-2023.git
-   cd Credit-Card-Fraud-2023
-	```
+```bash
+git clone https://github.com/BrenoFariasdaSilva/Credit-Card-Fraud-2023.git
+cd Credit-Card-Fraud-2023
+```
 
-2. Install the required packages:
+### Dependencies
+1. Install the project dependencies with the following command:
 
-	```bash
-	make dependencies
-	```
+```bash
+make dependencies
+```
 
-3. Download the dataset from Kaggle and place it in this project directory and run the following command:
+### Dataset
+1. Download the dataset from Kaggle and place it in this project directory `(/Repository-Name)` and run the following command:
 
-	```bash
-	make dataset
-	```
-	This command will give execution permission to the `Dataset.sh` ShellScript and execute it. The `Dataset.sh` ShellScript will unzip the `archive` file, rename the extracted folder to `dataset` and delete the `archive` file. Also, inside of the `dataset` folder, the `Dataset.sh` ShellScript will rename the `creditcard_2023.csv` file to `Credit-Card-Fraud-2023-Dataset.csv.
+```bash
+make dataset
+```
+This command will give execution permission to the `Dataset.sh` ShellScript and execute it. The `Dataset.sh` ShellScript will unzip the `archive` file, rename the extracted folder to `dataset` and delete the `archive` file. Also, inside of the `dataset` folder, the `Dataset.sh` ShellScript will rename the `creditcard_2023.csv` file to `Credit-Card-Fraud-2023-Dataset.csv.
 
 ## Usage
 
@@ -89,12 +100,9 @@ make run
 
 The results of the K-NN model in terms of accuracy will be outputted to the console and saved to the `results` directory.
 
+## Contributing
+Code improvement recommendations are very welcome. In order to contribute, follow the steps below:
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- Kaggle for providing the dataset.
-- Scikit-learn and other open-source contributors for their valuable libraries.
-- The broader data science community for inspiration and guidance.
