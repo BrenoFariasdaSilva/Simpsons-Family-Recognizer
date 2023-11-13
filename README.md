@@ -4,7 +4,7 @@ This project focuses on using the K-Nearest Neighbors (K-NN) algorithm to detect
 
 ## Dataset
 
-The dataset used for this project can be found on Kaggle: [Credit Card Fraud Detection Dataset 2023](https://www.kaggle.com/datasets/nelgiriyewithana/credit-card-fraud-detection-dataset-2023)
+The dataset used for this project can be found on Kaggle [here](https://www.kaggle.com/datasets/nelgiriyewithana/credit-card-fraud-detection-dataset-2023).
 
 ### Data Description
 
