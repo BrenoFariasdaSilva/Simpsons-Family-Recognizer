@@ -19,7 +19,7 @@ This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT
 ![GitHub Code Size in Bytes](https://img.shields.io/github/languages/code-size/BrenoFariasdaSilva/Simpsons-Family-Recognizer)
 ![GitHub Last Commit](https://img.shields.io/github/last-commit/BrenoFariasdaSilva/Simpsons-Family-Recognizer)
 ![GitHub](https://img.shields.io/github/license/BrenoFariasdaSilva/Simpsons-Family-Recognizer)
-![wakatime](https://wakatime.com/badge/github/BrenoFariasdaSilva/Simpsons-Family-Recognizer.svg)
+![wakatime](https://wakatime.com/badge/user/28f6c354-43b3-4634-8ec1-631893fe27d0/project/018bd988-d987-4ea0-955e-ba21bce66b1c.svg)
 
 </div>
 
