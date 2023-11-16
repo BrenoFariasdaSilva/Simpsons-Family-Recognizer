@@ -88,8 +88,23 @@ The dataset used for this project can be found [here](https://drive.google.com/u
 
 ### Data Description
 
-The dataset contains a mixture of legitimate and fraudulent transactions, with features that have been transformed to maintain confidentiality. Features include time, amount of the transaction, and anonymized numerical input variables, V1-V28. The target variable is a binary variable, Class, which denotes whether a transaction is fraudulent (1) or legitimate (0).  
-As for today, day 13/11/2023, the dataset contains 500k+ rows and 31 columns.
+The dataset contains two folders, one named "Train" and another named "Test". Each of this directories have .bmp photos of the Simpsons family members. The "Train" folder contains 226 photos of the Simpsons family members as follows:
+
+- Bart: 78 Photos.
+- Home: 61 Photos.
+- Lisa: 33 Photos.
+- Maggie: 30 Photos.
+- Marge: 24 Photos.
+
+The "Test" folder contains 95 photos of the Simpsons family members.
+
+- Bart: 35 Photos.
+- Home: 25 Photos.
+- Lisa: 13 Photos.
+- Maggie: 12 Photos.
+- Marge: 10 Photos.
+  
+All of the photos are named with the name of the character in the photo followed by a number, so that will be considered the label.
 
 ## Requirements
 
