@@ -1,6 +1,6 @@
 <div align="center">
   
-# [Credit Card Fraud 2023.](https://github.com/BrenoFariasdaSilva/Credit-Card-Fraud-2023.git) <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg"  width="3%" height="3%">
+# [Simpsons-Family-Recognizer.](https://github.com/BrenoFariasdaSilva/Simpsons-Family-Recognizer.git) <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg"  width="3%" height="3%">
 
 </div>
 
@@ -8,18 +8,18 @@
   
 ---
 
-This project focuses on using the K-Nearest Neighbors (K-NN) algorithm to detect credit card fraud. The dataset used for this project is sourced from Kaggle and contains anonymized credit card transactions labeled as either fraudulent or legitimate.
-  
+This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT), Support Vector Machines (SVM), MultiLayer Perceptrons (MLP) and Random Forest Supervised Learning Algorithms to recognize The Simpsons Family Members. The dataset used for this project is stored in [this](https://drive.google.com/uc?export=download&id=1wVyUmsz150uKjOprxRA_4LtmTXDPRp1o) url. To summary, this project will extract features from Bart, Homer, Lisa Maggie e Marge characters of the Simpsons family, in order to use all of the previously mentioned algorithms to train them to recognize from the features we extract with the labels we provide, which character is in the image is in the image name. The system will try to predict which image represents which member and Twill produce as output the accuracy and F1-Score [0 to 100%] and a confusion matrix (N × N) indicating the percentage of system hits and errors among the N classes.
+
 ---
 
 </div>
 
 <div align="center">
 
-![GitHub Code Size in Bytes](https://img.shields.io/github/languages/code-size/BrenoFariasdaSilva/Credit-Card-Fraud-2023)
-![GitHub Last Commit](https://img.shields.io/github/last-commit/BrenoFariasdaSilva/Credit-Card-Fraud-2023)
-![GitHub](https://img.shields.io/github/license/BrenoFariasdaSilva/Credit-Card-Fraud-2023)
-![wakatime](https://wakatime.com/badge/github/BrenoFariasdaSilva/Credit-Card-Fraud-2023.svg)
+![GitHub Code Size in Bytes](https://img.shields.io/github/languages/code-size/BrenoFariasdaSilva/Simpsons-Family-Recognizer)
+![GitHub Last Commit](https://img.shields.io/github/last-commit/BrenoFariasdaSilva/Simpsons-Family-Recognizer)
+![GitHub](https://img.shields.io/github/license/BrenoFariasdaSilva/Simpsons-Family-Recognizer)
+![wakatime](https://wakatime.com/badge/github/BrenoFariasdaSilva/Simpsons-Family-Recognizer.svg)
 
 </div>
 
@@ -30,7 +30,7 @@ This project focuses on using the K-Nearest Neighbors (K-NN) algorithm to detect
 </div>
 
 ## Table of Contents
-- [Credit Card Fraud 2023. ](#credit-card-fraud-2023-)
+- [Simpsons-Family-Recognizer. ](#simpsons-family-recognizer-)
 	- [Table of Contents](#table-of-contents)
 	- [Introduction](#introduction)
 		- [K-Nearest Neighbors - K-NN](#k-nearest-neighbors---k-nn)
@@ -78,8 +78,8 @@ As for today, day 13/11/2023, the dataset contains 500k+ rows and 31 columns.
 1. Clone the repository with the following command:
 
 ```bash
-git clone https://github.com/BrenoFariasdaSilva/Credit-Card-Fraud-2023.git
-cd Credit-Card-Fraud-2023
+git clone https://github.com/BrenoFariasdaSilva/Simpsons-Family-Recognizer.git
+cd Simpsons-Family-Recognizer
 ```
 
 ### Dependencies
@@ -95,7 +95,7 @@ make dependencies
 ```bash
 make data
 ```
-This command will give execution permission to the `Dataset.sh` ShellScript and execute it. The `Dataset.sh` ShellScript will unzip the `archive` file, rename the extracted folder to `dataset` and delete the `archive` file. Also, inside of the `dataset` folder, the `Dataset.sh` ShellScript will rename the `creditcard_2023.csv` file to `Credit-Card-Fraud-2023.csv.
+This command will give execution permission to the `Dataset.sh` ShellScript and execute it. The `Dataset.sh` ShellScript will unzip the `archive` file, rename the extracted folder to `dataset` and delete the `archive` file. Also, inside of the `dataset` folder, the `Dataset.sh` ShellScript will rename the `creditcard_2023.csv` file to `Simpsons-Family-Recognizer.csv.
 
 ## Usage
 
