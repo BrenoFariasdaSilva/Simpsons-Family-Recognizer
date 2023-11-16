@@ -44,18 +44,18 @@ This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT
 	- [Requirements](#requirements)
 	- [Setup](#setup)
 		- [Clone the repository](#clone-the-repository)
-		- [Dependencies](#dependencies)
-		- [Dataset](#dataset-1)
+		- [Install Dependencies](#install-dependencies)
+		- [Get Dataset](#get-dataset)
 	- [Usage](#usage)
 	- [Results](#results)
 	- [Contributing](#contributing)
 	- [License](#license)
 
-
 ## Introduction
+
 Classification problems in AI involve assigning predefined labels or categories to input data based on its features. The goal is to train models that can generalize patterns from labeled examples to accurately predict the class of new, unseen instances.  
 In this project, we use the K-Nearest Neighbors (K-NN), Decision Trees (DT), Support Vector Machines (SVM), MultiLayer Perceptrons (MLP) and Random Forest Supervised Learning Algorithms to recognize The Simpsons Family Members. So, this project will extract features from Bart, Homer, Lisa Maggie e Marge characters of the Simpsons family, in order to use all of the previously mentioned algorithms to train them to recognize them from the features we extract with the labels we provide, which character is in the image is in the image name.  
-The system will try to predict which image represents which member and will produce as output the accuracy and F1-Score [0 to 100%] and a confusion matrix (N × N) indicating the percentage of system hits and errors among the N classes. 
+The system will try to predict which image represents which member and will produce as output the accuracy and F1-Score [0 to 100%] and a confusion matrix (N × N) indicating the percentage of system hits and errors among the N classes.
 
 ### Machine Learning Supervised Classifiers
 
@@ -84,6 +84,7 @@ Multi-Layer Perceptron (MLP) is a type of artificial neural network commonly use
 Random Forest is an ensemble learning algorithm that combines multiple decision trees to improve predictive accuracy and control overfitting. Each tree in the forest is trained on a random subset of the data, and the final prediction is based on the majority vote or average of the individual tree predictions. Random Forest is robust and effective for both classification and regression tasks.
 
 ### Dataset
+
 The dataset used for this project can be found [here](https://drive.google.com/uc?export=download&id=1wVyUmsz150uKjOprxRA_4LtmTXDPRp1o).
 
 ### Data Description
@@ -117,6 +118,7 @@ All of the photos are named with the name of the character in the photo followed
 ## Setup
 
 ### Clone the repository
+
 1. Clone the repository with the following command:
 
 ```bash
@@ -124,20 +126,23 @@ git clone https://github.com/BrenoFariasdaSilva/Simpsons-Family-Recognizer.git
 cd Simpsons-Family-Recognizer
 ```
 
-### Dependencies
+### Install Dependencies
+
 1. Install the project dependencies with the following command:
 
 ```bash
 make dependencies
 ```
 
-### Dataset
+### Get Dataset
+
 1. Download the dataset from [Kaggle](https://www.kaggle.com/datasets/nelgiriyewithana/credit-card-fraud-detection-dataset-2023) and place it in this project directory `(/Repository-Name)` and run the following command:
 
 ```bash
 make dataset
 ```
-This command will give execution permission to the `Dataset.sh` ShellScript and execute it. The `Dataset.sh` ShellScript will unzip the `archive` file, rename the extracted folder to `dataset` and delete the `archive` file. Also, inside of the `dataset` folder, the `Dataset.sh` ShellScript will rename the `creditcard_2023.csv` file to `Simpsons-Family-Recognizer.csv.
+
+This command will give execution permission to the `Setup-Dataset.sh` ShellScript and execute it. The `Setup-Dataset.sh` ShellScript will download the dataset from a url and unzip it to the `dataset` directory and, lastly, remove the zip file. With that in mind, it basically does everything for you.
 
 ## Usage
 
@@ -152,6 +157,7 @@ make run
 The results of the K-NN model in terms of accuracy will be outputted to the console and saved to the `results` directory.
 
 ## Contributing
+
 Code improvement recommendations are very welcome. In order to contribute, follow the steps below:
 
 ## License
