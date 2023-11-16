@@ -174,7 +174,7 @@ desktop.ini
 *.rar
 *.gz
 *.7z
-.tar.gz
+*.tar.gz
 
 # Ignore the Data Directories
 Dados/
