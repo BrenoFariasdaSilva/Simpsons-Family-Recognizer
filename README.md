@@ -25,7 +25,7 @@ This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT
 
 <div align="center">
   
-![RepoBeats Statistics](https://repobeats.axiom.co/api/embed/2a2bfd10cfdfee1520cda5c7aeb0a8555c58334a.svg "Repobeats analytics image")
+![RepoBeats Statistics](https://repobeats.axiom.co/api/embed/c1d9310ac47ca95fa592c68214c0b91a81154eda.svg "Repobeats analytics image")
 
 </div>
 
