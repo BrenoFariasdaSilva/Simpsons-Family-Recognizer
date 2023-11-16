@@ -33,7 +33,12 @@ This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT
 - [Simpsons-Family-Recognizer. ](#simpsons-family-recognizer-)
 	- [Table of Contents](#table-of-contents)
 	- [Introduction](#introduction)
-		- [K-Nearest Neighbors - K-NN](#k-nearest-neighbors---k-nn)
+		- [Machine Learning Supervised Classifiers](#machine-learning-supervised-classifiers)
+		- [K-Nearest Neighbors (K-NN)](#k-nearest-neighbors-k-nn)
+		- [Decision Tress (DT)](#decision-tress-dt)
+		- [Support Vector Machines (SVM)](#support-vector-machines-svm)
+		- [Multi-Layer Perceptron (MLP)](#multi-layer-perceptron-mlp)
+		- [Random Forest](#random-forest)
 		- [Dataset](#dataset)
 		- [Data Description](#data-description)
 	- [Requirements](#requirements)
@@ -51,13 +56,34 @@ This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT
 Classification problems in AI involve assigning predefined labels or categories to input data based on its features. The goal is to train models that can generalize patterns from labeled examples to accurately predict the class of new, unseen instances.  
 In this project, we use the K-Nearest Neighbors (K-NN) algorithm to detect credit card fraud, but there are many others supervised learning algorithms that can be used to solve classification problems, such as Decision Trees, Support Vector Machines (SVM), Multilayer Perceptron (MLP), Random Forest, etc.  
 
-### K-Nearest Neighbors - K-NN
-K-Nearest Neighbors (K-NN) is a simple and widely used machine learning algorithm that falls under the category of supervised learning. It is a non-parametric and instance-based method used for classification and regression tasks.  
-The fundamental idea behind K-NN is to make predictions based on the majority class or average value of the 'k' nearest data points in the feature space. In other words, the algorithm classifies or predicts the output of an instance by considering the labels of its nearest neighbors that are the data points closest to that instance in a cartesian plane.
+### Machine Learning Supervised Classifiers
 
+This project employs various machine learning supervised classifiers to recognize the Simpsons family members. Each classifier has unique characteristics and applications. Below are brief descriptions of the classifiers used in this project.
+
+### K-Nearest Neighbors (K-NN)
+
+K-Nearest Neighbors (K-NN) is a simple and widely used machine learning algorithm that falls under the category of supervised learning. It is a non-parametric and instance-based method used for classification and regression tasks. The fundamental idea behind K-NN is to make predictions based on the majority class or average value of the 'k' nearest data points in the feature space. In other words, the algorithm classifies or predicts the output of an instance by considering the labels of its nearest neighbors that are the data points closest to that instance in a Cartesian plane. The K-NN doesn't have an explicit training and classification progress, so its classification time could be very slow, depending on the size of the dataset.
+
+### Decision Tress (DT)
+
+Decision Trees are a versatile machine learning algorithm used for both classification and regression tasks. They make decisions based on a set of rules learned from the training data.  
+Decision Trees recursively split the data into subsets based on the most significant features, creating a tree-like structure. They are interpretable and can capture complex relationships in the data.
+
+### Support Vector Machines (SVM)
+
+Support Vector Machines (SVM) is a powerful supervised learning algorithm used for classification and regression tasks. SVM aims to find a hyperplane that best separates data into different classes. It works by maximizing the margin between classes, and it is effective in high-dimensional spaces.  
+SVM can handle non-linear relationships through the use of kernel functions.
+
+### Multi-Layer Perceptron (MLP)
+
+Multi-Layer Perceptron (MLP) is a type of artificial neural network commonly used for classification and regression tasks. It consists of multiple layers of interconnected nodes (neurons) with each layer having a set of weights. MLPs can capture complex relationships in data and are known for their ability to model non-linear functions.
+
+### Random Forest
+
+Random Forest is an ensemble learning algorithm that combines multiple decision trees to improve predictive accuracy and control overfitting. Each tree in the forest is trained on a random subset of the data, and the final prediction is based on the majority vote or average of the individual tree predictions. Random Forest is robust and effective for both classification and regression tasks.
 
 ### Dataset
-The dataset used for this project can be found on Kaggle [here](https://www.kaggle.com/datasets/nelgiriyewithana/credit-card-fraud-detection-dataset-2023).
+The dataset used for this project can be found [here](https://www.kaggle.com/datasets/nelgiriyewithana/credit-card-fraud-detection-dataset-2023).
 
 ### Data Description
 
