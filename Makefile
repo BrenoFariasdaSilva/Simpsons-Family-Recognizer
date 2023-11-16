@@ -6,6 +6,6 @@ run:
 dependencies:
 	pip install colorama
 
-get-dataset:
+dataset:
 	chmod +x ./Setup-Dataset.sh
 	./Setup-Dataset.sh
