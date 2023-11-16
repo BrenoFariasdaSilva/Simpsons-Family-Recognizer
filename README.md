@@ -135,7 +135,7 @@ make dependencies
 1. Download the dataset from [Kaggle](https://www.kaggle.com/datasets/nelgiriyewithana/credit-card-fraud-detection-dataset-2023) and place it in this project directory `(/Repository-Name)` and run the following command:
 
 ```bash
-make data
+make dataset
 ```
 This command will give execution permission to the `Dataset.sh` ShellScript and execute it. The `Dataset.sh` ShellScript will unzip the `archive` file, rename the extracted folder to `dataset` and delete the `archive` file. Also, inside of the `dataset` folder, the `Dataset.sh` ShellScript will rename the `creditcard_2023.csv` file to `Simpsons-Family-Recognizer.csv.
 
