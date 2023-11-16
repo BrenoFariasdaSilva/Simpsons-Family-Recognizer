@@ -8,7 +8,7 @@
   
 ---
 
-This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT), Support Vector Machines (SVM), MultiLayer Perceptrons (MLP) and Random Forest Supervised Learning Algorithms to recognize The Simpsons Family Members. The dataset used for this project is stored in [this](https://drive.google.com/uc?export=download&id=1wVyUmsz150uKjOprxRA_4LtmTXDPRp1o) url. To summary, this project will extract features from Bart, Homer, Lisa Maggie e Marge characters of the Simpsons family, in order to use all of the previously mentioned algorithms to train them to recognize from the features we extract with the labels we provide, which character is in the image is in the image name. The system will try to predict which image represents which member and Twill produce as output the accuracy and F1-Score [0 to 100%] and a confusion matrix (N × N) indicating the percentage of system hits and errors among the N classes.
+This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT), Support Vector Machines (SVM), MultiLayer Perceptrons (MLP) and Random Forest Supervised Learning Algorithms to recognize The Simpsons Family Members. The dataset used for this project can be downloaded from [here](https://drive.google.com/uc?export=download&id=1wVyUmsz150uKjOprxRA_4LtmTXDPRp1o) url.
 
 ---
 
@@ -54,7 +54,8 @@ This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT
 
 ## Introduction
 Classification problems in AI involve assigning predefined labels or categories to input data based on its features. The goal is to train models that can generalize patterns from labeled examples to accurately predict the class of new, unseen instances.  
-In this project, we use the K-Nearest Neighbors (K-NN) algorithm to detect credit card fraud, but there are many others supervised learning algorithms that can be used to solve classification problems, such as Decision Trees, Support Vector Machines (SVM), Multilayer Perceptron (MLP), Random Forest, etc.  
+In this project, we use the K-Nearest Neighbors (K-NN), Decision Trees (DT), Support Vector Machines (SVM), MultiLayer Perceptrons (MLP) and Random Forest Supervised Learning Algorithms to recognize The Simpsons Family Members. So, this project will extract features from Bart, Homer, Lisa Maggie e Marge characters of the Simpsons family, in order to use all of the previously mentioned algorithms to train them to recognize them from the features we extract with the labels we provide, which character is in the image is in the image name.  
+The system will try to predict which image represents which member and will produce as output the accuracy and F1-Score [0 to 100%] and a confusion matrix (N × N) indicating the percentage of system hits and errors among the N classes. 
 
 ### Machine Learning Supervised Classifiers
 
