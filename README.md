@@ -35,7 +35,7 @@ This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT
 	- [Introduction](#introduction)
 		- [Machine Learning Supervised Classifiers](#machine-learning-supervised-classifiers)
 		- [K-Nearest Neighbors (K-NN)](#k-nearest-neighbors-k-nn)
-		- [Decision Tress (DT)](#decision-tress-dt)
+		- [Decision Trees (DT)](#decision-trees-dt)
 		- [Support Vector Machines (SVM)](#support-vector-machines-svm)
 		- [Multi-Layer Perceptron (MLP)](#multi-layer-perceptron-mlp)
 		- [Random Forest](#random-forest)
@@ -65,7 +65,7 @@ This project employs various machine learning supervised classifiers to recogniz
 
 K-Nearest Neighbors (K-NN) is a simple and widely used machine learning algorithm that falls under the category of supervised learning. It is a non-parametric and instance-based method used for classification and regression tasks. The fundamental idea behind K-NN is to make predictions based on the majority class or average value of the 'k' nearest data points in the feature space. In other words, the algorithm classifies or predicts the output of an instance by considering the labels of its nearest neighbors that are the data points closest to that instance in a Cartesian plane. The K-NN doesn't have an explicit training and classification progress, so its classification time could be very slow, depending on the size of the dataset.
 
-### Decision Tress (DT)
+### Decision Trees (DT)
 
 Decision Trees are a versatile machine learning algorithm used for both classification and regression tasks. They make decisions based on a set of rules learned from the training data.  
 Decision Trees recursively split the data into subsets based on the most significant features, creating a tree-like structure. They are interpretable and can capture complex relationships in the data.
@@ -142,7 +142,7 @@ make dependencies
 make dataset
 ```
 
-This command will give execution permission to the `Setup-Dataset.sh` ShellScript and execute it. The `Setup-Dataset.sh` ShellScript will download the dataset from a url and unzip it to the `dataset` directory and, lastly, remove the zip file. With that in mind, it basically does everything for you.
+This command will give execution permission to the `Setup-Dataset.sh` ShellScript and execute it. The `Setup-Dataset.sh` ShellScript will download the dataset from a url and unzip it to the `Dataset` directory and, lastly, remove the zip file. With that in mind, it basically does everything for you.
 
 ## Usage
 
