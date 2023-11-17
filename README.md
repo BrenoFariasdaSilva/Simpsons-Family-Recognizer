@@ -154,7 +154,7 @@ make run
 
 ## Results
 
-The results of the K-NN model in terms of accuracy will be outputted to the console and saved to the `results` directory.
+The results of the K-NN, DT, SVM, MLP and Random Forest algorithms models will produce as output the accuracy and F1-Score [0 to 100%] and a confusion matrix (N × N) indicating the percentage of system hits and errors among the N classes. That results will be shown in the terminal and saved in the `Results` directory.
 
 ## Contributing
 
