@@ -136,7 +136,7 @@ make dependencies
 
 ### Get Dataset
 
-1. Download the dataset from [Kaggle](https://www.kaggle.com/datasets/nelgiriyewithana/credit-card-fraud-detection-dataset-2023) and place it in this project directory `(/Repository-Name)` and run the following command:
+1. Download the dataset from [here](https://drive.google.com/uc?export=download&id=1wVyUmsz150uKjOprxRA_4LtmTXDPRp1o) and place it in this project directory `(/Simpsons-Family-Recognizer)` and run the following command:
 
 ```bash
 make dataset
