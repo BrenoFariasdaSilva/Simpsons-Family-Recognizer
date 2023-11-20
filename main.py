@@ -67,7 +67,7 @@ def knn(train_features_values, train_label, test_features_values, test_label):
    accuracy = neigh.score(test_features_values, test_label) # Calculate the accuracy
    execution_time = time.time() - start_time # Calculate the execution time
 
-   return accuracy, {"N Neighbors": 1, "Metric": "Euclidean", "Execution Time": f"{execution_time:.5f} Seconds"} # Return the execution time
+   return accuracy, {"N Neighbors": 1, "Metric": "Euclidean", "Execution Time": f"{execution_time:.5f} Seconds"} # Return the Accuracy and the Parameters
 
 # This is the Main function
 def main():
