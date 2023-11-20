@@ -57,6 +57,18 @@ def load_data():
    test_features_values = ts[:, 1:] # The second column to the last is the feature vector
    return train_features_values, train_label, test_features_values, test_label # Return the data
 
+# This function creates a k-NN classifier and prints the classification report
+def knn(train_features_values, train_label, test_features_values, test_label):
+   print(f"{BackgroundColors.GREEN}1º {BackgroundColors.CYAN}K-NN Classifier{BackgroundColors.GREEN}.{Style.RESET_ALL}")
+   start_time = time.time() # Start the timer
+   neigh = KNeighborsClassifier(n_neighbors=1, metric="euclidean") # Instantiate the classifier
+   neigh.fit(train_features_values, train_label) # Train the classifier
+   y_pred = neigh.predict(test_features_values) # Predict the test set
+   accuracy = neigh.score(test_features_values, test_label) # Calculate the accuracy
+   execution_time = time.time() - start_time # Calculate the execution time
+
+   return accuracy, {"N Neighbors": 1, "Metric": "Euclidean", "Execution Time": f"{execution_time:.5f} Seconds"} # Return the execution time
+
 # This is the Main function
 def main():
    print(f"{BackgroundColors.CLEAR_TERMINAL}{BackgroundColors.BOLD}{BackgroundColors.GREEN}Hello, World!{Style.RESET_ALL}") # Output the Welcome message
