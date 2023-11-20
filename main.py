@@ -159,6 +159,11 @@ def naive_bayes_with_grid_search(train_features_values, train_label, test_featur
 
    return accuracy, {"Var Smoothing": grid.best_params_["var_smoothing"], "Execution Time": f"{execution_time:.5f} Seconds"} # Return the Accuracy and the Parameters
 
+# This function sort the classifiers by accuracy
+def sort_classifiers_execution(classifiers_execution):
+   # Sort the classifiers by accuracy and return the sorted dictionary
+   return dict(sorted(classifiers_execution.items(), key=lambda item: item[1][0], reverse=True))
+
 # This is the Main function
 def main():
    print(f"{BackgroundColors.CLEAR_TERMINAL}{BackgroundColors.BOLD}{BackgroundColors.GREEN}Hello, World!{Style.RESET_ALL}") # Output the Welcome message
