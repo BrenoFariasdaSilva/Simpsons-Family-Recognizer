@@ -179,6 +179,22 @@ def print_classifiers_execution(sorted_classifiers_execution):
 def main():
    print(f"{BackgroundColors.CLEAR_TERMINAL}{BackgroundColors.BOLD}{BackgroundColors.GREEN}Hello, World!{Style.RESET_ALL}") # Output the Welcome message
 
+   train_features_values, train_label, test_features_values, test_label = load_data() # Load the data
+   classifiers_execution = {} # Dictionary to store the classifiers execution time
+
+   classifiers_execution["K-NN"] = knn(train_features_values, train_label, test_features_values, test_label) # Train the K-NN classifier
+   classifiers_execution["Decision Tree"] = decision_tree(train_features_values, train_label, test_features_values, test_label) # Train the Decision Tree classifier
+   classifiers_execution["Support Vector Machine"] = svm_with_grid_search(train_features_values, train_label, test_features_values, test_label) # Train the SVM classifier
+   classifiers_execution["Multilayer Perceptron Classifier"] = multilayer_perceptron(train_features_values, train_label, test_features_values, test_label) # Train the ANN/MLP classifier
+   classifiers_execution["Random Forest"] = random_forest(train_features_values, train_label, test_features_values, test_label) # Train the Random Forest classifier
+   classifiers_execution["Naive Bayes"] = naive_bayes_with_grid_search(train_features_values, train_label, test_features_values, test_label) # Train the Naive Bayes classifier
+
+   # Sort the classifiers by execution time
+   classifiers_execution = sort_classifiers_execution(classifiers_execution)
+
+   # Print the execution time
+   print_classifiers_execution(classifiers_execution)
+
    print(f"{BackgroundColors.BOLD}{BackgroundColors.GREEN}Program finished.{Style.RESET_ALL}") # Output the end of the program message
 
 # This is the standard boilerplate that calls the main() function.
