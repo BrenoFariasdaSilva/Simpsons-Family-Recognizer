@@ -32,6 +32,10 @@ SOUND_FILE = "./.assets/NotificationSound.wav" # The path to the sound file
 # Constants:
 INPUT_FILES = ["./", "./"] # The input files
 
+# Output Constants:
+SHOW_CONFUSION_MATRIX = True # If True, show the confusion matrix
+SHOW_CLASSIFICATION_REPORT = False # If True, show the classification report
+
 # This function defines the command to play a sound when the program finishes
 def play_sound():
    if os.path.exists(SOUND_FILE):
