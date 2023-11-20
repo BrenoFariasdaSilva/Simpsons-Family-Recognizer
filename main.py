@@ -45,6 +45,18 @@ def play_sound():
 # Register the function to play a sound when the program finishes
 atexit.register(play_sound)
 
+# This function loads the data from the dataset files and returns the training and test sets
+def load_data():
+   print(f"{BackgroundColors.BOLD}{BackgroundColors.YELLOW}Remember to remove the header line from the dataset files. They should be in the format: {BackgroundColors.CYAN}label feature1 feature2 ... featureN{Style.RESET_ALL}")
+   print(f"\n{BackgroundColors.GREEN}Loading data...{Style.RESET_ALL}")
+   tr = np.loadtxt(f"{INPUT_FILES[0]}") # Load the training data
+   ts = np.loadtxt(f"{INPUT_FILES[1]}") # Load the test data
+   train_label = tr[:, 0] # The first column is the label
+   test_label = ts[:, 0] # The first column is the label
+   train_features_values = tr[:, 1:] # The second column to the last is the feature vector
+   test_features_values = ts[:, 1:] # The second column to the last is the feature vector
+   return train_features_values, train_label, test_features_values, test_label # Return the data
+
 # This is the Main function
 def main():
    print(f"{BackgroundColors.CLEAR_TERMINAL}{BackgroundColors.BOLD}{BackgroundColors.GREEN}Hello, World!{Style.RESET_ALL}") # Output the Welcome message
