@@ -138,6 +138,27 @@ def random_forest(train_features_values, train_label, test_features_values, test
 
    return accuracy, {"N Estimators": 10000, "Max Depth": 30, "Execution Time": f"{execution_time:.5f} Seconds"} # Return the Accuracy and the Parameters
 
+# This function trains the Naive Bayes classifier and prints the classification report
+def naive_bayes_with_grid_search(train_features_values, train_label, test_features_values, test_label):
+   print(f"{BackgroundColors.GREEN}6º {BackgroundColors.CYAN}Naive Bayes Classifier with Grid Search{BackgroundColors.GREEN}.{Style.RESET_ALL}")
+
+   start_time = time.time() # Start the timer
+   # Define the parameters for the grid search
+   param_grid = {"var_smoothing": [1e-9, 1e-8, 1e-7, 1e-6, 1e-5]}
+
+   # Instantiate Naive Bayes classifier
+   nb = GaussianNB()
+
+   # Instantiate GridSearchCV
+   grid = GridSearchCV(nb, param_grid, cv=5, scoring="accuracy", verbose=0, n_jobs=-1)
+
+   grid.fit(train_features_values, train_label) # Train the classifier
+   y_pred = grid.predict(test_features_values) # Predict the test set
+   accuracy = grid.score(test_features_values, test_label) # Calculate the accuracy
+   execution_time = time.time() - start_time # Calculate the execution time
+
+   return accuracy, {"Var Smoothing": grid.best_params_["var_smoothing"], "Execution Time": f"{execution_time:.5f} Seconds"} # Return the Accuracy and the Parameters
+
 # This is the Main function
 def main():
    print(f"{BackgroundColors.CLEAR_TERMINAL}{BackgroundColors.BOLD}{BackgroundColors.GREEN}Hello, World!{Style.RESET_ALL}") # Output the Welcome message
