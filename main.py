@@ -193,7 +193,7 @@ def grid_search_multilayer_perceptron(train_features_values, train_label, test_f
    }
 
    # Instantiate the Multilayer Perceptron classifier
-   clf = MLPClassifier(random_state=1)
+   clf = MLPClassifier(random_state=1, max_iter=2000)
 
    # Instantiate GridSearchCV
    grid_search = GridSearchCV(clf, param_grid, scoring="accuracy", cv=5, n_jobs=-1)
