@@ -108,16 +108,16 @@ def decision_tree(train_features_values, train_label, test_features_values, test
 
    # Define the parameter grid for the grid search
    param_grid = {
-      'criterion': ['gini', 'entropy'],  # Add more criteria if needed
-      'splitter': ['best', 'random'],  # Add more splitters if needed
-      'max_depth': [None, 10, 20, 30],  # Add more depth values if needed
+      "criterion": ["gini", "entropy"],  # Add more criteria if needed
+      "splitter": ["best", "random"],  # Add more splitters if needed
+      "max_depth": [None, 10, 20, 30],  # Add more depth values if needed
    }
 
    # Instantiate the Decision Tree classifier
    clf = tree.DecisionTreeClassifier()
 
    # Instantiate GridSearchCV
-   grid_search = GridSearchCV(clf, param_grid, scoring='accuracy', cv=5, n_jobs=-1)
+   grid_search = GridSearchCV(clf, param_grid, scoring="accuracy", cv=5, n_jobs=-1)
 
    start_time = time.time()  # Start the timer
    grid_search.fit(train_features_values, train_label)  # Train the classifier with grid search
