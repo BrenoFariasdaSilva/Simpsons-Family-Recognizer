@@ -1,7 +1,19 @@
 import atexit # For playing a sound when the program finishes
+import numpy as np # For the data manipulation
 import os # For running a command in the terminal
 import platform # For getting the operating system name
+import time # For the timer
 from colorama import Style # For coloring the terminal
+from sklearn import svm # For the SVM classifier
+from sklearn import tree # For the decision tree classifier
+from sklearn.ensemble import RandomForestClassifier # For the random forest classifier
+from sklearn.metrics import classification_report # For the classification report
+from sklearn.model_selection import GridSearchCV # For the grid search
+from sklearn.naive_bayes import GaussianNB # For the Naive Bayes classifier
+from sklearn.neighbors import KNeighborsClassifier # For the k-NN classifier
+from sklearn.neural_network import MLPClassifier # For the MLP classifier
+from sklearn.pipeline import Pipeline # For the pipeline
+from sklearn.preprocessing import StandardScaler # For the standard scaler
 
 # Macros:
 class BackgroundColors: # Colors for the terminal
