@@ -39,6 +39,7 @@ This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT
 		- [Support Vector Machines (SVM)](#support-vector-machines-svm)
 		- [Multi-Layer Perceptron (MLP)](#multi-layer-perceptron-mlp)
 		- [Random Forest](#random-forest)
+		- [Naive Bayes](#naive-bayes)
 		- [Dataset](#dataset)
 		- [Data Description](#data-description)
 	- [Requirements](#requirements)
@@ -82,6 +83,10 @@ Multi-Layer Perceptron (MLP) is a type of artificial neural network commonly use
 ### Random Forest
 
 Random Forest is an ensemble learning algorithm that combines multiple decision trees to improve predictive accuracy and control overfitting. Each tree in the forest is trained on a random subset of the data, and the final prediction is based on the majority vote or average of the individual tree predictions. Random Forest is robust and effective for both classification and regression tasks.
+
+### Naive Bayes
+
+Naive Bayes is a simple yet powerful machine learning algorithm commonly used for classification tasks. It is a probabilistic classifier that makes use of Bayes' Theorem, which states that the probability of A given B is equal to the probability of B given A times the probability of A divided by the probability of B. The algorithm it self is simple and easy to implement, and it is effective in high-dimensional spaces. It is also fast and can be used for both binary and multi-class classification tasks. It has a few drawbacks, such as the assumption of independent features and the zero-frequency problem. Also, it requires a parameter called "var_smoothing" to be set, which is a smoothing parameter that accounts for features not present in the learning samples and prevents zero probabilities in the prediction.
 
 ### Dataset
 
