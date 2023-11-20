@@ -81,6 +81,36 @@ def decision_tree(train_features_values, train_label, test_features_values, test
 
    return accuracy, {"Criterion": "Gini", "Splitter": "Best", "Execution Time": f"{execution_time:.5f} Seconds"} # Return the Accuracy and the Parameters
 
+# This function creates a SVM classifier with grid search and prints the classification report
+def svm_with_grid_search(train_features_values, train_label, test_features_values, test_label):
+   print(f"{BackgroundColors.GREEN}3º {BackgroundColors.CYAN}Support Vector Machine Classifier with Grid Search{BackgroundColors.GREEN}.{Style.RESET_ALL}")
+   start_time = time.time() # Start the timer
+   C_range = 2. ** np.arange(-5, 15, 2) # The range of C values
+   gamma_range = 2. ** np.arange(3, -15, -2) # The range of gamma values which defines the influence of a single training example
+   k = ["rbf"] # The kernel
+
+   # Instantiate the classifier with probability
+   srv = svm.SVC(probability=True, kernel="rbf") # Instantiate the classifier
+   ss = StandardScaler() # Instantiate the standard scaler
+   pipeline = Pipeline([("scaler", ss), ("svm", srv)]) # Instantiate the pipeline
+
+   # Define the parameters for the grid search
+   param_grid = {
+      "svm__C": C_range,
+      "svm__gamma": gamma_range
+   }
+
+   # Perform Grid Search
+   grid = GridSearchCV(pipeline, param_grid, n_jobs=-1, verbose=0) # Instantiate the grid search
+   grid.fit(train_features_values, train_label) # Train the classifier
+
+   # Retrieve the best model
+   y_pred = grid.predict(test_features_values) # Predict the test set
+   accuracy = grid.score(test_features_values, test_label) # Calculate the accuracy
+   execution_time = time.time() - start_time # Calculate the execution time
+
+   return accuracy, {"C": grid.best_params_["svm__C"], "Gamma": grid.best_params_["svm__gamma"], "Execution Time": f"{execution_time:.5f} Seconds"} # Return the Accuracy and the Parameters
+
 # This is the Main function
 def main():
    print(f"{BackgroundColors.CLEAR_TERMINAL}{BackgroundColors.BOLD}{BackgroundColors.GREEN}Hello, World!{Style.RESET_ALL}") # Output the Welcome message
