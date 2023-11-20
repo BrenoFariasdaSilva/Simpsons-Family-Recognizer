@@ -111,6 +111,21 @@ def svm_with_grid_search(train_features_values, train_label, test_features_value
 
    return accuracy, {"C": grid.best_params_["svm__C"], "Gamma": grid.best_params_["svm__gamma"], "Execution Time": f"{execution_time:.5f} Seconds"} # Return the Accuracy and the Parameters
 
+# This function creates a Multilayer Perceptron classifier and prints the classification report
+def multilayer_perceptron(train_features_values, train_label, test_features_values, test_label):
+   print(f"{BackgroundColors.GREEN}4º {BackgroundColors.CYAN}Artificial Neural Network/Multilayer Perceptron Classifier{BackgroundColors.GREEN}.{Style.RESET_ALL}")
+   start_time = time.time() # Start the timer
+   scaler = StandardScaler() # Instantiate the standard scaler
+   train_features_values = scaler.fit_transform(train_features_values) # Scale the training features
+   test_features_values = scaler.fit_transform(test_features_values) # Scale the test features
+   clf = MLPClassifier(solver="adam", alpha=1e-5, hidden_layer_sizes=(500, 500, 500, 500), random_state=1) # Instantiate the classifier
+   clf.fit(train_features_values, train_label) # Train the classifier
+   y_pred = clf.predict(test_features_values) # Predict the test set
+   accuracy = clf.score(test_features_values, test_label) # Calculate the accuracy
+   execution_time = time.time() - start_time # Calculate the execution time
+
+   return accuracy, {"Solver": "Adam", "Alpha": 1e-5, "Hidden Layer Sizes": (500, 500, 500, 500), "Execution Time": f"{execution_time:.5f} Seconds"} # Return the Accuracy and the Parameters
+
 # This is the Main function
 def main():
    print(f"{BackgroundColors.CLEAR_TERMINAL}{BackgroundColors.BOLD}{BackgroundColors.GREEN}Hello, World!{Style.RESET_ALL}") # Output the Welcome message
