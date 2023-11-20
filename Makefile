@@ -1,4 +1,4 @@
-all: dependencies data run
+all: dependencies dataset run
 
 run:
 	clear; time python3 ./main.py
