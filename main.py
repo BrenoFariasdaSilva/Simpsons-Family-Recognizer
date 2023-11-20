@@ -201,9 +201,9 @@ def print_classifiers_execution(sorted_classifiers_execution):
          print(f"{BackgroundColors.GREEN}{parameter}: {BackgroundColors.CYAN}{value}{Style.RESET_ALL}")
       print(f"{Style.RESET_ALL}")
 
-# This is the Main function
+# This is the main function. It calls the other functions, building the project workflow
 def main():
-   print(f"{BackgroundColors.CLEAR_TERMINAL}{BackgroundColors.BOLD}{BackgroundColors.GREEN}Hello, World!{Style.RESET_ALL}") # Output the Welcome message
+   print(f"{BackgroundColors.CLEAR_TERMINAL}{BackgroundColors.BOLD}{BackgroundColors.GREEN}Welcome to the Simpsons Family Characters Classifier!{Style.RESET_ALL}") # Output the welcome message
 
    train_features_values, train_label, test_features_values, test_label = load_data() # Load the data
    classifiers_execution = {} # Dictionary to store the classifiers execution time
@@ -224,5 +224,5 @@ def main():
    print(f"{BackgroundColors.BOLD}{BackgroundColors.GREEN}Program finished.{Style.RESET_ALL}") # Output the end of the program message
 
 # This is the standard boilerplate that calls the main() function.
-if __name__ == '__main__':
+if __name__ == "__main__":
 	main() # Call the main function
