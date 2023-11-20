@@ -164,6 +164,17 @@ def sort_classifiers_execution(classifiers_execution):
    # Sort the classifiers by accuracy and return the sorted dictionary
    return dict(sorted(classifiers_execution.items(), key=lambda item: item[1][0], reverse=True))
 
+# This function prints the execution time of the classifiers
+def print_classifiers_execution(sorted_classifiers_execution):
+   print(f"\n{BackgroundColors.GREEN}Classifiers Results:{BackgroundColors.CYAN}") # Print the classifiers results
+
+   # loop through the classifiers name, accuracy and parameters
+   for classifier, accuracy in sorted_classifiers_execution.items():
+      print(f"{BackgroundColors.GREEN}{classifier}: {BackgroundColors.CYAN}{accuracy[0]*100:.2f}%{Style.RESET_ALL}")
+      for parameter, value in accuracy[1].items():
+         print(f"{BackgroundColors.GREEN}{parameter}: {BackgroundColors.CYAN}{value}{Style.RESET_ALL}")
+      print(f"{Style.RESET_ALL}")
+
 # This is the Main function
 def main():
    print(f"{BackgroundColors.CLEAR_TERMINAL}{BackgroundColors.BOLD}{BackgroundColors.GREEN}Hello, World!{Style.RESET_ALL}") # Output the Welcome message
