@@ -184,7 +184,7 @@ The results of the K-NN, Decision Tree, Support Vector Machine, Multilayer Perce
 
 ## Contributing
 
-Code improvement recommendations are very welcome. In order to contribute, follow the steps below:
+Code improvement recommendations are very welcome. In order to contribute, submit a Pull Request describing your code improvements.
 
 ## License
 
