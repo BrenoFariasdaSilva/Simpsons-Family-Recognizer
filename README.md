@@ -73,7 +73,11 @@ The impleted K-NN is using the Grid Search to find the best parameters for the m
 ### Decision Trees (DT)
 
 Decision Trees are a versatile machine learning algorithm used for both classification and regression tasks. They make decisions based on a set of rules learned from the training data.  
-Decision Trees recursively split the data into subsets based on the most significant features, creating a tree-like structure. They are interpretable and can capture complex relationships in the data.
+Decision Trees recursively split the data into subsets based on the most significant features, creating a tree-like structure. They are interpretable and can capture complex relationships in the data.  
+The implemented Decision Tree is using the Grid Search to find the best parameters for the model and the parameters used are:
+- criterion: The function to measure the quality of a split. The selected criterion are 'gini' and 'entropy'.
+- max_depth: The maximum depth of the tree. The selected max_depth are None, 10, 20, 30.
+- splitter: The strategy used to choose the split at each node. The selected splitter are 'best' and 'random'.
 
 ### Support Vector Machines (SVM)
 
