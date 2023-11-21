@@ -83,9 +83,9 @@ The implemented Decision Tree is using the Grid Search to find the best paramete
 Support Vector Machines (SVM) is a powerful supervised learning algorithm used for classification and regression tasks. SVM aims to find a hyperplane that best separates data into different classes. It works by maximizing the margin between classes, and it is effective in high-dimensional spaces.  
 SVM can handle non-linear relationships through the use of kernel functions.  
 The implemented SVM is using the Grid Search to find the best parameters for the model and the parameters used are:
-- C: Regularization parameter: It test the values from `2. ** np.arange(-5, 15, 2)`
-- kernel: Specifies the kernel type to be used in the algorithm. The selected kernel are 'linear', 'poly', 'rbf' and 'sigmoid'.
-- gamma: Kernel coefficient for 'rbf', 'poly' and 'sigmoid'. The selected gamma define the influence of input vectors on the margins. The values are from `2. ** np.arange(3, -15, -2)`.
+- `C`: Regularization parameter: It test the values from `2. ** np.arange(-5, 15, 2)`
+- `kernel`: Specifies the kernel type to be used in the algorithm. The selected kernel are `"linear", "poly", "rbf" and "sigmoid"`.
+- `gamma`: Kernel coefficient. The selected gamma define the influence of input vectors on the margins. The values are from `2. ** np.arange(3, -15, -2)`.
 
 ### Multi-Layer Perceptron (MLP)
 
