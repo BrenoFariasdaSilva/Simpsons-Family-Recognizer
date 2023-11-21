@@ -68,8 +68,8 @@ def grid_search_knn(train_features_values, train_label, test_features_values, te
 
    # Define the parameter grid for the grid search
    param_grid = {
-      "n_neighbors": [1, 3, 5, 7], # Neighbors to use
-      "metric": ["euclidean", "manhattan", "minkowski"], # Distance metric to use
+      "metric": ["euclidean", "manhattan", "minkowski"], # Distance metric to use.
+      "n_neighbors": [1, 3, 5, 7], # Neighbors to use.
    }
 
    knn = KNeighborsClassifier() # Instantiate the classifier
@@ -108,9 +108,9 @@ def grid_search_decision_tree(train_features_values, train_label, test_features_
 
    # Define the parameter grid for the grid search
    param_grid = {
-      "criterion": ["gini", "entropy"], # Add more criteria if needed
-      "splitter": ["best", "random"], # Add more splitters if needed
-      "max_depth": [None, 10, 20, 30], # Add more depth values if needed
+      "criterion": ["gini", "entropy"], # The function to measure the quality of a split.
+      "max_depth": [None, 10, 20, 30], # The maximum depth of the tree.
+      "splitter": ["best", "random"], # The strategy used to choose the split at each node.
    }
 
    # Instantiate the Decision Tree classifier
@@ -158,9 +158,9 @@ def grid_search_support_vector_machine(train_features_values, train_label, test_
 
    # Define the parameters for the grid search
    param_grid = {
-      "svm__C": C_range,
-      "svm__gamma": gamma_range,
-      "svm__kernel": k,
+      "svm__C": C_range, # The range of C values.
+      "svm__gamma": gamma_range, # The range of gamma values. The gamma defines the influence of a single training example.
+      "svm__kernel": k, # The kernel to use.
    }
 
    # Perform Grid Search
@@ -188,9 +188,9 @@ def grid_search_multilayer_perceptron(train_features_values, train_label, test_f
 
    # Define the parameter grid for the grid search
    param_grid = {
-      "alpha": [1e-5, 1e-4, 1e-3], # Add more alpha values if needed
-      "hidden_layer_sizes": [(100,), (100, 100), (500, 500, 500, 500)], # Add more hidden layer sizes if needed
-      "solver": ["adam", "lbfgs"], # Add more solvers if needed
+      "alpha": [1e-5, 1e-4, 1e-3], # L2 penalty (regularization term) parameter.
+      "hidden_layer_sizes": [(100,), (100, 100), (500, 500, 500, 500)], # Define the number of neurons in each hidden layer.
+      "solver": ["adam", "lbfgs"], # The solver for weight optimization.
    }
 
    # Instantiate the Multilayer Perceptron classifier
@@ -230,8 +230,8 @@ def grid_search_random_forest(train_features_values, train_label, test_features_
    
    # Define the parameter grid for the grid search
    param_grid = {
-      "n_estimators": [100, 500, 1000], # Add more values if needed
-      "max_depth": [None, 10, 20, 30], # Add more values if needed
+      "max_depth": [None, 10, 20, 30], # The maximum depth of the tree.
+      "n_estimators": [100, 500, 1000], # The number of trees in the forest. 
    }
 
    # Instantiate the Random Forest classifier
@@ -272,9 +272,9 @@ def grid_search_naive_bayes(train_features_values, train_label, test_features_va
    start_time = time.time() # Start the timer
    # Define the parameters for the grid search
    param_grid = {
-      "var_smoothing": [1e-9, 1e-8, 1e-7, 1e-6, 1e-5],
-      "priors": [None, [0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2]],
-      }
+      "priors": [None, [0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2]], # Prior probabilities of the classes.
+      "var_smoothing": [1e-9, 1e-8, 1e-7, 1e-6, 1e-5], # The var_smoothing parameter is the value added to the variance for calculation stability to avoid division by zero.
+   }
 
    # Instantiate Naive Bayes classifier
    nb = GaussianNB()
