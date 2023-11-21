@@ -41,6 +41,7 @@ This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT
 		- [Random Forest](#random-forest)
 		- [Naive Bayes](#naive-bayes)
 		- [Dataset](#dataset)
+		- [Feature Extraction](#feature-extraction)
 		- [Data Description](#data-description)
 	- [Requirements](#requirements)
 	- [Setup](#setup)
@@ -112,6 +113,10 @@ The implemented Naive Bayes is using the Grid Search to find the best parameters
 ### Dataset
 
 The dataset used for this project can be found [here](https://drive.google.com/uc?export=download&id=1wVyUmsz150uKjOprxRA_4LtmTXDPRp1o).
+
+### Feature Extraction
+
+- TODO: Use colored and black and white pictures to increase the sample size.
 
 ### Data Description
 
