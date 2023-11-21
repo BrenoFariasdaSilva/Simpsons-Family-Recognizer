@@ -231,7 +231,7 @@ def grid_search_random_forest(train_features_values, train_label, test_features_
    # Define the parameter grid for the grid search
    param_grid = {
       "n_estimators": [100, 500, 1000], # Add more values if needed
-      "max_depth": [None, 10, 30], # Add more values if needed
+      "max_depth": [None, 10, 20, 30], # Add more values if needed
    }
 
    # Instantiate the Random Forest classifier

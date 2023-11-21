@@ -97,7 +97,10 @@ The implemented MLP is using the Grid Search to find the best parameters for the
 
 ### Random Forest
 
-Random Forest is an ensemble learning algorithm that combines multiple decision trees to improve predictive accuracy and control overfitting. Each tree in the forest is trained on a random subset of the data, and the final prediction is based on the majority vote or average of the individual tree predictions. Random Forest is robust and effective for both classification and regression tasks.
+Random Forest is an ensemble learning algorithm that combines multiple decision trees to improve predictive accuracy and control overfitting. Each tree in the forest is trained on a random subset of the data, and the final prediction is based on the majority vote or average of the individual tree predictions. Random Forest is robust and effective for both classification and regression tasks.  
+The implemented Random Forest is using the Grid Search to find the best parameters for the model and the parameters used are:
+- `n_estimators`: The number of trees in the forest. The selected n_estimators are `100, 500 and 1000`.
+- `max_depth`: The maximum depth of the tree. The selected max_depth are `None, 10, 20, 30`.
 
 ### Naive Bayes
 
