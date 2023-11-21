@@ -314,13 +314,42 @@ def main():
 
    train_features_values, train_label, test_features_values, test_label = load_data() # Load the data
    classifiers_execution = {} # Dictionary to store the classifiers execution time
+   classifiers_predictions = {} # Dictionary to store the classifiers predictions
 
-   classifiers_execution["K-Nearest Neighbors"] = grid_search_knn(train_features_values, train_label, test_features_values, test_label) # Train the K-NN classifier
-   classifiers_execution["Decision Tree"] = grid_search_decision_tree(train_features_values, train_label, test_features_values, test_label) # Train the Decision Tree classifier
-   classifiers_execution["Support Vector Machine"] = grid_search_support_vector_machine(train_features_values, train_label, test_features_values, test_label) # Train the SVM classifier
-   classifiers_execution["Multilayer Perceptron"] = grid_search_multilayer_perceptron(train_features_values, train_label, test_features_values, test_label) # Train the ANN/MLP classifier
-   classifiers_execution["Random Forest"] = grid_search_random_forest(train_features_values, train_label, test_features_values, test_label) # Train the Random Forest classifier
-   classifiers_execution["Naive Bayes"] = grid_search_naive_bayes(train_features_values, train_label, test_features_values, test_label) # Train the Naive Bayes classifier
+   # Train the K-NN classifier
+   accuracy, y_pred, parameters = grid_search_knn(train_features_values, train_label, test_features_values, test_label)
+   # Store results in dictionaries
+   classifiers_execution["K-Nearest Neighbors"] = (accuracy, parameters)
+   classifiers_predictions["K-Nearest Neighbors"] = y_pred
+
+   # Train the Decision Tree classifier
+   accuracy, y_pred, parameters = grid_search_decision_tree(train_features_values, train_label, test_features_values, test_label)
+   # Store results in dictionaries
+   classifiers_execution["Decision Tree"] = (accuracy, parameters)
+   classifiers_predictions["Decision Tree"] = y_pred
+
+   # Train the Support Vector Machine classifier
+   accuracy, y_pred, parameters = grid_search_support_vector_machine(train_features_values, train_label, test_features_values, test_label)
+   # Store results in dictionaries
+   classifiers_execution["Support Vector Machine"] = (accuracy, parameters)
+   classifiers_predictions["Support Vector Machine"] = y_pred
+
+   # Train the Multilayer Perceptron classifier
+   accuracy, y_pred, parameters = grid_search_multilayer_perceptron(train_features_values, train_label, test_features_values, test_label)
+   # Store results in dictionaries
+   classifiers_execution["Multilayer Perceptron"] = (accuracy, parameters)
+   classifiers_predictions["Multilayer Perceptron"] = y_pred
+
+   # Train the Random Forest classifier
+   accuracy, y_pred, parameters = grid_search_random_forest(train_features_values, train_label, test_features_values, test_label)
+   # Store results in dictionaries
+   classifiers_execution["Random Forest"] = (accuracy, parameters)
+
+   # Train the Naive Bayes classifier
+   accuracy, y_pred, parameters = grid_search_naive_bayes(train_features_values, train_label, test_features_values, test_label)
+   # Store results in dictionaries
+   classifiers_execution["Naive Bayes"] = (accuracy, parameters)
+   classifiers_predictions["Naive Bayes"] = y_pred
 
    # Sort the classifiers by execution time
    classifiers_execution = sort_classifiers_execution(classifiers_execution)
