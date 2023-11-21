@@ -271,7 +271,10 @@ def grid_search_naive_bayes(train_features_values, train_label, test_features_va
 
    start_time = time.time() # Start the timer
    # Define the parameters for the grid search
-   param_grid = {"var_smoothing": [1e-9, 1e-8, 1e-7, 1e-6, 1e-5]}
+   param_grid = {
+      "var_smoothing": [1e-9, 1e-8, 1e-7, 1e-6, 1e-5],
+      "priors": [None, [0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2]],
+      }
 
    # Instantiate Naive Bayes classifier
    nb = GaussianNB()
