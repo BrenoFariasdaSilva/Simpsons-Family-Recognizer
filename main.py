@@ -68,7 +68,7 @@ def load_data():
    return train_features_values, train_label, test_features_values, test_label # Return the data
 
 # This function creates a k-NN classifier and prints the classification report
-def grid_search_knn(train_features_values, train_label, test_features_values, test_label):
+def grid_search_k_nearest_neighbors(train_features_values, train_label, test_features_values, test_label):
    # Define the parameter grid for the grid search
    param_grid = {
       "metric": ["euclidean", "manhattan", "minkowski"], # Distance metric to use.
@@ -309,7 +309,7 @@ def main():
    classifiers_predictions = {} # Dictionary to store the classifiers predictions
 
    # Train the K-NN classifier
-   accuracy, y_pred, parameters = grid_search_knn(train_features_values, train_label, test_features_values, test_label)
+   accuracy, y_pred, parameters = grid_search_k_nearest_neighbors(train_features_values, train_label, test_features_values, test_label)
    # Store results in dictionaries
    classifiers_execution["K-Nearest Neighbors"] = (accuracy, parameters)
    classifiers_predictions["K-Nearest Neighbors"] = y_pred
