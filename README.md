@@ -66,8 +66,8 @@ This project employs various machine learning supervised classifiers to recogniz
 
 K-Nearest Neighbors (K-NN) is a simple and widely used machine learning algorithm that falls under the category of supervised learning. It is a non-parametric and instance-based method used for classification and regression tasks. The fundamental idea behind K-NN is to make predictions based on the majority class or average value of the `k` nearest data points in the feature space. In other words, the algorithm classifies or predicts the output of an instance by considering the labels of its nearest neighbors that are the data points closest to that instance in a Cartesian plane. The K-NN doesn't have an explicit training and classification progress, so its classification time could be very slow, depending on the size of the dataset.  
 The impleted K-NN is using the Grid Search to find the best parameters for the model and the parameters used are:
-- `n_neighbors`: Number of neighbors to use by default for kneighbors queries -> `1, 3, 5 and 7`.
 - `metric`: The distance metric to use for the tree. The selected metrics are `"euclidean", "manhattan" and "minkowski"`.
+- `n_neighbors`: Number of neighbors to use by default for kneighbors queries -> `1, 3, 5 and 7`.
 
 ### Decision Trees (DT)
 
@@ -84,8 +84,8 @@ Support Vector Machines (SVM) is a powerful supervised learning algorithm used f
 SVM can handle non-linear relationships through the use of kernel functions.  
 The implemented SVM is using the Grid Search to find the best parameters for the model and the parameters used are:
 - `C`: Regularization parameter: It test the values from `2. ** np.arange(-5, 15, 2)`
-- `kernel`: Specifies the kernel type to be used in the algorithm. The selected kernel are `"linear", "poly", "rbf" and "sigmoid"`.
 - `gamma`: Kernel coefficient. The selected gamma define the influence of input vectors on the margins. The values are from `2. ** np.arange(3, -15, -2)`.
+- `kernel`: Specifies the kernel type to be used in the algorithm. The selected kernel are `"linear", "poly", "rbf" and "sigmoid"`.
 
 ### Multi-Layer Perceptron (MLP)
 
@@ -99,15 +99,15 @@ The implemented MLP is using the Grid Search to find the best parameters for the
 
 Random Forest is an ensemble learning algorithm that combines multiple decision trees to improve predictive accuracy and control overfitting. Each tree in the forest is trained on a random subset of the data, and the final prediction is based on the majority vote or average of the individual tree predictions. Random Forest is robust and effective for both classification and regression tasks.  
 The implemented Random Forest is using the Grid Search to find the best parameters for the model and the parameters used are:
-- `n_estimators`: The number of trees in the forest. The selected n_estimators are `100, 500 and 1000`.
 - `max_depth`: The maximum depth of the tree. The selected max_depth are `None, 10, 20, 30`.
+- `n_estimators`: The number of trees in the forest. The selected n_estimators are `100, 500 and 1000`.
 
 ### Naive Bayes
 
 Naive Bayes is a simple yet powerful machine learning algorithm commonly used for classification tasks. It is a probabilistic classifier that makes use of Bayes' Theorem, which states that the probability of A given B is equal to the probability of B given A times the probability of A divided by the probability of B. The algorithm it self is simple and easy to implement, and it is effective in high-dimensional spaces. It is also fast and can be used for both binary and multi-class classification tasks. It has a few drawbacks, such as the assumption of independent features and the zero-frequency problem. Also, it requires a parameter called "var_smoothing" to be set, which is a smoothing parameter that accounts for features not present in the learning samples and prevents zero probabilities in the prediction.  
 The implemented Naive Bayes is using the Grid Search to find the best parameters for the model and the parameters used are:
-- `var_smoothing`: Portion of the largest variance of all features that is added to variances for calculation stability. The selected var_smoothing are `1e-9, 1e-8, 1e-7, 1e-6, 1e-5`.
 - `priors`: Prior probabilities of the classes. The selected priors are `None and [0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2]`.
+- `var_smoothing`: Portion of the largest variance of all features that is added to variances for calculation stability. The selected var_smoothing are `1e-9, 1e-8, 1e-7, 1e-6, 1e-5`.
 
 ### Dataset
 
