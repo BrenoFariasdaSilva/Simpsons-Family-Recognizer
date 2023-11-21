@@ -180,7 +180,7 @@ make run
 
 ## Results
 
-The results of the K-NN, Decision Tree, Support Vector Machine, Multilayer Perceptron, Random Forest and Naive Bayes algorithms models will produce as output the accuracy, F1-Score [0 to 100%], it's Best Params found by the Grid Search, the execution time and a confusion matrix (N × N) indicating the percentage of system hits and errors among the N classes. That results will be shown in the terminal and saved in the `Results` directory.
+The results of the K-Nearest Neighbors (K-NN), Decision Tree (DT), Support Vector Machine (SVM), Multilayer Perceptron (MLP), Random Forest and Naive Bayes algorithms models will produce as output the accuracy, F1-Score [0 to 100%], it's Best Params found by the Grid Search, the execution time and a confusion matrix (N × N) indicating the percentage of system hits and errors among the N classes. That results will be shown in the terminal and saved in the `Results` directory.
 
 ## Contributing
 
