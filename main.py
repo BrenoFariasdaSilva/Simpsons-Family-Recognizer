@@ -286,6 +286,13 @@ def grid_search_naive_bayes(train_features_values, train_label, test_features_va
    execution_time = time.time() - start_time # Calculate the execution time
    accuracy = grid.score(test_features_values, test_label) # Calculate the accuracy
 
+   if SHOW_CLASSIFICATION_REPORT: # Show the classification report if it is set to True
+      print(f"{classification_report(test_label, y_pred)}{Style.RESET_ALL}")
+
+   if SHOW_CONFUSION_MATRIX: # Show the confusion matrix if it is set to True
+      conf_matrix = confusion_matrix(test_label, y_pred) # Calculate the confusion matrix
+      print(f"{BackgroundColors.CYAN}Naive Bayes{BackgroundColors.GREEN} Confusion Matrix:\n{BackgroundColors.CYAN}{conf_matrix}{Style.RESET_ALL}") # Print the confusion matrix
+
    return accuracy, y_pred, {"Var Smoothing": grid.best_params_["var_smoothing"], "Execution Time": f"{execution_time:.5f} Seconds"} # Return the Accuracy and the Parameters
 
 # This function performs majority voting on the classifiers' predictions
