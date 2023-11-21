@@ -103,7 +103,7 @@ def grid_search_knn(train_features_values, train_label, test_features_values, te
       conf_matrix = confusion_matrix(test_label, y_pred) # Calculate the confusion matrix
       print(f"{BackgroundColors.GREEN}Confusion Matrix:\n{BackgroundColors.CYAN}{conf_matrix}{Style.RESET_ALL}") # Print the confusion matrix
    
-   return accuracy, {"Best Parameters": best_params, "Execution Time": f"{execution_time:.5f} Seconds"} # Return the Accuracy and the Parameters
+   return accuracy, y_pred, {"Best Parameters": best_params, "Execution Time": f"{execution_time:.5f} Seconds"} # Return the Accuracy and the Parameters
 
 # This function creates a Decision Tree classifier with grid search and prints the classification report
 def grid_search_decision_tree(train_features_values, train_label, test_features_values, test_label):
@@ -145,7 +145,7 @@ def grid_search_decision_tree(train_features_values, train_label, test_features_
       conf_matrix = confusion_matrix(test_label, y_pred) 
       print(f"{BackgroundColors.GREEN}Confusion Matrix:\n{BackgroundColors.CYAN}{conf_matrix}{Style.RESET_ALL}")
 
-   return accuracy, {"Best Parameters": best_params, "Execution Time": f"{execution_time:.5f} Seconds"} # Return the Accuracy and the Parameters
+   return accuracy, y_pred, {"Best Parameters": best_params, "Execution Time": f"{execution_time:.5f} Seconds"} # Return the Accuracy and the Parameters
 
 # This function creates a SVM classifier with grid search and prints the classification report
 def grid_search_support_vector_machine(train_features_values, train_label, test_features_values, test_label):
@@ -183,7 +183,7 @@ def grid_search_support_vector_machine(train_features_values, train_label, test_
       conf_matrix = confusion_matrix(test_label, y_pred)
       print(f"{BackgroundColors.GREEN}Confusion Matrix:\n{BackgroundColors.CYAN}{conf_matrix}{Style.RESET_ALL}")
 
-   return accuracy, {"C": grid.best_params_["svm__C"], "Gamma": grid.best_params_["svm__gamma"], "Execution Time": f"{execution_time:.5f} Seconds"} # Return the Accuracy and the Parameters
+   return accuracy, y_pred, {"C": grid.best_params_["svm__C"], "Gamma": grid.best_params_["svm__gamma"], "Execution Time": f"{execution_time:.5f} Seconds"} # Return the Accuracy and the Parameters
 
 # This function creates a Multilayer Perceptron classifier and prints the classification report
 def grid_search_multilayer_perceptron(train_features_values, train_label, test_features_values, test_label):
@@ -225,7 +225,7 @@ def grid_search_multilayer_perceptron(train_features_values, train_label, test_f
       conf_matrix = confusion_matrix(test_label, y_pred)
       print(f"{BackgroundColors.GREEN}Confusion Matrix:\n{BackgroundColors.CYAN}{conf_matrix}{Style.RESET_ALL}") # Print the confusion matrix
 
-   return accuracy, {"Best Parameters": best_params, "Execution Time": f"{execution_time:.5f} Seconds"} # Return the Accuracy and the Parameters
+   return accuracy, y_pred, {"Best Parameters": best_params, "Execution Time": f"{execution_time:.5f} Seconds"} # Return the Accuracy and the Parameters
 
 # This function creates a Random Forest classifier and prints the classification report
 def grid_search_random_forest(train_features_values, train_label, test_features_values, test_label):
@@ -266,7 +266,7 @@ def grid_search_random_forest(train_features_values, train_label, test_features_
       conf_matrix = confusion_matrix(test_label, y_pred) # Calculate the confusion matrix
       print(f"{BackgroundColors.GREEN}Confusion Matrix:\n{BackgroundColors.CYAN}{conf_matrix}{Style.RESET_ALL}") # Print the confusion matrix
 
-   return accuracy, {"Best Parameters": best_params, "Execution Time": f"{execution_time:.5f} Seconds"} # Return the Accuracy and the Parameters
+   return accuracy, y_pred, {"Best Parameters": best_params, "Execution Time": f"{execution_time:.5f} Seconds"} # Return the Accuracy and the Parameters
 
 # This function trains the Naive Bayes classifier and prints the classification report
 def grid_search_naive_bayes(train_features_values, train_label, test_features_values, test_label):
@@ -290,7 +290,7 @@ def grid_search_naive_bayes(train_features_values, train_label, test_features_va
    execution_time = time.time() - start_time # Calculate the execution time
    accuracy = grid.score(test_features_values, test_label) # Calculate the accuracy
 
-   return accuracy, {"Var Smoothing": grid.best_params_["var_smoothing"], "Execution Time": f"{execution_time:.5f} Seconds"} # Return the Accuracy and the Parameters
+   return accuracy, y_pred, {"Var Smoothing": grid.best_params_["var_smoothing"], "Execution Time": f"{execution_time:.5f} Seconds"} # Return the Accuracy and the Parameters
 
 # This function sort the classifiers by accuracy
 def sort_classifiers_execution(classifiers_execution):
