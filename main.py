@@ -147,11 +147,11 @@ def grid_search_decision_tree(train_features_values, train_label, test_features_
 # This function creates a SVM classifier with grid search and prints the classification report
 def grid_search_support_vector_machine(train_features_values, train_label, test_features_values, test_label):
    print(f"{BackgroundColors.GREEN}3º {BackgroundColors.CYAN}Support Vector Machine Classifier with Grid Search{BackgroundColors.GREEN}.{Style.RESET_ALL}")
+
    C_range = 2. ** np.arange(-5, 15, 2) # The range of C values
    gamma_range = 2. ** np.arange(3, -15, -2) # The range of gamma values which defines the influence of a single training example
    k = ["linear", "rbf", "poly", "sigmoid"] # The kernel
 
-   # Instantiate the classifier with probability
    srv = svm.SVC(probability=True) # Instantiate the classifier with probability
    ss = StandardScaler() # Instantiate the standard scaler
    pipeline = Pipeline([("scaler", ss), ("svm", srv)]) # Instantiate the pipeline
@@ -269,7 +269,6 @@ def grid_search_random_forest(train_features_values, train_label, test_features_
 def grid_search_naive_bayes(train_features_values, train_label, test_features_values, test_label):
    print(f"{BackgroundColors.GREEN}6º {BackgroundColors.CYAN}Naive Bayes Classifier with Grid Search{BackgroundColors.GREEN}.{Style.RESET_ALL}")
 
-   start_time = time.time() # Start the timer
    # Define the parameters for the grid search
    param_grid = {
       "priors": [None, [0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2]], # Prior probabilities of the classes.
@@ -282,6 +281,7 @@ def grid_search_naive_bayes(train_features_values, train_label, test_features_va
    # Instantiate GridSearchCV
    grid = GridSearchCV(nb, param_grid, cv=5, scoring="accuracy", verbose=0, n_jobs=-1)
 
+   start_time = time.time() # Start the timer
    grid.fit(train_features_values, train_label) # Train the classifier
    y_pred = grid.predict(test_features_values) # Predict the test set
    accuracy = grid.score(test_features_values, test_label) # Calculate the accuracy
