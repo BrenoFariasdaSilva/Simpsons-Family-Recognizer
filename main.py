@@ -3,10 +3,12 @@ import numpy as np # For the data manipulation
 import os # For running a command in the terminal
 import platform # For getting the operating system name
 import time # For the timer
+from collections import Counter # For the majority voting
 from colorama import Style # For coloring the terminal
 from sklearn import svm # For the SVM classifier
 from sklearn import tree # For the decision tree classifier
 from sklearn.ensemble import RandomForestClassifier # For the random forest classifier
+from sklearn.metrics import accuracy_score # For the accuracy score
 from sklearn.metrics import classification_report # For the classification report
 from sklearn.metrics import confusion_matrix # For the confusion matrix
 from sklearn.model_selection import GridSearchCV # For the grid search
@@ -292,6 +294,12 @@ def grid_search_naive_bayes(train_features_values, train_label, test_features_va
 
    return accuracy, y_pred, {"Var Smoothing": grid.best_params_["var_smoothing"], "Execution Time": f"{execution_time:.5f} Seconds"} # Return the Accuracy and the Parameters
 
+# This function performs majority voting on the classifiers' predictions
+def majority_vote_predictions(classifiers_predictions):
+   transposed_predictions = list(map(list, zip(*classifiers_predictions.values()))) # Transpose the predictions
+   final_predictions = [Counter(instance_predictions).most_common(1)[0][0] for instance_predictions in transposed_predictions] # Calculate the majority vote predictions
+   return final_predictions # Return the majority vote predictions
+
 # This function sort the classifiers by accuracy
 def sort_classifiers_execution(classifiers_execution):
    # Sort the classifiers by accuracy and return the sorted dictionary
@@ -351,10 +359,19 @@ def main():
    classifiers_execution["Naive Bayes"] = (accuracy, parameters)
    classifiers_predictions["Naive Bayes"] = y_pred
 
-   # Sort the classifiers by execution time
-   classifiers_execution = sort_classifiers_execution(classifiers_execution)
+   # Calculate majority vote predictions
+   majority_vote_predictions_result = majority_vote_predictions(classifiers_predictions)
 
-   # Print the execution time
+   # Calculate accuracy for majority vote predictions
+   majority_vote_accuracy = accuracy_score(test_label, majority_vote_predictions_result)
+
+   # print the majority vote accuracy
+   print(f"{BackgroundColors.GREEN}Majority Vote Accuracy: {BackgroundColors.CYAN}{majority_vote_accuracy * 100:.2f}%{Style.RESET_ALL}")
+
+   # Add majority vote to the classifiers execution dictionary
+   classifiers_execution["Majority Vote"] = (majority_vote_accuracy, {})
+
+   # # Print the execution time
    print_classifiers_execution(classifiers_execution)
 
    print(f"{BackgroundColors.BOLD}{BackgroundColors.GREEN}Thank you for using the Simpsons Family Characters Classifier!{Style.RESET_ALL}") # Output the goodbye message
