@@ -188,9 +188,9 @@ def grid_search_multilayer_perceptron(train_features_values, train_label, test_f
 
    # Define the parameter grid for the grid search
    param_grid = {
-      "solver": ["adam", "lbfgs"], # Add more solvers if needed
       "alpha": [1e-5, 1e-4, 1e-3], # Add more alpha values if needed
       "hidden_layer_sizes": [(100,), (100, 100), (500, 500, 500, 500)], # Add more hidden layer sizes if needed
+      "solver": ["adam", "lbfgs"], # Add more solvers if needed
    }
 
    # Instantiate the Multilayer Perceptron classifier

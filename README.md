@@ -89,7 +89,11 @@ The implemented SVM is using the Grid Search to find the best parameters for the
 
 ### Multi-Layer Perceptron (MLP)
 
-Multi-Layer Perceptron (MLP) is a type of artificial neural network commonly used for classification and regression tasks. It consists of multiple layers of interconnected nodes (neurons) with each layer having a set of weights. MLPs can capture complex relationships in data and are known for their ability to model non-linear functions.
+Multi-Layer Perceptron (MLP) is a type of artificial neural network commonly used for classification and regression tasks. It consists of multiple layers of interconnected nodes (neurons) with each layer having a set of weights. MLPs can capture complex relationships in data and are known for their ability to model non-linear functions.  
+The implemented MLP is using the Grid Search to find the best parameters for the model and the parameters used are:
+- `alpha`: L2 penalty (regularization term) parameter. The selected alpha are `1e-5, 1e-4 and 1e-3`.
+- `hidden_layer_sizes`: The number of neurons in the hidden layers. The selected hidden_layer_sizes are `(100,), (100, 100), (500, 500, 500, 500)`.
+- `solver`: The solver for weight optimization. The selected solver are `"adam" and "lbfgs"`.
 
 ### Random Forest
 
