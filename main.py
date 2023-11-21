@@ -69,7 +69,7 @@ def grid_search_knn(train_features_values, train_label, test_features_values, te
    # Define the parameter grid for the grid search
    param_grid = {
       "n_neighbors": [1, 3, 5, 7], # Neighbors to use
-      "metric": ["euclidean", "manhattan"], # Distance metric to use
+      "metric": ["euclidean", "manhattan", "minkowski"], # Distance metric to use
    }
 
    knn = KNeighborsClassifier() # Instantiate the classifier
