@@ -115,10 +115,10 @@ All of the photos are named with the name of the character in the photo followed
 ## Requirements
 
 - Python 3.x
+- Colorama
 - Pandas
 - NumPy
 - Scikit-learn
-- Matplotlib
 
 ## Setup
 
