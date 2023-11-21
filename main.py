@@ -38,7 +38,7 @@ SHOW_CONFUSION_MATRIX = True # If True, show the confusion matrix
 SHOW_CLASSIFICATION_REPORT = False # If True, show the classification report
 
 # Grid Search Constants:
-CROSS_VALIDATION = 10 # The number of cross validation folds
+CROSS_VALIDATION = None # The number of cross validation folds
 
 # This function defines the command to play a sound when the program finishes
 def play_sound():
