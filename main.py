@@ -79,13 +79,13 @@ def grid_search_knn(train_features_values, train_label, test_features_values, te
 
    start_time = time.time() # Start the timer
    grid_search.fit(train_features_values, train_label) # Train the classifier with grid search
-   execution_time = time.time() - start_time # Calculate the execution time
 
    # Get the best model from the grid search
    best_knn = grid_search.best_estimator_
 
    # Predict the test set using the best model
    y_pred = best_knn.predict(test_features_values)
+   execution_time = time.time() - start_time # Calculate the execution time
 
    # Calculate the accuracy
    accuracy = best_knn.score(test_features_values, test_label)
@@ -121,13 +121,13 @@ def grid_search_decision_tree(train_features_values, train_label, test_features_
 
    start_time = time.time() # Start the timer
    grid_search.fit(train_features_values, train_label) # Train the classifier with grid search
-   execution_time = time.time() - start_time # Calculate the execution time
 
    # Get the best model from the grid search
    best_clf = grid_search.best_estimator_
 
    # Predict the test set using the best model
    y_pred = best_clf.predict(test_features_values)
+   execution_time = time.time() - start_time # Calculate the execution time
 
    # Calculate the accuracy
    accuracy = best_clf.score(test_features_values, test_label)
@@ -167,10 +167,10 @@ def grid_search_support_vector_machine(train_features_values, train_label, test_
    grid = GridSearchCV(pipeline, param_grid, n_jobs=-1, verbose=0) # Instantiate the grid search
    start_time = time.time() # Start the timer
    grid.fit(train_features_values, train_label) # Train the classifier
-   execution_time = time.time() - start_time # Calculate the execution time
 
    # Retrieve the best model
    y_pred = grid.predict(test_features_values) # Predict the test set
+   execution_time = time.time() - start_time # Calculate the execution time
    accuracy = grid.score(test_features_values, test_label) # Calculate the accuracy
 
    if SHOW_CLASSIFICATION_REPORT: # Show the classification report if it is set to True
@@ -201,13 +201,13 @@ def grid_search_multilayer_perceptron(train_features_values, train_label, test_f
 
    start_time = time.time() # Start the timer
    grid_search.fit(train_features_values, train_label) # Train the classifier with grid search
-   execution_time = time.time() - start_time # Calculate the execution time
 
    # Get the best model from the grid search
    best_clf = grid_search.best_estimator_
 
    # Predict the test set using the best model
    y_pred = best_clf.predict(test_features_values)
+   execution_time = time.time() - start_time # Calculate the execution time
 
    # Calculate the accuracy
    accuracy = best_clf.score(test_features_values, test_label)
@@ -242,13 +242,13 @@ def grid_search_random_forest(train_features_values, train_label, test_features_
 
    start_time = time.time() # Start the timer
    grid_search.fit(train_features_values, train_label) # Train the classifier with grid search
-   execution_time = time.time() - start_time # Calculate the execution time
 
    # Get the best model from the grid search
    best_clf = grid_search.best_estimator_
 
    # Predict the test set using the best model
    y_pred = best_clf.predict(test_features_values)
+   execution_time = time.time() - start_time # Calculate the execution time
 
    # Calculate the accuracy
    accuracy = best_clf.score(test_features_values, test_label)
@@ -284,8 +284,8 @@ def grid_search_naive_bayes(train_features_values, train_label, test_features_va
    start_time = time.time() # Start the timer
    grid.fit(train_features_values, train_label) # Train the classifier
    y_pred = grid.predict(test_features_values) # Predict the test set
-   accuracy = grid.score(test_features_values, test_label) # Calculate the accuracy
    execution_time = time.time() - start_time # Calculate the execution time
+   accuracy = grid.score(test_features_values, test_label) # Calculate the accuracy
 
    return accuracy, {"Var Smoothing": grid.best_params_["var_smoothing"], "Execution Time": f"{execution_time:.5f} Seconds"} # Return the Accuracy and the Parameters
 
