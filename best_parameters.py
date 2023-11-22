@@ -373,6 +373,7 @@ def train_selected_classifiers(classifiers, selected_classifiers, train_features
          accuracy, y_pred, parameters = train_and_evaluate_classifier(classifier_function, train_features, train_labels, test_features, test_labels) # Train and evaluate the classifier
          classifiers_execution[classifier_name] = (accuracy, parameters) # Add the classifier execution to the dictionary
          classifiers_predictions[classifier_name] = y_pred # Add the classifier predictions to the dictionary
+         pbar.update(1) # Update the progress bar
 
    return classifiers_execution, classifiers_predictions # Return the classifiers execution and predictions dictionaries
 

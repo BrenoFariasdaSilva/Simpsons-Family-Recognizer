@@ -225,6 +225,7 @@ def train_all_classifiers(classifiers, selected_classifiers, train_features, tra
          accuracy, y_pred, parameters = train_and_evaluate_classifier(classifier_function, train_features, train_labels, test_features, test_labels) # Train and evaluate the classifier
          classifiers_execution[classifier_name] = (accuracy, parameters) # Add the classifier execution to the dictionary
          classifiers_predictions[classifier_name] = y_pred # Add the classifier predictions to the dictionary
+         pbar.update(1) # Update the progress bar
 
    return classifiers_execution, classifiers_predictions # Return the classifiers execution and predictions dictionaries
 
@@ -248,9 +249,7 @@ def train_best_combination(classifiers, train_features, train_labels, test_featu
          accuracy, y_pred, parameters = train_and_evaluate_classifier(classifier_function, train_features, train_labels, test_features, test_labels) # Train and evaluate the classifier
          classifiers_execution[classifier_name] = (accuracy, parameters) # Add the classifier execution to the dictionary
          classifiers_predictions[classifier_name] = y_pred # Add the classifier predictions to the dictionary
-
-         # Update the progress bar
-         pbar.update(1)
+         pbar.update(1) # Update the progress bar
 
    execution_time = time.time() - start_time # Calculate the execution time
    classifiers_execution["Best Combination"] = (None, {"Predefined Parameters": BEST_COMBINATION, "Execution Time": f"{execution_time:.5f} Seconds"}) # Add the best combination to the classifiers execution dictionary
