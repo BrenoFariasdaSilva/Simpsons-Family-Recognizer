@@ -32,7 +32,7 @@ SOUND_COMMANDS = {"Darwin": "afplay", "Linux": "aplay", "Windows": "start"}
 SOUND_FILE = "./.assets/NotificationSound.wav" # The path to the sound file
 
 # Input Constants:
-INPUT_DEEP_LEARNING_MODEL = "ResNet18" # The deep learning model to use
+INPUT_DEEP_LEARNING_MODEL = "NasNetLarge" # The deep learning model to use
 INPUT_FILES = {
    "NasNetLarge": ["./Dataset/NasNetLarge/Train.txt", "./Dataset/NasNetLarge/Test.txt"],
    "ResNet18": ["./Dataset/ResNet18/Train.txt", "./Dataset/ResNet18/Test.txt"],
@@ -274,7 +274,10 @@ def print_classifiers_execution(sorted_classifiers_execution):
 
 # This is the main function. It calls the other functions, building the project workflow
 def main():
-   print(f"{BackgroundColors.CLEAR_TERMINAL}{BackgroundColors.BOLD}{BackgroundColors.GREEN}Welcome to the Simpsons Family Characters Classifier!{Style.RESET_ALL}") # Output the welcome message
+   print(f"{BackgroundColors.CLEAR_TERMINAL}{BackgroundColors.BOLD}{BackgroundColors.GREEN}Welcome to the Simpsons Family Characters Specific Parameters Algorithm!{Style.RESET_ALL}") # Output the welcome message
+   print(f"{BackgroundColors.GREEN}In order to have the best results, please make sure you ran the {BackgroundColors.CYAN}best_parameters.py{BackgroundColors.GREEN} file first, as it will output the best parameters for each classifier.{Style.RESET_ALL}") # Output the best_parameters.py file message
+   print(f"{BackgroundColors.GREEN}You can modify the parameters in the {BackgroundColors.CYAN}BEST_PARAMETERS{BackgroundColors.GREEN} dictionary.{Style.RESET_ALL}") # Output the best_parameters.py file message
+   print(f"{BackgroundColors.GREEN}The deep learning model used is {BackgroundColors.CYAN}{INPUT_DEEP_LEARNING_MODEL}{BackgroundColors.GREEN}. If you want to change it, please change the {BackgroundColors.CYAN}INPUT_DEEP_LEARNING_MODEL{BackgroundColors.GREEN} variable.{Style.RESET_ALL}") # Output the deep learning model used
 
    train_features, train_labels, test_features, test_labels = load_data() # Load the data
 
