@@ -187,7 +187,7 @@ def grid_search_support_vector_machine(train_features_values, train_label, test_
       conf_matrix = confusion_matrix(test_label, y_pred)
       print(f"{BackgroundColors.GREEN}Support Vector Machine Confusion Matrix:\n{BackgroundColors.CYAN}{conf_matrix}{Style.RESET_ALL}")
 
-   return accuracy, y_pred, {"C": grid.best_params_["svm__C"], "Gamma": grid.best_params_["svm__gamma"], "Execution Time": f"{execution_time:.5f} Seconds"} # Return the Accuracy and the Parameters
+   return accuracy, y_pred, {"C": grid.best_params_["svm__C"], "Gamma": grid.best_params_["svm__gamma"], "Kernel": grid.best_params_["svm__kernel"], "Execution Time": f"{execution_time:.5f} Seconds"} # Return the Accuracy and the Parameters
 
 # This function creates a Multilayer Perceptron classifier and prints the classification report
 def grid_search_multilayer_perceptron(train_features_values, train_label, test_features_values, test_label):
@@ -295,7 +295,7 @@ def grid_search_naive_bayes(train_features_values, train_label, test_features_va
       conf_matrix = confusion_matrix(test_label, y_pred) # Calculate the confusion matrix
       print(f"{BackgroundColors.GREEN}Naive Bayes Confusion Matrix:\n{BackgroundColors.CYAN}{conf_matrix}{Style.RESET_ALL}") # Print the confusion matrix
 
-   return accuracy, y_pred, {"Var Smoothing": grid.best_params_["var_smoothing"], "Execution Time": f"{execution_time:.5f} Seconds"} # Return the Accuracy and the Parameters
+   return accuracy, y_pred, {"Var Smoothing": grid.best_params_["var_smoothing"], "Priors": grid.best_params_["priors"], "Execution Time": f"{execution_time:.5f} Seconds"} # Return the Accuracy and the Parameters
 
 # This function trains and evaluates a classifier
 def train_and_evaluate_classifier(classifier_function, train_features, train_labels, test_features, test_labels):
