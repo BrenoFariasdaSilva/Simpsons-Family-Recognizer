@@ -1,7 +1,10 @@
-all: dependencies dataset run
+all: dependencies dataset
 
-run:
-	clear; time python3 ./main.py
+best_parameters:
+	clear; time python3 ./best_parameters.py
+
+specific_parameters:
+	clear; time python3 ./specific_parameters.py
 
 dependencies:
 	pip install colorama collection numpy scikit-learn tqdm
