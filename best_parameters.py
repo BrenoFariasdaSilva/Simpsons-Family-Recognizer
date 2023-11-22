@@ -127,10 +127,10 @@ def grid_search_decision_tree(train_features_values, train_label, test_features_
    }
 
    # Instantiate the Decision Tree classifier
-   clf = tree.DecisionTreeClassifier()
+   dt = tree.DecisionTreeClassifier()
 
    # Instantiate GridSearchCV
-   grid_search = GridSearchCV(clf, param_grid, scoring="accuracy", cv=CROSS_VALIDATION, n_jobs=-1)
+   grid_search = GridSearchCV(dt, param_grid, scoring="accuracy", cv=CROSS_VALIDATION, n_jobs=-1)
 
    start_time = time.time() # Start the timer
    grid_search.fit(train_features_values, train_label) # Train the classifier with grid search
@@ -159,9 +159,9 @@ def grid_search_decision_tree(train_features_values, train_label, test_features_
 
 # This function creates a SVM classifier with grid search and prints the classification report
 def grid_search_support_vector_machine(train_features_values, train_label, test_features_values, test_label):
-   srv = svm.SVC(probability=True) # Instantiate the classifier with probability
+   svm = svm.SVC(probability=True) # Instantiate the classifier with probability
    ss = StandardScaler() # Instantiate the standard scaler
-   pipeline = Pipeline([("scaler", ss), ("svm", srv)]) # Instantiate the pipeline
+   pipeline = Pipeline([("scaler", ss), ("svm", svm)]) # Instantiate the pipeline
 
    # Define the parameters for the grid search
    param_grid = {
@@ -199,10 +199,10 @@ def grid_search_multilayer_perceptron(train_features_values, train_label, test_f
    }
 
    # Instantiate the Multilayer Perceptron classifier
-   clf = MLPClassifier(random_state=1, max_iter=2000)
+   mlp = MLPClassifier(random_state=1, max_iter=2000)
 
    # Instantiate GridSearchCV
-   grid_search = GridSearchCV(clf, param_grid, scoring="accuracy", cv=CROSS_VALIDATION, n_jobs=-1)
+   grid_search = GridSearchCV(mlp, param_grid, scoring="accuracy", cv=CROSS_VALIDATION, n_jobs=-1)
 
    start_time = time.time() # Start the timer
    grid_search.fit(train_features_values, train_label) # Train the classifier with grid search
@@ -238,10 +238,10 @@ def grid_search_random_forest(train_features_values, train_label, test_features_
    }
 
    # Instantiate the Random Forest classifier
-   clf = RandomForestClassifier(random_state=1)
+   rf = RandomForestClassifier(random_state=1)
 
    # Instantiate GridSearchCV
-   grid_search = GridSearchCV(clf, param_grid, scoring="accuracy", cv=CROSS_VALIDATION, n_jobs=-1)
+   grid_search = GridSearchCV(rf, param_grid, scoring="accuracy", cv=CROSS_VALIDATION, n_jobs=-1)
 
    start_time = time.time() # Start the timer
    grid_search.fit(train_features_values, train_label) # Train the classifier with grid search
