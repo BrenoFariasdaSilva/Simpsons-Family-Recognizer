@@ -38,7 +38,7 @@ SOUND_FILE = "./.assets/NotificationSound.wav" # The path to the sound file
 INPUT_FILES = ["./", "./"] # The input files
 
 # Output Constants:
-SHOW_CONFUSION_MATRIX = True # If True, show the confusion matrix
+SHOW_CONFUSION_MATRIX = False # If True, show the confusion matrix
 SHOW_CLASSIFICATION_REPORT = False # If True, show the classification report
 
 # Classifiers Constants:
