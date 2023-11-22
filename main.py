@@ -6,6 +6,7 @@ import time # For the timer
 import tqdm # For the progress bar
 from collections import Counter # For the majority voting
 from colorama import Style # For coloring the terminal
+from itertools import combinations # For the combinations
 from sklearn import svm # For the SVM classifier
 from sklearn import tree # For the decision tree classifier
 from sklearn.ensemble import RandomForestClassifier # For the random forest classifier
