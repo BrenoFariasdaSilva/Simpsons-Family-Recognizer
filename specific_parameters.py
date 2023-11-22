@@ -31,8 +31,12 @@ class BackgroundColors: # Colors for the terminal
 SOUND_COMMANDS = {"Darwin": "afplay", "Linux": "aplay", "Windows": "start"}
 SOUND_FILE = "./.assets/NotificationSound.wav" # The path to the sound file
 
-# Constants:
-INPUT_FILES = ["./dataset/digits/training/5x5-normalized-pixel_count.txt", "./dataset/digits/test/5x5-normalized-pixel_count.txt"] # The input files
+# Input Constants:
+INPUT_DEEP_LEARNING_MODEL = "ResNet18" # The deep learning model to use
+INPUT_FILES = {
+   "NasNetLarge": ["./Dataset/NasNetLarge/Train.txt", "./Dataset/NasNetLarge/Test.txt"],
+   "ResNet18": ["./Dataset/ResNet18/Train.txt", "./Dataset/ResNet18/Test.txt"],
+}
 
 # Output Constants:
 SHOW_CONFUSION_MATRIX = False # If True, show the confusion matrix
@@ -77,12 +81,12 @@ atexit.register(play_sound)
 def load_data():
    print(f"{BackgroundColors.BOLD}{BackgroundColors.YELLOW}Remember to remove the header line from the dataset files. They should be in the format: {BackgroundColors.CYAN}label feature1 feature2 ... featureN{Style.RESET_ALL}")
    print(f"\n{BackgroundColors.GREEN}Loading data...{Style.RESET_ALL}")
-   tr = np.loadtxt(f"{INPUT_FILES[0]}") # Load the training data
-   ts = np.loadtxt(f"{INPUT_FILES[1]}") # Load the test data
-   train_labels = tr[:, 0] # The first column is the label
-   test_labels = ts[:, 0] # The first column is the label
-   train_features = tr[:, 1:] # The second column to the last is the feature vector
-   test_features = ts[:, 1:] # The second column to the last is the feature vector
+   tr = np.loadtxt(f"{INPUT_FILES[INPUT_DEEP_LEARNING_MODEL][0]}") # Load the training data
+   ts = np.loadtxt(f"{INPUT_FILES[INPUT_DEEP_LEARNING_MODEL][1]}") # Load the test data
+   train_labels = tr[:, -1] # Get the training labels
+   train_features = tr[:, :-1] # Get the training features
+   test_labels = ts[:, -1] # Get the test labels
+   test_features = ts[:, :-1] # Get the test features
    return train_features, train_labels, test_features, test_labels # Return the data
 
 # This function creates a k-NN classifier and prints the classification report
