@@ -35,10 +35,12 @@ SOUND_COMMANDS = {"Darwin": "afplay", "Linux": "aplay", "Windows": "start"}
 SOUND_FILE = "./.assets/NotificationSound.wav" # The path to the sound file
 
 # Input Constants:
-INPUT_DEEP_LEARNING_MODEL = "ResNet18" # The deep learning model to use
+INPUT_DEEP_LEARNING_MODEL = "InceptionV3" # The deep learning model to use
 INPUT_FILES = {
    "NasNetLarge": ["./Dataset/NasNetLarge/Train.txt", "./Dataset/NasNetLarge/Test.txt"],
    "ResNet18": ["./Dataset/ResNet18/Train.txt", "./Dataset/ResNet18/Test.txt"],
+   "InceptionV3": ["./Dataset/InceptionV3/Train.txt", "./Dataset/InceptionV3/Test.txt"],
+   "VGG16": ["./Dataset/VGG16/Train.txt", "./Dataset/VGG16/Test.txt"],
 }
 
 # Output Constants:
