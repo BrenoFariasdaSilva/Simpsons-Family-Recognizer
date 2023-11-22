@@ -121,7 +121,7 @@ The dataset used for this project can be found [here](https://drive.google.com/u
 
 ### Feature Extraction
 
-- TODO: Use colored and black and white pictures to increase the sample size.
+- The feature extraction is done by running the `NASNetLarge` and `ResNet18` deep learning models on the images and extracting the features from the last layer of the model, named `activation_520` and `pool5`, respectively. The features extracted from the `NASNetLarge` model have 4032 features and the features extracted from the `ResNet18` model have 512 features. Both of them will be available in the `Dataset` directory and you can modify in the code  the `INPUT_FILES` constant, so you can choose which features you want to use to train the models.
 
 ### Data Description
 
