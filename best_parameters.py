@@ -389,7 +389,7 @@ def sort_classifiers_execution(classifiers_execution):
 
 # This function prints the execution time of the classifiers
 def print_classifiers_execution(sorted_classifiers_execution):
-   print(f"\n{BackgroundColors.GREEN}Classifiers Results:{BackgroundColors.CYAN}") # Print the classifiers results
+   print(f"\n{BackgroundColors.GREEN}Classifiers Results for {BackgroundColors.CYAN}{INPUT_DEEP_LEARNING_MODEL}{BackgroundColors.GREEN}:{BackgroundColors.CYAN}") # Print the classifiers results
 
    # loop through the classifiers name, accuracy and parameters
    for classifier, accuracy in sorted_classifiers_execution.items():
