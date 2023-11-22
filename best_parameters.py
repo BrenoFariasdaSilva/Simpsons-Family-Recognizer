@@ -401,7 +401,8 @@ def print_classifiers_execution(sorted_classifiers_execution):
 
 # This is the main function. It calls the other functions, building the project workflow
 def main():
-   print(f"{BackgroundColors.CLEAR_TERMINAL}{BackgroundColors.BOLD}{BackgroundColors.GREEN}Welcome to the Simpsons Family Characters Classifier!{Style.RESET_ALL}") # Output the welcome message
+   print(f"{BackgroundColors.CLEAR_TERMINAL}{BackgroundColors.BOLD}{BackgroundColors.GREEN}Welcome to the Simpsons Family Characters Best Parameters Finder Algorithm!{Style.RESET_ALL}") # Output the welcome message
+   print(f"{BackgroundColors.GREEN}The deep learning model used is {BackgroundColors.CYAN}{INPUT_DEEP_LEARNING_MODEL}{BackgroundColors.GREEN}. If you want to change it, please change the {BackgroundColors.CYAN}INPUT_DEEP_LEARNING_MODEL{BackgroundColors.GREEN} variable{Style.RESET_ALL}") # Output the deep learning model used
 
    train_features, train_labels, test_features, test_labels = load_data() # Load the data
 
