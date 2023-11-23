@@ -32,7 +32,7 @@ SOUND_COMMANDS = {"Darwin": "afplay", "Linux": "aplay", "Windows": "start"}
 SOUND_FILE = "./.assets/NotificationSound.wav" # The path to the sound file
 
 # Input Constants:
-INPUT_DEEP_LEARNING_MODEL = "InceptionV3" # The deep learning model to use
+INPUT_DEEP_LEARNING_MODEL = "NasNetLarge" # The deep learning model to use
 INPUT_FILES = {
    "InceptionV3": ["./Dataset/InceptionV3/Train.txt", "./Dataset/InceptionV3/Test.txt"],
    "NasNetLarge": ["./Dataset/NasNetLarge/Train.txt", "./Dataset/NasNetLarge/Test.txt"],
@@ -102,11 +102,11 @@ def k_nearest_neighbors(train_features, train_labels, test_features, test_labels
    accuracy = knn.score(test_features, test_labels) # Calculate the accuracy
 
    if SHOW_CLASSIFICATION_REPORT: # Show the classification report if it is set to True
-      print(f"{BackgroundColors.GREEN}K-Nearest Neighbors Classification Report for {INPUT_DEEP_LEARNING_MODEL}:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}") # Print the classification report
+      print(f"{BackgroundColors.GREEN}K-Nearest Neighbors Classification Report for {INPUT_DEEP_LEARNING_MODEL}:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}", end="\n\n") # Print the classification report
 
    if SHOW_CONFUSION_MATRIX: # Show the confusion matrix if it is set to True
       conf_matrix = confusion_matrix(test_labels, y_pred) # Calculate the confusion matrix
-      print(f"{BackgroundColors.GREEN}K-Nearest Neighbors Confusion Matrix:\n{BackgroundColors.CYAN}{conf_matrix}{Style.RESET_ALL}") # Print the confusion matrix
+      print(f"{BackgroundColors.GREEN}K-Nearest Neighbors Confusion Matrix:\n{BackgroundColors.CYAN}{conf_matrix}{Style.RESET_ALL}", end="\n\n") # Print the confusion matrix
    
    return accuracy, y_pred, {"Predefined Parameters": best_params, "Execution Time": f"{execution_time:.5f} Seconds"}
 
@@ -121,11 +121,11 @@ def decision_tree(train_features, train_labels, test_features, test_labels):
    accuracy = dt.score(test_features, test_labels) # Calculate the accuracy
 
    if SHOW_CLASSIFICATION_REPORT: # Show the classification report if it is set to True
-      print(f"{BackgroundColors.GREEN}Decision Tree Classification Report for {INPUT_DEEP_LEARNING_MODEL}:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}")
+      print(f"{BackgroundColors.GREEN}Decision Tree Classification Report for {INPUT_DEEP_LEARNING_MODEL}:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}", end="\n\n")
    
    if SHOW_CONFUSION_MATRIX: # Show the confusion matrix if it is set to True
       conf_matrix = confusion_matrix(test_labels, y_pred) 
-      print(f"{BackgroundColors.GREEN}Decision Tree Confusion Matrix:\n{BackgroundColors.CYAN}{conf_matrix}{Style.RESET_ALL}")
+      print(f"{BackgroundColors.GREEN}Decision Tree Confusion Matrix:\n{BackgroundColors.CYAN}{conf_matrix}{Style.RESET_ALL}", end="\n\n")
 
    return accuracy, y_pred, {"Predefined Parameters": best_params, "Execution Time": f"{execution_time:.5f} Seconds"}
 
@@ -143,11 +143,11 @@ def support_vector_machine(train_features, train_labels, test_features, test_lab
    accuracy = pipeline.score(test_features, test_labels) # Calculate the accuracy
 
    if SHOW_CLASSIFICATION_REPORT: # Show the classification report if it is set to True
-      print(f"{BackgroundColors.GREEN}Support Vector Machine Classification Report for {INPUT_DEEP_LEARNING_MODEL}:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}")
+      print(f"{BackgroundColors.GREEN}Support Vector Machine Classification Report for {INPUT_DEEP_LEARNING_MODEL}:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}", end="\n\n")
 
    if SHOW_CONFUSION_MATRIX: # Show the confusion matrix if it is set to True
       conf_matrix = confusion_matrix(test_labels, y_pred)
-      print(f"{BackgroundColors.GREEN}Support Vector Machine Confusion Matrix:\n{BackgroundColors.CYAN}{conf_matrix}{Style.RESET_ALL}")
+      print(f"{BackgroundColors.GREEN}Support Vector Machine Confusion Matrix:\n{BackgroundColors.CYAN}{conf_matrix}{Style.RESET_ALL}", end="\n\n")
 
    return accuracy, y_pred, {"Predefined Parameters": best_params, "Execution Time": f"{execution_time:.5f} Seconds"}
 
@@ -162,11 +162,11 @@ def multilayer_perceptron(train_features, train_labels, test_features, test_labe
    accuracy = mlp.score(test_features, test_labels) # Calculate the accuracy
 
    if SHOW_CLASSIFICATION_REPORT: # Show the classification report if it is set to True
-      print(f"{BackgroundColors.GREEN}Multilayer Perceptron Classification Report for {INPUT_DEEP_LEARNING_MODEL}:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}") # Print the classification report
+      print(f"{BackgroundColors.GREEN}Multilayer Perceptron Classification Report for {INPUT_DEEP_LEARNING_MODEL}:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}", end="\n\n") # Print the classification report
 
    if SHOW_CONFUSION_MATRIX: # Show the confusion matrix if it is set to True
       conf_matrix = confusion_matrix(test_labels, y_pred)
-      print(f"{BackgroundColors.GREEN}Multilayer Perceptron Confusion Matrix:\n{BackgroundColors.CYAN}{conf_matrix}{Style.RESET_ALL}") # Print the confusion matrix
+      print(f"{BackgroundColors.GREEN}Multilayer Perceptron Confusion Matrix:\n{BackgroundColors.CYAN}{conf_matrix}{Style.RESET_ALL}", end="\n\n") # Print the confusion matrix
 
    return accuracy, y_pred, {"Predefined Parameters": best_params, "Execution Time": f"{execution_time:.5f} Seconds"}
 
@@ -181,11 +181,11 @@ def random_forest(train_features, train_labels, test_features, test_labels):
    accuracy = rf.score(test_features, test_labels) # Calculate the accuracy
 
    if SHOW_CLASSIFICATION_REPORT: # Show the classification report if it is set to True
-      print(f"{BackgroundColors.GREEN}Random Forest Classification Report for {INPUT_DEEP_LEARNING_MODEL}:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}") # Print the classification report
+      print(f"{BackgroundColors.GREEN}Random Forest Classification Report for {INPUT_DEEP_LEARNING_MODEL}:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}", end="\n\n") # Print the classification report
 
    if SHOW_CONFUSION_MATRIX: # Show the confusion matrix if it is set to True
       conf_matrix = confusion_matrix(test_labels, y_pred) # Calculate the confusion matrix
-      print(f"{BackgroundColors.GREEN}Random Forest Confusion Matrix:\n{BackgroundColors.CYAN}{conf_matrix}{Style.RESET_ALL}") # Print the confusion matrix
+      print(f"{BackgroundColors.GREEN}Random Forest Confusion Matrix:\n{BackgroundColors.CYAN}{conf_matrix}{Style.RESET_ALL}", end="\n\n") # Print the confusion matrix
 
    return accuracy, y_pred, {"Predefined Parameters": best_params, "Execution Time": f"{execution_time:.5f} Seconds"}
 
@@ -200,11 +200,11 @@ def naive_bayes(train_features, train_labels, test_features, test_labels):
    accuracy = nb.score(test_features, test_labels) # Calculate the accuracy
 
    if SHOW_CLASSIFICATION_REPORT: # Show the classification report if it is set to True
-      print(f"{BackgroundColors.GREEN}Naive Bayes Classification Report for {INPUT_DEEP_LEARNING_MODEL}:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}")
+      print(f"{BackgroundColors.GREEN}Naive Bayes Classification Report for {INPUT_DEEP_LEARNING_MODEL}:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}", end="\n\n")
 
    if SHOW_CONFUSION_MATRIX: # Show the confusion matrix if it is set to True
       conf_matrix = confusion_matrix(test_labels, y_pred) # Calculate the confusion matrix
-      print(f"{BackgroundColors.GREEN}Naive Bayes Confusion Matrix:\n{BackgroundColors.CYAN}{conf_matrix}{Style.RESET_ALL}") # Print the confusion matrix
+      print(f"{BackgroundColors.GREEN}Naive Bayes Confusion Matrix:\n{BackgroundColors.CYAN}{conf_matrix}{Style.RESET_ALL}", end="\n\n") # Print the confusion matrix
 
    return accuracy, y_pred, {"Predefined Parameters": best_params, "Execution Time": f"{execution_time:.5f} Seconds"}
 
