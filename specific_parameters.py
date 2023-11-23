@@ -32,7 +32,7 @@ SOUND_COMMANDS = {"Darwin": "afplay", "Linux": "aplay", "Windows": "start"}
 SOUND_FILE = "./.assets/NotificationSound.wav" # The path to the sound file
 
 # Input Constants:
-INPUT_DEEP_LEARNING_MODEL = "EfficientNetB0" # The deep learning model to use
+INPUT_DEEP_LEARNING_MODEL = "Densenet201" # The deep learning model to use
 INPUT_FILES = {
    "Densenet201": ["./Dataset/Densenet201/Train.txt", "./Dataset/Densenet201/Test.txt"],
    "EfficientNetB0": ["./Dataset/EfficientNetB0/Train.txt", "./Dataset/EfficientNetB0/Test.txt"],
