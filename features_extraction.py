@@ -55,6 +55,7 @@ OUTPUT_MODELS = { # Dictionary of output for the pre-trained models -> model nam
 }
 
 DATASETS = ["Train", "Test"] # List of datasets
+OUTPUT_FILE_FORMAT = ".txt" # The output file format
 
 # Functions:
 
@@ -111,7 +112,7 @@ def deep_features(imds, model, layer, labels, output_file):
 	data = np.hstack((features_flat, np.array(labels)[:, np.newaxis]))
 
 	# Save features and labels to a text file
-	np.savetxt(output_file + ".txt", data, fmt="%.6f")
+	np.savetxt(output_file, data, fmt="%.6f")
 
 # This is the Main function
 def main():
@@ -136,7 +137,7 @@ def main():
             pbar.set_description(f"{BackgroundColors.GREEN}Processing model {BackgroundColors.CYAN}{model_name}{BackgroundColors.GREEN}using the {BackgroundColors.CYAN}{layer_name}{BackgroundColors.GREEN} with dataset {BackgroundColors.CYAN}{dataset}{Style.RESET_ALL}")
 
             # Provide the path and name for the output file
-            output_file_name = f"./Datasets/{model_name.capitalize()}/{dataset}"
+            output_file_name = f"./Datasets/{OUTPUT_MODELS[model_name]}/{dataset}{OUTPUT_FILE_FORMAT}"
 
             # You can assign labels to the images manually or load them from your dataset
             # Classes: 01 (Bart), 02 (Homer), 03 (Lisa), 04 (Maggie) and 05 (Marge)
