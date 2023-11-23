@@ -58,6 +58,7 @@ This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT
 		- [Get Dataset](#get-dataset)
 	- [How to run](#how-to-run)
 	- [Results](#results)
+	- [Important Notes](#important-notes)
 	- [Contributing](#contributing)
 	- [License](#license)
 
@@ -291,6 +292,14 @@ make specific_parameters
 ## Results
 
 The results of the K-Nearest Neighbors (K-NN), Decision Tree (DT), Support Vector Machine (SVM), Multilayer Perceptron (MLP), Random Forest and Naive Bayes algorithms models will produce as output the accuracy, F1-Score [0 to 100%], it's Best Params found by the Grid Search, the execution time and a confusion matrix (N × N) indicating the percentage of system hits and errors among the N classes. That results will be shown in the terminal and saved in the `Results` directory.
+
+## Important Notes
+
+In order to improve the accuracy of the models, i tried to implement the a python algorithm that read each image and generated a new image with the face centralized, but it works well for humans, but as The Simpsons characters are not humans, it didn't work as expected. So, i decided to not use it in the project, but you can find it in the following url: [Face Detection Python Algorithm](https://github.com/BrenoFariasdaSilva/Python/tree/main/Faces%20Detection).
+
+Also, be aware that this is a very hardware intensive project, so if you want to fully run this project, you will need a very good hardware. I do have a Ryzen 3800X with 16 threads and 32GB of RAM and to run the `best_parameters.py` algorithm for all of the 9 deep learning models, it was predicted to take almost 48 hours to finish, so i only tested the `best_parameters.py` algorithm with the `ResNet18` dataset (which took about 3 hours) and replicated the found parameters to every of the others 8 deep learning models, but be aware that the right thing to do is to run the `best_parameters.py` algorithm for all of the 9 deep learning models and then run the `specific_parameters.py` algorithm with the best parameters found by the Grid Search for each algorithm.
+
+Another thing that could improve the classifiers combination is to the majority vote be now only for the predicted label, but for the top 3 predicted labels, so the algorithm could be more accurate, but only the proper execution would tell us if it would be better or not. Futhermore, i could have used the `XGBoost` algorithm, which is a very powerful algorithm, but i didn't have time to implement it, so i left it for future improvements.
 
 ## Contributing
 
