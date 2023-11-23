@@ -45,10 +45,10 @@ This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT
 		- [Feature Extraction](#feature-extraction)
 		- [Data Description](#data-description)
 	- [Algorithms](#algorithms)
-		- [best\_parameters.py](#best_parameterspy)
+		- [Best Parameters Python Algorithm](#best-parameters-python-algorithm)
 			- [Usage](#usage)
 			- [Output Example](#output-example)
-		- [data\_augmentation.py](#data_augmentationpy)
+		- [Data Augmentation  Python Algorithm](#data-augmentation--python-algorithm)
 			- [Usage](#usage-1)
 			- [Output Example](#output-example-1)
 	- [Requirements](#requirements)
@@ -152,7 +152,7 @@ All of the photos are named with the name of the character in the photo followed
 
 ## Algorithms
 
-### best_parameters.py
+### Best Parameters Python Algorithm
 
 This Python script is designed to find the best parameters for a set of classifiers to classify characters from the Simpsons Family dataset. The script performs a grid search for each classifier to determine the optimal hyperparameters and then outputs the best combination of classifiers.
 The purpose of this script is to automate the process of finding the best combination of classifiers with their optimal hyperparameters for character classification using the Simpsons Family dataset.
@@ -164,9 +164,9 @@ The purpose of this script is to automate the process of finding the best combin
 3. **Outputs**: Modify the outputs constants, such as, `SHOW_CLASSIFICATION_REPORT`, `SHOW_CONFUSION_MATRIX`, and `SHOW_DATASET_INFORMATION`.
 So, Adjust the script's constants and parameters to fit your specific use case.
 
-```bash
-make best_parameters
-```
+	```bash
+	make best_parameters
+	```
 
 #### Output Example
 
@@ -193,7 +193,7 @@ Kernel: rbf
 Execution Time: 42.035 Seconds
 ```
 
-### data_augmentation.py
+### Data Augmentation Python Algorithm
 
 This Python script performs image data augmentation on a set of input images. It utilizes the `imgaug` library to apply various transformations to the images, creating augmented versions for training purposes. The program is designed to work with image datasets used in machine learning projects.
 
