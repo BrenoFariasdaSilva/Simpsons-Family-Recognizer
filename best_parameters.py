@@ -43,7 +43,9 @@ INPUT_FILES = {
    "MobileNetV2": ["./Dataset/MobileNetV2/Train.txt", "./Dataset/MobileNetV2/Test.txt"],
    "NasNetLarge": ["./Dataset/NasNetLarge/Train.txt", "./Dataset/NasNetLarge/Test.txt"],
    "ResNet18": ["./Dataset/ResNet18/Train.txt", "./Dataset/ResNet18/Test.txt"],
+   "ResNet50": ["./Dataset/ResNet50/Train.txt", "./Dataset/ResNet50/Test.txt"],
    "VGG16": ["./Dataset/VGG16/Train.txt", "./Dataset/VGG16/Test.txt"],
+   "Xception": ["./Dataset/Xception/Train.txt", "./Dataset/Xception/Test.txt"],
 }
 
 # Output Constants:
