@@ -56,7 +56,7 @@ This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT
 		- [Clone the repository](#clone-the-repository)
 		- [Install Dependencies](#install-dependencies)
 		- [Get Dataset](#get-dataset)
-	- [Usage](#usage-2)
+	- [How to run](#how-to-run)
 	- [Results](#results)
 	- [Contributing](#contributing)
 	- [License](#license)
@@ -262,12 +262,30 @@ make dataset
 
 This command will give execution permission to the `Setup-Dataset.sh` ShellScript and execute it. The `Setup-Dataset.sh` ShellScript will download the dataset from a url and unzip it to the `Dataset` directory and, lastly, remove the zip file. With that in mind, it basically does everything for you.
 
-## Usage
+## How to run
 
-In order to run the project, run the following command:
+In order to run the project, make sure you already have installed the dependencies using the `make dependencies` command. In case you already did that and have the dataset right placed as well as the variables setup for each algorithm, first we must run the Data Augmentation code by following command:
 
 ```bash
-make run
+make data_augmentation
+```
+
+Now we have the dataset size increased by 2 times, as each image received an augmented version of itself. With that in mind, we must extract the features from the images by running the following command:
+
+```bash
+make feature_extraction
+```
+
+Now we have the features extracted from the images, so we can run the algorithms to find the best parameters for each algorithm, as well as the best combination of them. To do that, run the following command:
+
+```bash
+make best_parameters
+```
+
+Now, with the output of the modify the `specific_parameters.py` algorithm with the best parameters found by the Grid Search for each algorithm  that was executed in the `best_parameters.py` code, so now we are finally able to classify the images. To do that, run the following command:
+
+```bash
+make specific_parameters
 ```
 
 ## Results
