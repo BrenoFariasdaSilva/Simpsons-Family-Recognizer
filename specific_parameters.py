@@ -41,9 +41,9 @@ INPUT_FILES = {
 }
 
 # Output Constants:
-SHOW_DATASET_INFORMATION = True # If True, show the dataset information
-SHOW_CONFUSION_MATRIX = True # If True, show the confusion matrix
 SHOW_CLASSIFICATION_REPORT = True # If True, show the classification report
+SHOW_CONFUSION_MATRIX = True # If True, show the confusion matrix
+SHOW_DATASET_INFORMATION = True # If True, show the dataset information
 
 # Classifiers Constants:
 CLASSIFIERS = { # The classifiers
