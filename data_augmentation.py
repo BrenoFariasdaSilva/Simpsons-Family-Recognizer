@@ -62,8 +62,6 @@ def process_files():
 def augment_image(image):
 	# Define the augmentation sequence
 	augmentation_sequence = iaa.Sequential([
-		iaa.Fliplr(0.5), # Horizontal flips
-		iaa.Crop(percent=(0, 0.1)), # Random crops
 		iaa.GaussianBlur(sigma=(0, 1.0)), # Gaussian blur
 		iaa.Add((-10, 10), per_channel=0.5), # Add brightness
 		iaa.Multiply((0.5, 1.5), per_channel=0.5), # Multiply brightness
