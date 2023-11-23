@@ -10,9 +10,7 @@ from tensorflow.keras.applications import ( # For loading the pre-trained models
 	resnet50, # ResNet-50
 	vgg16, # VGG-16
 	densenet, # DenseNet-201
-	mobilenet_v2, # MobileNet V2
 	xception, # Xception
-	nasnet, # NASNet Mobile
 	efficientnet, # EfficientNet B0
 )
 from tqdm import tqdm # For showing a progress bar
@@ -35,23 +33,19 @@ SOUND_FILE = "./.assets/NotificationSound.wav" # The path to the sound file
 MODELS = { # Dictionary of pre-trained models -> model name: model constructor
 	"densenet201": densenet.DenseNet201,
 	"efficientnetb0": efficientnet.EfficientNetB0,
-	"mobilenetv2": mobilenet_v2.MobileNetV2,
-	"nasnetmobile": nasnet.NASNetMobile,
+	"inception_v3": inception_v3.InceptionV3,
 	"resnet50": resnet50.ResNet50,
 	"vgg16": vgg16.VGG16,
 	"xception": xception.Xception,
-	"inception_v3": inception_v3.InceptionV3,
 }
 
 OUTPUT_MODELS = { # Dictionary of output for the pre-trained models -> model name: Output model name
 	"densenet201": "DenseNet201",
 	"efficientnetb0": "EfficientNetB0",
-	"mobilenetv2": "MobileVetV2",
-	"nasnetmobile": "NASNetMobile",
+	"inception_v3": "InceptionV3",
 	"resnet50": "ResNet50",
 	"vgg16": "VGG16",
 	"xception": "Xception",
-	"inception_v3": "InceptionV3",
 }
 
 INPUT_FILES = ["./Dataset/Simpsons/Train/", "./Dataset/Simpsons/Test/"] # The input files
@@ -90,29 +84,28 @@ def create_output_directory(output_file):
           
 # This function extracts deep features from the specified layer of the pre-trained model
 def deep_features(imds, model, layer, labels, output_file):
-	# Resize images according to the mode's input size
-	input_shape = (299, 299)  # Modify this according to your model"s input shape
-	datagen = image.ImageDataGenerator(rescale=1./255)	# Create an image generator that reads images from the dataset directory
-	img_generator = datagen.flow_from_directory( # Create a generator that reads images from the dataset directory
-		imds,
-		target_size=input_shape,
-		batch_size=1,
-		class_mode=None,
-		shuffle=False,
-	)
+   input_shape = (299, 299) # Resize images according to the mode's input size
+   datagen = image.ImageDataGenerator(rescale=1./255)	# Create an image generator that reads images from the dataset directory
+   img_generator = datagen.flow_from_directory( # Create a generator that reads images from the dataset directory
+      imds,
+      target_size=input_shape,
+      batch_size=1,
+      class_mode=None,
+      shuffle=False,
+   )
 
-	# Extract features from the specified layer
-	feature_extractor = tf.keras.Model(inputs=model.input, outputs=model.get_layer(layer).output)
-	features = feature_extractor.predict(img_generator)
+   # Extract features from the specified layer
+   feature_extractor = tf.keras.Model(inputs=model.input, outputs=model.get_layer(layer).output)
+   features = feature_extractor.predict(img_generator)
 
-	# Reshape features to a flat format
-	features_flat = features.reshape((features.shape[0], -1))
+   # Reshape features to a flat format
+   features_flat = features.reshape((features.shape[0], -1))
 
-	# Combine features and labels
-	data = np.hstack((features_flat, np.array(labels)[:, np.newaxis]))
+   # Combine features and labels
+   data = np.hstack((features_flat, np.array(labels)[:, np.newaxis]))
 
-	# Save features and labels to a text file
-	np.savetxt(output_file, data, fmt="%.6f")
+   # Save features and labels to a text file
+   np.savetxt(output_file, data, fmt="%.6f")
 
 # This is the Main function
 def main():
