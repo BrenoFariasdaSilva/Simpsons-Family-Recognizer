@@ -48,12 +48,15 @@ This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT
 		- [best\_parameters.py](#best_parameterspy)
 			- [Usage](#usage)
 			- [Output Example](#output-example)
+		- [data\_augmentation.py](#data_augmentationpy)
+	- [Usage](#usage-1)
+			- [Output Example](#output-example-1)
 	- [Requirements](#requirements)
 	- [Setup](#setup)
 		- [Clone the repository](#clone-the-repository)
 		- [Install Dependencies](#install-dependencies)
 		- [Get Dataset](#get-dataset)
-	- [Usage](#usage-1)
+	- [Usage](#usage-2)
 	- [Results](#results)
 	- [Contributing](#contributing)
 	- [License](#license)
@@ -189,6 +192,24 @@ Gamma: 0.1
 Kernel: rbf
 Execution Time: 42.035 Seconds
 ```
+
+### data_augmentation.py
+
+This Python script performs image data augmentation on a set of input images. It utilizes the `imgaug` library to apply various transformations to the images, creating augmented versions for training purposes. The program is designed to work with image datasets used in machine learning projects.
+
+## Usage
+
+1. **Input Files:** Specify the input directories (`INPUT_FILES`) containing the images you want to augment.
+2. **Image Formats:** Define the accepted image formats (`IMAGE_FORMATS`) to filter the files in the input directories.
+3. **Image Filters:** Specify the image filters/transformations to be applied in the `augmentation_sequence` variable.
+So, Adjust the script's constants and parameters to fit your specific use case.
+
+	```bash
+	make data_augmentation
+	```
+
+#### Output Example
+The terminal will not show any really useful output, rather than the progress of the execution. The output will be the augmented images, which will have the file name followed by the `_augmented` string, indicating that the image is an augmented image.
 
 ## Requirements
 
