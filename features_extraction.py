@@ -137,8 +137,7 @@ def main():
             # Provide the path and name for the output file
             output_file_name = f"./Dataset/{OUTPUT_MODELS[model_name]}/{dataset_path.split('/')[-2]}{OUTPUT_FILE_FORMAT}"
 
-            # You can assign labels to the images manually or load them from your dataset
-            # Classes: 01 (Bart), 02 (Homer), 03 (Lisa), 04 (Maggie) and 05 (Marge)
+            # Labels classes: 01 (Bart), 02 (Homer), 03 (Lisa), 04 (Maggie) and 05 (Marge)
             labels = [0] * len(os.listdir(os.path.join(dataset_path, "01"))) + \
                      [1] * len(os.listdir(os.path.join(dataset_path, "02"))) + \
                      [2] * len(os.listdir(os.path.join(dataset_path, "03"))) + \
