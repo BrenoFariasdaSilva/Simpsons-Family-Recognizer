@@ -149,9 +149,21 @@ All of the photos are named with the name of the character in the photo followed
 
 ## Feature Extraction
 
-- The feature extraction is done in `MatLab` by running the `NASNetLarge` and `ResNet18` deep learning models on the images and extracting the features from the last layer of the model, named `activation_520` and `pool5`, respectively. The features extracted from the `NASNetLarge` model have 4032 features and the features extracted from the `ResNet18` model have 512 features. Both of them will be available in the `Dataset` directory and you can modify in the code  the `INPUT_FILES` constant, so you can choose which features you want to use to train the models.
+The feature extraction process was tested using various deep learning models, each with a specific number of features. The following list provides an overview:
 
+1. `DenseNet201`: 155520 features.
+2. `EfficientNetB0`: 103680 features.
+3. `InceptionV3`: 1000 features.
+4. `MobileNetV2`: 103680 features.
+5. `NASNetLarge`: 487872 features.
+6. `ResNet18`: 512 features.
+7. `ResNet50`: 204800 features.
+8. `VGG16`: 1000 features.
+9. `Xception`: 204800 features.
 
+The chosen layer for extraction is always the last layer of the model. The resulting output is stored in `.txt` files, where all columns, except the last one, correspond to the extracted features, and the last column represents the label of the instance. The main difference between the models used in feature extraction is the quantity of features, as indicated in the list above.
+
+You can find the extracted features datasets from any of the mentioned models [here](https://drive.google.com/drive/folders/12TjdYNLIml8E-k9G5HwZ4wxmeNwXNRCo?usp=share_link). Please note that the size of the extracted features file is generally proportional to the number of features extracted from a model.
 
 ## Algorithms
 
