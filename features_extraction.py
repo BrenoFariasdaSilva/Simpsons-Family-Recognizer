@@ -46,6 +46,19 @@ DATASETS = ["Train", "Test"] # List of datasets
 
 # Functions:
 
+# This function defines the command to play a sound when the program finishes
+def play_sound():
+   if os.path.exists(SOUND_FILE):
+      if platform.system() in SOUND_COMMANDS: # If the platform.system() is in the SOUND_COMMANDS dictionary
+         os.system(f"{SOUND_COMMANDS[platform.system()]} {SOUND_FILE}")
+      else: # If the platform.system() is not in the SOUND_COMMANDS dictionary
+         print(f"{BackgroundColors.RED}The {BackgroundColors.CYAN}platform.system(){BackgroundColors.RED} is not in the {BackgroundColors.CYAN}SOUND_COMMANDS dictionary{BackgroundColors.RED}. Please add it!{Style.RESET_ALL}")
+   else: # If the sound file does not exist
+      print(f"{BackgroundColors.RED}Sound file {BackgroundColors.CYAN}{SOUND_FILE}{BackgroundColors.RED} not found. Make sure the file exists.{Style.RESET_ALL}")
+
+# Register the function to play a sound when the program finishes
+atexit.register(play_sound)
+
 # This function creates the input directory if it doesn't exist and deletes
 def create_input_directory(input_directory):
 	# Create the directory if it doesn't exist
@@ -61,19 +74,6 @@ def create_output_directory(output_file):
 		os.makedirs(output_dir) # Recursive directory creation function
 	if os.path.exists(f"{output_file}.txt"):
 		os.remove(f"{output_file}.txt") # Delete the file if it exists
-
-# This function defines the command to play a sound when the program finishes
-def play_sound():
-   if os.path.exists(SOUND_FILE):
-      if platform.system() in SOUND_COMMANDS: # If the platform.system() is in the SOUND_COMMANDS dictionary
-         os.system(f"{SOUND_COMMANDS[platform.system()]} {SOUND_FILE}")
-      else: # If the platform.system() is not in the SOUND_COMMANDS dictionary
-         print(f"{BackgroundColors.RED}The {BackgroundColors.CYAN}platform.system(){BackgroundColors.RED} is not in the {BackgroundColors.CYAN}SOUND_COMMANDS dictionary{BackgroundColors.RED}. Please add it!{Style.RESET_ALL}")
-   else: # If the sound file does not exist
-      print(f"{BackgroundColors.RED}Sound file {BackgroundColors.CYAN}{SOUND_FILE}{BackgroundColors.RED} not found. Make sure the file exists.{Style.RESET_ALL}")
-
-# Register the function to play a sound when the program finishes
-atexit.register(play_sound)
 
 # This is the Main function
 def main():
