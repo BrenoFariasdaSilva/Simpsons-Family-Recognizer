@@ -44,12 +44,16 @@ This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT
 		- [Dataset](#dataset)
 		- [Feature Extraction](#feature-extraction)
 		- [Data Description](#data-description)
+	- [Algorithms](#algorithms)
+		- [best\_parameters.py](#best_parameterspy)
+			- [Usage](#usage)
+			- [Output Example](#output-example)
 	- [Requirements](#requirements)
 	- [Setup](#setup)
 		- [Clone the repository](#clone-the-repository)
 		- [Install Dependencies](#install-dependencies)
 		- [Get Dataset](#get-dataset)
-	- [Usage](#usage)
+	- [Usage](#usage-1)
 	- [Results](#results)
 	- [Contributing](#contributing)
 	- [License](#license)
@@ -142,6 +146,50 @@ The "Test" folder contains 95 photos of the Simpsons family members.
 - Marge: 10 Photos.
   
 All of the photos are named with the name of the character in the photo followed by a number, so that will be considered the label.
+
+## Algorithms
+
+### best_parameters.py
+
+This Python script is designed to find the best parameters for a set of classifiers to classify characters from the Simpsons Family dataset. The script performs a grid search for each classifier to determine the optimal hyperparameters and then outputs the best combination of classifiers.
+The purpose of this script is to automate the process of finding the best combination of classifiers with their optimal hyperparameters for character classification using the Simpsons Family dataset.
+
+#### Usage
+
+1. The script loads the dataset based on the selected deep learning model (INPUT_DEEP_LEARNING_MODEL variable).
+2. It performs a grid search for each classifier specified in the CLASSIFIERS dictionary to find the best hyperparameters.
+3. The script then evaluates the selected classifiers and outputs their accuracy, hyperparameters, and execution time.
+4. Finally, the script finds and evaluates the best combination of classifiers using a majority voting approach.
+So, Adjust the script's constants and parameters to fit your specific use case.
+
+```bash
+make best_parameters
+```
+
+#### Output Example
+
+```bash
+Best Combination: ('Decision Tree', 'Random Forest', 'Support Vector Machine')
+Majority Vote Accuracy: 85.2%
+Execution Time: 120.256 Seconds
+
+Decision Tree: 86.5%
+Criterion: gini
+Max Depth: None
+Splitter: best
+Execution Time: 32.543 Seconds
+
+Random Forest: 84.8%
+Max Depth: 30
+Number of Estimators: 100
+Execution Time: 45.678 Seconds
+
+Support Vector Machine: 82.3%
+C: 10
+Gamma: 0.1
+Kernel: rbf
+Execution Time: 42.035 Seconds
+```
 
 ## Requirements
 
