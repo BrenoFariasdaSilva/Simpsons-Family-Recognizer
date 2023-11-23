@@ -91,6 +91,12 @@ def main():
                      [2] * len(os.listdir(os.path.join(dataset_path, "03"))) + \
                      [3] * len(os.listdir(os.path.join(dataset_path, "04"))) + \
                      [4] * len(os.listdir(os.path.join(dataset_path, "05")))
+            
+            create_input_directory(dataset_path) # Create the input directory if it doesn't exist
+            create_output_directory(output_file_name) # Create the output directory if it doesn't exist
+            
+            # Extract deep features from the specified layer of the pre-trained model
+            deep_features(dataset_path, model, layer_name, labels, output_file_name)
 
             pbar.update(1) # Update the progress bar
             print(f"The code was executed successfully for the file {output_file_name} using the model {model_name}.")
