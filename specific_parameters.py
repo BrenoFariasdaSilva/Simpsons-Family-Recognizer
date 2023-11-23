@@ -102,7 +102,7 @@ def k_nearest_neighbors(train_features, train_labels, test_features, test_labels
    accuracy = knn.score(test_features, test_labels) # Calculate the accuracy
 
    if SHOW_CLASSIFICATION_REPORT: # Show the classification report if it is set to True
-      print(f"{BackgroundColors.GREEN}K-Nearest Neighbors Classification Report:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}") # Print the classification report
+      print(f"{BackgroundColors.GREEN}K-Nearest Neighbors Classification Report for {INPUT_DEEP_LEARNING_MODEL}:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}") # Print the classification report
 
    if SHOW_CONFUSION_MATRIX: # Show the confusion matrix if it is set to True
       conf_matrix = confusion_matrix(test_labels, y_pred) # Calculate the confusion matrix
@@ -121,7 +121,7 @@ def decision_tree(train_features, train_labels, test_features, test_labels):
    accuracy = dt.score(test_features, test_labels) # Calculate the accuracy
 
    if SHOW_CLASSIFICATION_REPORT: # Show the classification report if it is set to True
-      print(f"{BackgroundColors.GREEN}Decision Tree Classification Report:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}")
+      print(f"{BackgroundColors.GREEN}Decision Tree Classification Report for {INPUT_DEEP_LEARNING_MODEL}:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}")
    
    if SHOW_CONFUSION_MATRIX: # Show the confusion matrix if it is set to True
       conf_matrix = confusion_matrix(test_labels, y_pred) 
@@ -143,7 +143,7 @@ def support_vector_machine(train_features, train_labels, test_features, test_lab
    accuracy = pipeline.score(test_features, test_labels) # Calculate the accuracy
 
    if SHOW_CLASSIFICATION_REPORT: # Show the classification report if it is set to True
-      print(f"{BackgroundColors.GREEN}Support Vector Machine Classification Report:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}")
+      print(f"{BackgroundColors.GREEN}Support Vector Machine Classification Report for {INPUT_DEEP_LEARNING_MODEL}:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}")
 
    if SHOW_CONFUSION_MATRIX: # Show the confusion matrix if it is set to True
       conf_matrix = confusion_matrix(test_labels, y_pred)
@@ -162,7 +162,7 @@ def multilayer_perceptron(train_features, train_labels, test_features, test_labe
    accuracy = mlp.score(test_features, test_labels) # Calculate the accuracy
 
    if SHOW_CLASSIFICATION_REPORT: # Show the classification report if it is set to True
-      print(f"{BackgroundColors.GREEN}Multilayer Perceptron Classification Report:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}") # Print the classification report
+      print(f"{BackgroundColors.GREEN}Multilayer Perceptron Classification Report for {INPUT_DEEP_LEARNING_MODEL}:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}") # Print the classification report
 
    if SHOW_CONFUSION_MATRIX: # Show the confusion matrix if it is set to True
       conf_matrix = confusion_matrix(test_labels, y_pred)
@@ -181,7 +181,7 @@ def random_forest(train_features, train_labels, test_features, test_labels):
    accuracy = rf.score(test_features, test_labels) # Calculate the accuracy
 
    if SHOW_CLASSIFICATION_REPORT: # Show the classification report if it is set to True
-      print(f"{BackgroundColors.GREEN}Random Forest Classification Report:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}") # Print the classification report
+      print(f"{BackgroundColors.GREEN}Random Forest Classification Report for {INPUT_DEEP_LEARNING_MODEL}:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}") # Print the classification report
 
    if SHOW_CONFUSION_MATRIX: # Show the confusion matrix if it is set to True
       conf_matrix = confusion_matrix(test_labels, y_pred) # Calculate the confusion matrix
@@ -200,7 +200,7 @@ def naive_bayes(train_features, train_labels, test_features, test_labels):
    accuracy = nb.score(test_features, test_labels) # Calculate the accuracy
 
    if SHOW_CLASSIFICATION_REPORT: # Show the classification report if it is set to True
-      print(f"{BackgroundColors.GREEN}Naive Bayes Classification Report:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}")
+      print(f"{BackgroundColors.GREEN}Naive Bayes Classification Report for {INPUT_DEEP_LEARNING_MODEL}:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}")
 
    if SHOW_CONFUSION_MATRIX: # Show the confusion matrix if it is set to True
       conf_matrix = confusion_matrix(test_labels, y_pred) # Calculate the confusion matrix
@@ -220,14 +220,14 @@ def train_all_classifiers(classifiers, selected_classifiers, train_features, tra
    classifiers_predictions = {} # Initialize the classifiers predictions dictionary
 
    # Create progress bar that shows the training progress and the current classifier
-   with tqdm.tqdm(total=len(selected_classifiers), desc=f"{BackgroundColors.GREEN}Training Classifiers{Style.RESET_ALL}", bar_format="{l_bar}{bar:20}{r_bar}{bar:-20b}") as pbar:
-      # Loop through the selected classifiers
-      for classifier_name in selected_classifiers:
-         classifier_function = classifiers[classifier_name] # Get the classifier function
-         accuracy, y_pred, parameters = train_and_evaluate_classifier(classifier_function, train_features, train_labels, test_features, test_labels) # Train and evaluate the classifier
-         classifiers_execution[classifier_name] = (accuracy, parameters) # Add the classifier execution to the dictionary
-         classifiers_predictions[classifier_name] = y_pred # Add the classifier predictions to the dictionary
-         pbar.update(1) # Update the progress bar
+   # with tqdm.tqdm(total=len(selected_classifiers), desc=f"{BackgroundColors.GREEN}Training Classifiers{Style.RESET_ALL}", bar_format="{l_bar}{bar:20}{r_bar}{bar:-20b}") as pbar:
+   #    # Loop through the selected classifiers
+   for classifier_name in selected_classifiers:
+      classifier_function = classifiers[classifier_name] # Get the classifier function
+      accuracy, y_pred, parameters = train_and_evaluate_classifier(classifier_function, train_features, train_labels, test_features, test_labels) # Train and evaluate the classifier
+      classifiers_execution[classifier_name] = (accuracy, parameters) # Add the classifier execution to the dictionary
+      classifiers_predictions[classifier_name] = y_pred # Add the classifier predictions to the dictionary
+         # pbar.update(1) # Update the progress bar
 
    return classifiers_execution, classifiers_predictions # Return the classifiers execution and predictions dictionaries
 
@@ -244,14 +244,14 @@ def train_best_combination(classifiers, train_features, train_labels, test_featu
    start_time = time.time() # Start the timer
 
    # Create progress bar that shows the training progress and the current classifier
-   with tqdm.tqdm(total=len(BEST_COMBINATION), desc=f"{BackgroundColors.GREEN}Training Classifiers{Style.RESET_ALL}", bar_format="{l_bar}{bar:20}{r_bar}{bar:-20b}") as pbar:
-      # Loop through the selected classifiers
-      for classifier_name in BEST_COMBINATION:
-         classifier_function = classifiers[classifier_name] # Get the classifier function
-         accuracy, y_pred, parameters = train_and_evaluate_classifier(classifier_function, train_features, train_labels, test_features, test_labels) # Train and evaluate the classifier
-         classifiers_execution[classifier_name] = (accuracy, parameters) # Add the classifier execution to the dictionary
-         classifiers_predictions[classifier_name] = y_pred # Add the classifier predictions to the dictionary
-         pbar.update(1) # Update the progress bar
+   # with tqdm.tqdm(total=len(BEST_COMBINATION), desc=f"{BackgroundColors.GREEN}Training Classifiers{Style.RESET_ALL}", bar_format="{l_bar}{bar:20}{r_bar}{bar:-20b}") as pbar:
+   #    # Loop through the selected classifiers
+   for classifier_name in BEST_COMBINATION:
+      classifier_function = classifiers[classifier_name] # Get the classifier function
+      accuracy, y_pred, parameters = train_and_evaluate_classifier(classifier_function, train_features, train_labels, test_features, test_labels) # Train and evaluate the classifier
+      classifiers_execution[classifier_name] = (accuracy, parameters) # Add the classifier execution to the dictionary
+      classifiers_predictions[classifier_name] = y_pred # Add the classifier predictions to the dictionary
+         # pbar.update(1) # Update the progress bar
 
    execution_time = time.time() - start_time # Calculate the execution time
    classifiers_execution["Best Combination"] = (None, {"Predefined Parameters": BEST_COMBINATION, "Execution Time": f"{execution_time:.5f} Seconds"}) # Add the best combination to the classifiers execution dictionary
