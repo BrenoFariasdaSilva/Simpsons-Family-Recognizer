@@ -46,6 +46,22 @@ DATASETS = ["Train", "Test"] # List of datasets
 
 # Functions:
 
+# This function creates the input directory if it doesn't exist and deletes
+def create_input_directory(input_directory):
+	# Create the directory if it doesn't exist
+	if not os.path.exists(input_directory):
+		os.makedirs(input_directory) # Recursive directory creation function
+		
+# This function creates the output directory if it doesn't exist and deletes
+def create_output_directory(output_file):
+	output_dir = os.path.dirname(output_file) # Get the directory name
+   
+   # Create the directory if it doesn't exist
+	if not os.path.exists(output_dir):
+		os.makedirs(output_dir) # Recursive directory creation function
+	if os.path.exists(f"{output_file}.txt"):
+		os.remove(f"{output_file}.txt") # Delete the file if it exists
+
 # This function defines the command to play a sound when the program finishes
 def play_sound():
    if os.path.exists(SOUND_FILE):
