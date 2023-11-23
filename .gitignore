@@ -178,10 +178,7 @@ desktop.ini
 
 # Ignore the Data Directories
 dataset/*
-Dados/*
-Data/*
 Dataset/*
-Results/*
 Models/*
 
 # Ignore the Data Files
