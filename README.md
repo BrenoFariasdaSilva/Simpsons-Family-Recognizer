@@ -156,10 +156,9 @@ The purpose of this script is to automate the process of finding the best combin
 
 #### Usage
 
-1. The script loads the dataset based on the selected deep learning model (INPUT_DEEP_LEARNING_MODEL variable).
-2. It performs a grid search for each classifier specified in the CLASSIFIERS dictionary to find the best hyperparameters.
-3. The script then evaluates the selected classifiers and outputs their accuracy, hyperparameters, and execution time.
-4. Finally, the script finds and evaluates the best combination of classifiers using a majority voting approach.
+1. **Deep Learning Model**: The script loads the dataset based on the selected deep learning model (INPUT_DEEP_LEARNING_MODEL variable).
+2. **Classifiers**: It performs a grid search for each classifier specified in the CLASSIFIERS dictionary to find the best hyperparameters.
+3. **Outputs**: Modify the outputs constants, such as, `SHOW_CLASSIFICATION_REPORT`, `SHOW_CONFUSION_MATRIX`, and `SHOW_DATASET_INFORMATION`.
 So, Adjust the script's constants and parameters to fit your specific use case.
 
 ```bash
