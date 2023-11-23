@@ -102,7 +102,7 @@ def k_nearest_neighbors(train_features, train_labels, test_features, test_labels
    accuracy = knn.score(test_features, test_labels) # Calculate the accuracy
 
    if SHOW_CLASSIFICATION_REPORT: # Show the classification report if it is set to True
-      print(f"{BackgroundColors.GREEN}K-Nearest Neighbors Classification Report for {INPUT_DEEP_LEARNING_MODEL}:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}", end="\n\n") # Print the classification report
+      print(f"{BackgroundColors.GREEN}K-Nearest Neighbors Classification Report for {INPUT_DEEP_LEARNING_MODEL}:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}", end="\n") # Print the classification report
 
    if SHOW_CONFUSION_MATRIX: # Show the confusion matrix if it is set to True
       conf_matrix = confusion_matrix(test_labels, y_pred) # Calculate the confusion matrix
@@ -121,7 +121,7 @@ def decision_tree(train_features, train_labels, test_features, test_labels):
    accuracy = dt.score(test_features, test_labels) # Calculate the accuracy
 
    if SHOW_CLASSIFICATION_REPORT: # Show the classification report if it is set to True
-      print(f"{BackgroundColors.GREEN}Decision Tree Classification Report for {INPUT_DEEP_LEARNING_MODEL}:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}", end="\n\n")
+      print(f"{BackgroundColors.GREEN}Decision Tree Classification Report for {INPUT_DEEP_LEARNING_MODEL}:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}", end="\n")
    
    if SHOW_CONFUSION_MATRIX: # Show the confusion matrix if it is set to True
       conf_matrix = confusion_matrix(test_labels, y_pred) 
@@ -143,7 +143,7 @@ def support_vector_machine(train_features, train_labels, test_features, test_lab
    accuracy = pipeline.score(test_features, test_labels) # Calculate the accuracy
 
    if SHOW_CLASSIFICATION_REPORT: # Show the classification report if it is set to True
-      print(f"{BackgroundColors.GREEN}Support Vector Machine Classification Report for {INPUT_DEEP_LEARNING_MODEL}:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}", end="\n\n")
+      print(f"{BackgroundColors.GREEN}Support Vector Machine Classification Report for {INPUT_DEEP_LEARNING_MODEL}:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}", end="\n")
 
    if SHOW_CONFUSION_MATRIX: # Show the confusion matrix if it is set to True
       conf_matrix = confusion_matrix(test_labels, y_pred)
@@ -162,7 +162,7 @@ def multilayer_perceptron(train_features, train_labels, test_features, test_labe
    accuracy = mlp.score(test_features, test_labels) # Calculate the accuracy
 
    if SHOW_CLASSIFICATION_REPORT: # Show the classification report if it is set to True
-      print(f"{BackgroundColors.GREEN}Multilayer Perceptron Classification Report for {INPUT_DEEP_LEARNING_MODEL}:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}", end="\n\n") # Print the classification report
+      print(f"{BackgroundColors.GREEN}Multilayer Perceptron Classification Report for {INPUT_DEEP_LEARNING_MODEL}:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}", end="\n") # Print the classification report
 
    if SHOW_CONFUSION_MATRIX: # Show the confusion matrix if it is set to True
       conf_matrix = confusion_matrix(test_labels, y_pred)
@@ -181,7 +181,7 @@ def random_forest(train_features, train_labels, test_features, test_labels):
    accuracy = rf.score(test_features, test_labels) # Calculate the accuracy
 
    if SHOW_CLASSIFICATION_REPORT: # Show the classification report if it is set to True
-      print(f"{BackgroundColors.GREEN}Random Forest Classification Report for {INPUT_DEEP_LEARNING_MODEL}:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}", end="\n\n") # Print the classification report
+      print(f"{BackgroundColors.GREEN}Random Forest Classification Report for {INPUT_DEEP_LEARNING_MODEL}:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}", end="\n") # Print the classification report
 
    if SHOW_CONFUSION_MATRIX: # Show the confusion matrix if it is set to True
       conf_matrix = confusion_matrix(test_labels, y_pred) # Calculate the confusion matrix
@@ -200,7 +200,7 @@ def naive_bayes(train_features, train_labels, test_features, test_labels):
    accuracy = nb.score(test_features, test_labels) # Calculate the accuracy
 
    if SHOW_CLASSIFICATION_REPORT: # Show the classification report if it is set to True
-      print(f"{BackgroundColors.GREEN}Naive Bayes Classification Report for {INPUT_DEEP_LEARNING_MODEL}:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}", end="\n\n")
+      print(f"{BackgroundColors.GREEN}Naive Bayes Classification Report for {INPUT_DEEP_LEARNING_MODEL}:\n{BackgroundColors.CYAN}{classification_report(test_labels, y_pred)}{Style.RESET_ALL}", end="\n")
 
    if SHOW_CONFUSION_MATRIX: # Show the confusion matrix if it is set to True
       conf_matrix = confusion_matrix(test_labels, y_pred) # Calculate the confusion matrix
