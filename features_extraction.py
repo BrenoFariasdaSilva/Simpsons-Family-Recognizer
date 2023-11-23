@@ -146,7 +146,7 @@ def main():
             pbar.update(1) # Update the progress bar
             print(f"\nThe code was executed successfully for the file {output_file_name} using the model {model_name}.")
 
-   print(f"{BackgroundColors.BOLD}{BackgroundColors.GREEN}The program finished successfully!{Style.RESET_ALL}")
+   print(f"{BackgroundColors.BOLD}{BackgroundColors.GREEN}Thank you for using the {BackgroundColors.CYAN}Feature Extraction{BackgroundColors.GREEN} program!{Style.RESET_ALL}") # Output the goodbye message
 
 # This is the standard boilerplate that calls the main() function.
 if __name__ == '__main__':
