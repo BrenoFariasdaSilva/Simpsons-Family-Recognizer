@@ -48,7 +48,7 @@ This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT
 		- [Best Parameters Python Algorithm](#best-parameters-python-algorithm)
 			- [Usage](#usage)
 			- [Output Example](#output-example)
-		- [Data Augmentation  Python Algorithm](#data-augmentation--python-algorithm)
+		- [Data Augmentation Python Algorithm](#data-augmentation-python-algorithm)
 			- [Usage](#usage-1)
 			- [Output Example](#output-example-1)
 	- [Requirements](#requirements)
@@ -159,8 +159,8 @@ The purpose of this script is to automate the process of finding the best combin
 
 #### Usage
 
-1. **Deep Learning Model**: The script loads the dataset based on the selected deep learning model (INPUT_DEEP_LEARNING_MODEL variable).
-2. **Classifiers**: It performs a grid search for each classifier specified in the CLASSIFIERS dictionary to find the best hyperparameters.
+1. **Deep Learning Model**: The script loads the dataset based on the selected deep learning model (`INPUT_DEEP_LEARNING_MODEL` variable).
+2. **Classifiers**: It performs a grid search for each classifier specified in the `CLASSIFIERS` dictionary to find the best hyperparameters.
 3. **Outputs**: Modify the outputs constants, such as, `SHOW_CLASSIFICATION_REPORT`, `SHOW_CONFUSION_MATRIX`, and `SHOW_DATASET_INFORMATION`.
 So, Adjust the script's constants and parameters to fit your specific use case.
 
@@ -214,10 +214,22 @@ The terminal will not show any really useful output, rather than the progress of
 ## Requirements
 
 - Python 3.x
+- Makefile
 - Colorama
-- Pandas
+- Collections
+- ImgAug
 - NumPy
+- OpenCV-Python
 - Scikit-learn
+- TensorFlow
+- TQDM
+- Threadpoolctl (requires upgrade)
+
+You can install all of the requirements (except the Python and the Makefile) by running the following command:
+
+```bash
+make dependencies
+```
 
 ## Setup
 
