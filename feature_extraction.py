@@ -1,7 +1,19 @@
 import atexit # For playing a sound when the program finishes
 import os # For running a command in the terminal
 import platform # For getting the operating system name
+import tensorflow as tf # To load the pre-trained models
 from colorama import Style # For coloring the terminal
+from tensorflow.keras.preprocessing import image # For loading images
+from tensorflow.keras.applications import ( # For loading the pre-trained models
+	inception_v3, # Inception V3
+	resnet50, # ResNet-50
+	vgg16, # VGG-16
+	densenet, # DenseNet-201
+	mobilenet_v2, # MobileNet V2
+	xception, # Xception
+	nasnet, # NASNet Mobile
+	efficientnet, # EfficientNet B0
+)
 
 # Macros:
 class BackgroundColors: # Colors for the terminal
