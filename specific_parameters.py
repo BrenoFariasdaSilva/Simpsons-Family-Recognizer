@@ -70,6 +70,8 @@ BEST_PARAMETERS = { # The best parameters for each classifier
 # Define the best combination of classifiers to use
 BEST_COMBINATION = ["K-Nearest Neighbors", "Multilayer Perceptron", "Random Forest"]
 
+# Functions:
+
 # This function defines the command to play a sound when the program finishes
 def play_sound():
    if os.path.exists(SOUND_FILE):

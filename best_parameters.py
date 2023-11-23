@@ -64,6 +64,8 @@ CLASSIFIERS = {
 # Grid Search Constants:
 CROSS_VALIDATION = None # The number of cross validation folds
 
+# Functions:
+
 # This function defines the command to play a sound when the program finishes
 def play_sound():
    if os.path.exists(SOUND_FILE):
