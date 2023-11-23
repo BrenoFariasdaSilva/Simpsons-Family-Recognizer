@@ -42,16 +42,21 @@ atexit.register(play_sound)
 
 # This function loops through the input files and augments the images
 def process_files():
-	for input_file in tqdm(INPUT_FILES, desc="Processing Input Files"): # Loop through the input files with a progress bar
-		for root, directories, files in os.walk(input_file): # Loop through the files in the input file
-			for file in tqdm(files, desc="Processing Files", leave=False): # Loop through the files with a progress bar
-				if file.endswith(tuple(IMAGE_FORMATS)): # If the file ends with one of the image formats
-					image_path = os.path.join(root, file) # Get the image path
-					image_path = image_path.replace(".", "_augmented.") # Replace the dot with _augmented.
-					image = cv2.imread(image_path) # Load the image
-					image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB) # Convert the image from BGR to RGB
-					augmented_image = augment_image(image) # Augment the image
-					cv2.imwrite(image_path, augmented_image) # Save the augmented image   
+	# Get the number of files
+	files_quantity = sum(1 for input_file in INPUT_FILES for root, directories, files in os.walk(input_file) for file in files if file.endswith(tuple(IMAGE_FORMATS)))
+
+	with tqdm(total=files_quantity, desc=f"{BackgroundColors.GREEN}Processing Input Files{Style.RESET_ALL}") as pbar: # Create a progress bar
+		for input_file in INPUT_FILES: # Loop through the input files
+			for root, directories, files in os.walk(input_file): # Loop through the files in the input file
+				for file in files: # Loop through the files in the input file
+					if file.endswith(tuple(IMAGE_FORMATS)): # If the file ends with one of the image formats
+						image_path = os.path.join(root, file) # Get the image path
+						augmented_image_path = image_path[::-1].replace(".", "_augmented."[::-1], 1)[::-1] # Get the augmented image path
+						image = cv2.imread(image_path) # Load the image
+						image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB) # Convert the image from BGR to RGB
+						augmented_image = augment_image(image) # Augment the image
+						cv2.imwrite(augmented_image_path, augmented_image) # Save the augmented image
+						pbar.update(1) # Update the progress bar
 
 # Function for image data augmentation
 def augment_image(image):
