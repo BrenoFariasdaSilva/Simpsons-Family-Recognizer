@@ -46,8 +46,8 @@ INPUT_FILES = {
 }
 
 # Output Constants:
-SHOW_CLASSIFICATION_REPORT = True # If True, show the classification report
-SHOW_CONFUSION_MATRIX = True # If True, show the confusion matrix
+SHOW_CLASSIFICATION_REPORT = False # If True, show the classification report
+SHOW_CONFUSION_MATRIX = False # If True, show the confusion matrix
 SHOW_DATASET_INFORMATION = True # If True, show the dataset information
 
 # Classifiers Constants:
@@ -245,14 +245,14 @@ def train_all_classifiers(classifiers, selected_classifiers, train_features, tra
    classifiers_predictions = {} # Initialize the classifiers predictions dictionary
 
    # Create progress bar that shows the training progress and the current classifier
-   # with tqdm.tqdm(total=len(selected_classifiers), desc=f"{BackgroundColors.GREEN}Training Classifiers{Style.RESET_ALL}", bar_format="{l_bar}{bar:20}{r_bar}{bar:-20b}") as pbar:
-   #    # Loop through the selected classifiers
-   for classifier_name in selected_classifiers:
-      classifier_function = classifiers[classifier_name] # Get the classifier function
-      accuracy, y_pred, parameters = train_and_evaluate_classifier(classifier_function, train_features, train_labels, test_features, test_labels) # Train and evaluate the classifier
-      classifiers_execution[classifier_name] = (accuracy, parameters) # Add the classifier execution to the dictionary
-      classifiers_predictions[classifier_name] = y_pred # Add the classifier predictions to the dictionary
-         # pbar.update(1) # Update the progress bar
+   with tqdm.tqdm(total=len(selected_classifiers), desc=f"{BackgroundColors.GREEN}Training Classifiers{Style.RESET_ALL}", bar_format="{l_bar}{bar:20}{r_bar}{bar:-20b}") as pbar:
+      # Loop through the selected classifiers
+      for classifier_name in selected_classifiers:
+         classifier_function = classifiers[classifier_name] # Get the classifier function
+         accuracy, y_pred, parameters = train_and_evaluate_classifier(classifier_function, train_features, train_labels, test_features, test_labels) # Train and evaluate the classifier
+         classifiers_execution[classifier_name] = (accuracy, parameters) # Add the classifier execution to the dictionary
+         classifiers_predictions[classifier_name] = y_pred # Add the classifier predictions to the dictionary
+         pbar.update(1) # Update the progress bar
 
    return classifiers_execution, classifiers_predictions # Return the classifiers execution and predictions dictionaries
 
@@ -269,14 +269,14 @@ def train_best_combination(classifiers, train_features, train_labels, test_featu
    start_time = time.time() # Start the timer
 
    # Create progress bar that shows the training progress and the current classifier
-   # with tqdm.tqdm(total=len(BEST_COMBINATION), desc=f"{BackgroundColors.GREEN}Training Classifiers{Style.RESET_ALL}", bar_format="{l_bar}{bar:20}{r_bar}{bar:-20b}") as pbar:
-   #    # Loop through the selected classifiers
-   for classifier_name in BEST_COMBINATION:
-      classifier_function = classifiers[classifier_name] # Get the classifier function
-      accuracy, y_pred, parameters = train_and_evaluate_classifier(classifier_function, train_features, train_labels, test_features, test_labels) # Train and evaluate the classifier
-      classifiers_execution[classifier_name] = (accuracy, parameters) # Add the classifier execution to the dictionary
-      classifiers_predictions[classifier_name] = y_pred # Add the classifier predictions to the dictionary
-         # pbar.update(1) # Update the progress bar
+   with tqdm.tqdm(total=len(BEST_COMBINATION), desc=f"{BackgroundColors.GREEN}Training Classifiers{Style.RESET_ALL}", bar_format="{l_bar}{bar:20}{r_bar}{bar:-20b}") as pbar:
+      # Loop through the selected classifiers
+      for classifier_name in BEST_COMBINATION:
+         classifier_function = classifiers[classifier_name] # Get the classifier function
+         accuracy, y_pred, parameters = train_and_evaluate_classifier(classifier_function, train_features, train_labels, test_features, test_labels) # Train and evaluate the classifier
+         classifiers_execution[classifier_name] = (accuracy, parameters) # Add the classifier execution to the dictionary
+         classifiers_predictions[classifier_name] = y_pred # Add the classifier predictions to the dictionary
+         pbar.update(1) # Update the progress bar 
 
    execution_time = time.time() - start_time # Calculate the execution time
    classifiers_execution["Best Combination"] = (None, {"Predefined Parameters": BEST_COMBINATION, "Execution Time": f"{execution_time:.5f} Seconds"}) # Add the best combination to the classifiers execution dictionary
