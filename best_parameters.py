@@ -79,10 +79,14 @@ atexit.register(play_sound)
 
 # This function prints if the dataset is balanced or not
 def dataset_balance(train_labels, test_labels):
-   if len(np.unique(train_labels)) == len(np.unique(test_labels)):
-      print(f"{BackgroundColors.GREEN}The dataset is {BackgroundColors.CYAN}balanced{BackgroundColors.GREEN}.{Style.RESET_ALL}")
+   # Calculate the number of samples per class in the training and test sets
+   qtd_labels_per_class_train = [np.count_nonzero(train_labels == label) for label in np.unique(train_labels)]
+   qtd_labels_per_class_test = [np.count_nonzero(test_labels == label) for label in np.unique(test_labels)]
+   if qtd_labels_per_class_train == qtd_labels_per_class_test:
+      print(f"{BackgroundColors.GREEN}The dataset is {BackgroundColors.CYAN}balanced{BackgroundColors.GREEN}, as there are same amounts of samples per class.{Style.RESET_ALL}", end="\n\n")
    else:
-      print(f"{BackgroundColors.GREEN}The dataset is {BackgroundColors.RED}not balanced{BackgroundColors.GREEN}.{Style.RESET_ALL}")
+      print(f"{BackgroundColors.GREEN}The dataset is {BackgroundColors.RED}not balanced{BackgroundColors.GREEN}, as there are different amounts of samples per class.{Style.RESET_ALL}", end="\n\n")
+
 
 # This function prints the dataset information
 def print_dataset_information(train_features, train_labels, test_features):
