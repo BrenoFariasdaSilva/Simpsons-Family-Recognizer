@@ -135,7 +135,7 @@ def main():
             pbar.set_description(f"{BackgroundColors.GREEN}Processing model {BackgroundColors.CYAN}{model_name}{BackgroundColors.GREEN} using the {BackgroundColors.CYAN}{layer_name}{BackgroundColors.GREEN} with dataset {BackgroundColors.CYAN}{dataset_path.split('/')[-1]}{Style.RESET_ALL}")
 
             # Provide the path and name for the output file
-            output_file_name = f"./Datasets/{OUTPUT_MODELS[model_name]}/{dataset_path.split('/')[-1]}{OUTPUT_FILE_FORMAT}"
+            output_file_name = f"./Dataset/{OUTPUT_MODELS[model_name]}/{dataset_path.split('/')[-1]}{OUTPUT_FILE_FORMAT}"
 
             # You can assign labels to the images manually or load them from your dataset
             # Classes: 01 (Bart), 02 (Homer), 03 (Lisa), 04 (Maggie) and 05 (Marge)
