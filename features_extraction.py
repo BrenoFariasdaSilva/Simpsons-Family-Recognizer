@@ -67,10 +67,10 @@ def play_sound():
 atexit.register(play_sound)
 
 # This function creates the input directory if it doesn't exist and deletes
-def create_directory(input_directory):
+def create_directory(directory):
 	# Create the directory if it doesn't exist
-	if not os.path.exists(input_directory):
-		os.makedirs(input_directory) # Recursive directory creation function
+	if not os.path.exists(directory):
+		os.makedirs(directory) # Recursive directory creation function
 		
 # This function verifies if the directory that contains exists and deletes the file if it exists
 def verify_directory_file(file):
