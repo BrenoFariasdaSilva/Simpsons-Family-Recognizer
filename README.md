@@ -49,7 +49,7 @@ This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT
 			- [Usage](#usage)
 			- [Output Example](#output-example)
 		- [data\_augmentation.py](#data_augmentationpy)
-	- [Usage](#usage-1)
+			- [Usage](#usage-1)
 			- [Output Example](#output-example-1)
 	- [Requirements](#requirements)
 	- [Setup](#setup)
@@ -197,7 +197,7 @@ Execution Time: 42.035 Seconds
 
 This Python script performs image data augmentation on a set of input images. It utilizes the `imgaug` library to apply various transformations to the images, creating augmented versions for training purposes. The program is designed to work with image datasets used in machine learning projects.
 
-## Usage
+#### Usage
 
 1. **Input Files:** Specify the input directories (`INPUT_FILES`) containing the images you want to augment.
 2. **Image Formats:** Define the accepted image formats (`IMAGE_FORMATS`) to filter the files in the input directories.
