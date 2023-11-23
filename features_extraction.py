@@ -1,5 +1,6 @@
 import atexit # For playing a sound when the program finishes
 import os # For running a command in the terminal
+import numpy as np # For saving the features and labels to a text file
 import platform # For getting the operating system name
 import tensorflow as tf # To load the pre-trained models
 from colorama import Style # For coloring the terminal
@@ -74,6 +75,32 @@ def create_output_directory(output_file):
 		os.makedirs(output_dir) # Recursive directory creation function
 	if os.path.exists(f"{output_file}.txt"):
 		os.remove(f"{output_file}.txt") # Delete the file if it exists
+          
+# This function extracts deep features from the specified layer of the pre-trained model
+def deep_features(imds, model, layer, labels, output_file):
+	# Resize images according to the mode's input size
+	input_shape = (299, 299)  # Modify this according to your model"s input shape
+	datagen = image.ImageDataGenerator(rescale=1./255)	# Create an image generator that reads images from the dataset directory
+	img_generator = datagen.flow_from_directory( # Create a generator that reads images from the dataset directory
+		imds,
+		target_size=input_shape,
+		batch_size=1,
+		class_mode=None,
+		shuffle=False,
+	)
+
+	# Extract features from the specified layer
+	feature_extractor = tf.keras.Model(inputs=model.input, outputs=model.get_layer(layer).output)
+	features = feature_extractor.predict(img_generator)
+
+	# Reshape features to a flat format
+	features_flat = features.reshape((features.shape[0], -1))
+
+	# Combine features and labels
+	data = np.hstack((features_flat, np.array(labels)[:, np.newaxis]))
+
+	# Save features and labels to a text file
+	np.savetxt(output_file + ".txt", data, fmt="%.6f")
 
 # This is the Main function
 def main():
