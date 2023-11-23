@@ -67,20 +67,20 @@ def play_sound():
 atexit.register(play_sound)
 
 # This function creates the input directory if it doesn't exist and deletes
-def create_input_directory(input_directory):
+def create_directory(input_directory):
 	# Create the directory if it doesn't exist
 	if not os.path.exists(input_directory):
 		os.makedirs(input_directory) # Recursive directory creation function
 		
-# This function creates the output directory if it doesn't exist and deletes
-def create_output_directory(output_file):
-	output_dir = os.path.dirname(output_file) # Get the directory name
+# This function verifies if the directory that contains exists and deletes the file if it exists
+def verify_directory_file(file):
+	output_dir = os.path.dirname(file) # Get the directory name
    
    # Create the directory if it doesn't exist
 	if not os.path.exists(output_dir):
 		os.makedirs(output_dir) # Recursive directory creation function
-	if os.path.exists(f"{output_file}.txt"):
-		os.remove(f"{output_file}.txt") # Delete the file if it exists
+	if os.path.exists(f"{file}.txt"):
+		os.remove(f"{file}.txt") # Delete the file if it exists
           
 # This function extracts deep features from the specified layer of the pre-trained model
 def deep_features(imds, model, layer, labels, output_file):
@@ -137,8 +137,8 @@ def main():
                      [3] * len(os.listdir(os.path.join(dataset_path, "04"))) + \
                      [4] * len(os.listdir(os.path.join(dataset_path, "05"))) # Create a list of labels
             
-            create_input_directory(dataset_path) # Create the input directory if it doesn't exist
-            create_output_directory(output_file_name) # Create the output directory if it doesn't exist
+            create_directory(dataset_path) # Create the input directory if it doesn't exist
+            verify_directory_file(output_file_name) # Create the output directory if it doesn't exist
             
             # Extract deep features from the specified layer of the pre-trained model
             deep_features(dataset_path, model, layer_name, labels, output_file_name)
