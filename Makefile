@@ -13,5 +13,5 @@ specific_parameters:
 	clear; time python3 ./specific_parameters.py
 
 dependencies:
-	pip install colorama collection imgaug numpy scikit-learn tensorflow tqdm
+	pip install colorama collection imgaug matplotlib numpy opencv-python scikit-learn tensorflow tqdm
 	pip install --upgrade threadpoolctl
