@@ -196,7 +196,7 @@ Execution Time: 42.035 Seconds
 
 ### Data Augmentation Python Algorithm
 
-This Python script performs image data augmentation on a set of input images. It utilizes the `imgaug` library to apply various transformations to the images, creating augmented versions for training purposes. The program is designed to work with image datasets used in machine learning projects.
+This Python script performs image data augmentation on a set of input images. It utilizes the `imgaug` library to apply various transformations to the images, creating augmented versions for training purposes. The program is designed to work with image datasets used in machine learning projects.  
 Data Augmentation is a technique used to increase the size of a dataset by applying various transformations to the images. This is useful for training machine learning models, as it allows the model to learn from a larger number of images. The script performs a series of transformations on the input images, creating augmented versions of the images. The augmented images are saved in the same directory as the original images, with the file name followed by the `_augmented` string.
 
 #### Usage
