@@ -33,17 +33,17 @@ This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT
 - [Simpsons-Family-Recognizer. ](#simpsons-family-recognizer-)
 	- [Table of Contents](#table-of-contents)
 	- [Introduction](#introduction)
-		- [Machine Learning Supervised Classifiers](#machine-learning-supervised-classifiers)
+	- [Machine Learning Supervised Classifiers](#machine-learning-supervised-classifiers)
 		- [K-Nearest Neighbors (K-NN)](#k-nearest-neighbors-k-nn)
 		- [Decision Trees (DT)](#decision-trees-dt)
 		- [Support Vector Machines (SVM)](#support-vector-machines-svm)
 		- [Multi-Layer Perceptron (MLP)](#multi-layer-perceptron-mlp)
 		- [Random Forest](#random-forest)
 		- [Naive Bayes](#naive-bayes)
-		- [Combining the Supervised Learning Algorithms](#combining-the-supervised-learning-algorithms)
-		- [Dataset](#dataset)
-		- [Feature Extraction](#feature-extraction)
+	- [Combining the Supervised Learning Algorithms](#combining-the-supervised-learning-algorithms)
+	- [Dataset](#dataset)
 		- [Data Description](#data-description)
+	- [Feature Extraction](#feature-extraction)
 	- [Algorithms](#algorithms)
 		- [Best Parameters Python Algorithm](#best-parameters-python-algorithm)
 			- [Usage](#usage)
@@ -68,7 +68,7 @@ Classification problems in AI involve assigning predefined labels or categories 
 In this project, we use the K-Nearest Neighbors (K-NN), Decision Trees (DT), Support Vector Machines (SVM), MultiLayer Perceptrons (MLP), Random Forest and Combine those Supervised Learning Algorithms to recognize The Simpsons Family Members. So, this project will extract features from Bart, Homer, Lisa Maggie e Marge characters of the Simpsons family, in order to use all of the previously mentioned algorithms to train them to recognize them from the features we extract with the labels we provide, which character is in the image is in the image name.  
 The system will try to predict which image represents which member and will produce as output the accuracy and F1-Score [0 to 100%] and a confusion matrix (N × N) indicating the percentage of system hits and errors among the N classes.
 
-### Machine Learning Supervised Classifiers
+## Machine Learning Supervised Classifiers
 
 This project employs various machine learning supervised classifiers to recognize the Simpsons family members. Each classifier has unique characteristics and applications. Below are brief descriptions of the classifiers used in this project.
 
@@ -119,17 +119,13 @@ The implemented Naive Bayes is using the Grid Search to find the best parameters
 - `priors`: Prior probabilities of the classes. The selected priors are `None and [0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2]`.
 - `var_smoothing`: Portion of the largest variance of all features that is added to variances for calculation stability. The selected var_smoothing are `1e-9, 1e-8, 1e-7, 1e-6, 1e-5`.
 
-### Combining the Supervised Learning Algorithms
+## Combining the Supervised Learning Algorithms
 
 The idea of combining the Supervised Learning Algorithms is to use the best parameters found by the Grid Search for each algorithm and combine them to create a new model. The new model will be trained with the best parameters found by the Grid Search for each algorithm and the prediction will be made by the majority vote of the predictions of each algorithm.
 
-### Dataset
+## Dataset
 
 The dataset used for this project can be found [here](https://drive.google.com/uc?export=download&id=1wVyUmsz150uKjOprxRA_4LtmTXDPRp1o).
-
-### Feature Extraction
-
-- The feature extraction is done in `MatLab` by running the `NASNetLarge` and `ResNet18` deep learning models on the images and extracting the features from the last layer of the model, named `activation_520` and `pool5`, respectively. The features extracted from the `NASNetLarge` model have 4032 features and the features extracted from the `ResNet18` model have 512 features. Both of them will be available in the `Dataset` directory and you can modify in the code  the `INPUT_FILES` constant, so you can choose which features you want to use to train the models.
 
 ### Data Description
 
@@ -150,6 +146,12 @@ The "Test" folder contains 95 photos of the Simpsons family members.
 - Marge: 10 Photos.
   
 All of the photos are named with the name of the character in the photo followed by a number, so that will be considered the label.
+
+## Feature Extraction
+
+- The feature extraction is done in `MatLab` by running the `NASNetLarge` and `ResNet18` deep learning models on the images and extracting the features from the last layer of the model, named `activation_520` and `pool5`, respectively. The features extracted from the `NASNetLarge` model have 4032 features and the features extracted from the `ResNet18` model have 512 features. Both of them will be available in the `Dataset` directory and you can modify in the code  the `INPUT_FILES` constant, so you can choose which features you want to use to train the models.
+
+
 
 ## Algorithms
 
