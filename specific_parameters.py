@@ -41,6 +41,7 @@ INPUT_FILES = {
 }
 
 # Output Constants:
+SHOW_DATASET_INFORMATION = True # If True, show the dataset information
 SHOW_CONFUSION_MATRIX = True # If True, show the confusion matrix
 SHOW_CLASSIFICATION_REPORT = True # If True, show the classification report
 
@@ -78,6 +79,20 @@ def play_sound():
 
 # Register the function to play a sound when the program finishes
 atexit.register(play_sound)
+
+# This function prints if the dataset is balanced or not
+def dataset_balance(train_labels, test_labels):
+   if len(np.unique(train_labels)) == len(np.unique(test_labels)):
+      print(f"{BackgroundColors.GREEN}The dataset is {BackgroundColors.CYAN}balanced{BackgroundColors.GREEN}.{Style.RESET_ALL}")
+   else:
+      print(f"{BackgroundColors.GREEN}The dataset is {BackgroundColors.RED}not balanced{BackgroundColors.GREEN}.{Style.RESET_ALL}")
+
+# This function prints the dataset information
+def print_dataset_information(train_features, train_labels, test_features):
+   print(f"{BackgroundColors.GREEN}Number of features: {BackgroundColors.CYAN}{train_features.shape[1]}{Style.RESET_ALL}")
+   print(f"{BackgroundColors.GREEN}Number of training instances: {BackgroundColors.CYAN}{train_features.shape[0]}{Style.RESET_ALL}")
+   print(f"{BackgroundColors.GREEN}Number of test instances: {BackgroundColors.CYAN}{test_features.shape[0]}{Style.RESET_ALL}")
+   print(f"{BackgroundColors.GREEN}Number of classes: {BackgroundColors.CYAN}{len(np.unique(train_labels))}{Style.RESET_ALL}")
 
 # This function loads the data from the dataset files and returns the training and test sets
 def load_data():
@@ -282,6 +297,10 @@ def main():
    print(f"{BackgroundColors.GREEN}The deep learning model used is {BackgroundColors.CYAN}{INPUT_DEEP_LEARNING_MODEL}{BackgroundColors.GREEN}. If you want to change it, please change the {BackgroundColors.CYAN}INPUT_DEEP_LEARNING_MODEL{BackgroundColors.GREEN} variable.{Style.RESET_ALL}") # Output the deep learning model used
 
    train_features, train_labels, test_features, test_labels = load_data() # Load the data
+
+   if SHOW_DATASET_INFORMATION: # Show the dataset information if it is set to True
+      print_dataset_information(train_features, train_labels, test_features) # Print the dataset information
+      dataset_balance(train_labels, test_labels) # Print if the dataset is balanced or not
 
    # Train every classifier and get the classifiers execution and predictions
    selected_classifiers_execution, selected_classifiers_predictions = train_all_classifiers(CLASSIFIERS, CLASSIFIERS, train_features, train_labels, test_features, test_labels)
