@@ -29,6 +29,22 @@ class BackgroundColors: # Colors for the terminal
 SOUND_COMMANDS = {"Darwin": "afplay", "Linux": "aplay", "Windows": "start"}
 SOUND_FILE = "./.assets/NotificationSound.wav" # The path to the sound file
 
+# Dataset Constants:
+MODELS = { # Dictionary of pre-trained models -> model name: model constructor
+	"densenet201": densenet.DenseNet201,
+	"efficientnetb0": efficientnet.EfficientNetB0,
+	"mobilenetv2": mobilenet_v2.MobileNetV2,
+	"nasnetmobile": nasnet.NASNetMobile,
+	"resnet50": resnet50.ResNet50,
+	"vgg16": vgg16.VGG16,
+	"xception": xception.Xception,
+	"inception_v3": inception_v3.InceptionV3,
+}
+
+DATASETS = ["Train", "Test"] # List of datasets
+
+# Functions:
+
 # This function defines the command to play a sound when the program finishes
 def play_sound():
    if os.path.exists(SOUND_FILE):
