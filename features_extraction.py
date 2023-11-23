@@ -132,7 +132,7 @@ def main():
             layer_name = model.layers[-1].name # Get the name of the last layer
 
             # Update the progress bar
-            pbar.set_description(f"{BackgroundColors.GREEN}Processing model {BackgroundColors.CYAN}{model_name}{BackgroundColors.GREEN}using the {BackgroundColors.CYAN}{layer_name}{BackgroundColors.GREEN} with dataset {BackgroundColors.CYAN}{dataset_path.split('/')[-1]}{Style.RESET_ALL}")
+            pbar.set_description(f"{BackgroundColors.GREEN}Processing model {BackgroundColors.CYAN}{model_name}{BackgroundColors.GREEN} using the {BackgroundColors.CYAN}{layer_name}{BackgroundColors.GREEN} with dataset {BackgroundColors.CYAN}{dataset_path.split('/')[-1]}{Style.RESET_ALL}")
 
             # Provide the path and name for the output file
             output_file_name = f"./Datasets/{OUTPUT_MODELS[model_name]}/{dataset_path.split('/')[-1]}{OUTPUT_FILE_FORMAT}"
