@@ -169,9 +169,8 @@ You can find the extracted features datasets from any of the mentioned models [h
 
 ### Best Parameters Python Algorithm
 
-This Python script is designed to find the best parameters for a set of classifiers to classify characters from the Simpsons Family dataset. The script performs a grid search for each classifier to determine the optimal hyperparameters and then outputs the best combination of classifiers.
-The purpose of this script is to automate the process of finding the best combination of classifiers with their optimal hyperparameters for character classification using the Simpsons Family dataset.  
-This will be really useful for the last step of the project, which is to run the `specific_parameters.py` algorithm to combine the classifiers with the best parameters found by the Grid Search for each algorithm and the prediction will be made by the majority vote of the predictions of each algorithm.
+This Python script automates the search for optimal parameters across a set of classifiers for character classification in the Simpsons Family dataset. It conducts a grid search for each classifier, identifying the best hyperparameters, and outputs the optimal combination of classifiers.  
+This streamlined process is crucial for the final project step, where the specific_parameters.py algorithm combines classifiers with the best parameters using a majority vote for predictions.
 
 #### Usage
 
