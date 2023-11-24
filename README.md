@@ -229,6 +229,7 @@ So, Adjust the script's constants and parameters to fit your specific use case.
 	```
 
 #### Output Example
+
 The terminal will not show any really useful output, rather than the progress of the execution. The output will be the augmented images, which will have the file name followed by the `_augmented` string, indicating that the image is an augmented image.
 
 ### Feature Extraction Python Algorithm
@@ -247,6 +248,7 @@ So, Adjust the script's constants and parameters to fit your specific use case.
 	```
 
 #### Output Example
+
 The terminal will not show any really useful output, rather than the progress of the execution. The output will be the txt files with the extracted features, where the last column represents the label of the instance and the other columns represent the extracted features. Those files will be saved in the `Dataset/ModelName/` directory.
 
 ## Requirements
