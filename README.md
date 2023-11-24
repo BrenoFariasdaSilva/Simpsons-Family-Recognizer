@@ -54,6 +54,9 @@ This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT
 		- [Feature Extraction Python Algorithm](#feature-extraction-python-algorithm)
 			- [Usage](#usage-2)
 			- [Output Example](#output-example-2)
+		- [Specific Parameters Python Algorithm](#specific-parameters-python-algorithm)
+			- [Usage](#usage-3)
+			- [Output Example](#output-example-3)
 	- [Requirements](#requirements)
 	- [Setup](#setup)
 		- [Clone the repository](#clone-the-repository)
@@ -250,6 +253,29 @@ So, Adjust the script's constants and parameters to fit your specific use case.
 #### Output Example
 
 The terminal will not show any really useful output, rather than the progress of the execution. The output will be the txt files with the extracted features, where the last column represents the label of the instance and the other columns represent the extracted features. Those files will be saved in the `Dataset/ModelName/` directory.
+
+### Specific Parameters Python Algorithm
+
+This Python script is designed for training and evaluating various classifiers on a dataset of Simpsons family characters. It performs runs each classifier with the specified parameters, as well as the best Classifier Combination found by the `best_parameters.py` algorithm, and outputs the accuracy, F1-Score [0 to 100%], Confusion Matrix [N × N], indicating the percentage of system hits and errors among the N classes, the execution time for each classifier, as well as it's Best Params found by the Grid Search.
+
+#### Usage
+
+1. **Input Files:** Adjust the `INPUT_FILES` dictionary with the correct paths to your dataset files.
+2. **Deep Learning Model:** The script loads the dataset based on the selected deep learning model (`INPUT_DEEP_LEARNING_MODEL` variable).
+3. **Classifiers:** The script loads the classifiers based on the selected classifiers (`CLASSIFIERS` dictionary).
+4. **Best Parameters:** The script loads the classifiers parameters based on the selected classifiers parameters (`BEST_PARAMETERS` dictionary).
+5. **Best Combination:** The script loads the classifiers combination based on the selected classifiers combination (`BEST_COMBINATION` dictionary).
+6. **Outputs:** Modify the outputs constants, such as, `SHOW_CLASSIFICATION_REPORT`, `SHOW_CONFUSION_MATRIX`, and `SHOW_DATASET_INFORMATION`.
+
+So, Adjust the script's constants and parameters to fit your specific use case.
+
+	```bash
+	make specific_parameters
+	```
+
+#### Output Example
+
+The script will display the results of each classifier, including accuracy, parameters, and execution time. The final section will present the best combination of classifiers and their performance.
 
 ## Requirements
 
