@@ -266,7 +266,6 @@ This Python script is designed for training and evaluating various classifiers o
 4. **Best Parameters:** The script loads the classifiers parameters based on the selected classifiers parameters (`BEST_PARAMETERS` dictionary).
 5. **Best Combination:** The script loads the classifiers combination based on the selected classifiers combination (`BEST_COMBINATION` dictionary).
 6. **Outputs:** Modify the outputs constants, such as, `SHOW_CLASSIFICATION_REPORT`, `SHOW_CONFUSION_MATRIX`, and `SHOW_DATASET_INFORMATION`.
-
 So, Adjust the script's constants and parameters to fit your specific use case.
 
 	```bash
