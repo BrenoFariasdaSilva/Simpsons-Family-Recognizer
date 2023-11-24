@@ -51,6 +51,9 @@ This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT
 		- [Data Augmentation Python Algorithm](#data-augmentation-python-algorithm)
 			- [Usage](#usage-1)
 			- [Output Example](#output-example-1)
+		- [Feature Extraction Python Algorithm](#feature-extraction-python-algorithm)
+			- [Usage](#usage-2)
+			- [Output Example](#output-example-2)
 	- [Requirements](#requirements)
 	- [Setup](#setup)
 		- [Clone the repository](#clone-the-repository)
@@ -227,6 +230,24 @@ So, Adjust the script's constants and parameters to fit your specific use case.
 
 #### Output Example
 The terminal will not show any really useful output, rather than the progress of the execution. The output will be the augmented images, which will have the file name followed by the `_augmented` string, indicating that the image is an augmented image.
+
+### Feature Extraction Python Algorithm
+
+This Python script automates the extraction of deep features from athe last layer of pre-trained models for the Simpsons Family dataset. The features are saved to text files, which can be used for training classifiers in subsequent steps like `best_parameters.py` and `specific_parameters.py`.  
+The script loads pre-trained models like `DenseNet201`, `EfficientNetB0`, `InceptionV3`, `ResNet50`, `VGG16`, and `Xception`, extracting deep features from the last layer of each model for character classification.
+
+#### Usage
+
+1. **Input Files:** Specify the input directories (`INPUT_FILES`) containing the images you want to augment.
+2. **Deep Learning Models:** Define the deep learning models (`MODELS`) variable to be used for feature extraction.
+So, Adjust the script's constants and parameters to fit your specific use case.
+
+	```bash
+	make feature_extraction
+	```
+
+#### Output Example
+The terminal will not show any really useful output, rather than the progress of the execution. The output will be the txt files with the extracted features, where the last column represents the label of the instance and the other columns represent the extracted features. Those files will be saved in the `Dataset/ModelName/` directory.
 
 ## Requirements
 
