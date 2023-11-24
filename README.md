@@ -58,6 +58,7 @@ This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT
 		- [Setup Dataset](#setup-dataset)
 	- [How to run](#how-to-run)
 	- [Results](#results)
+		- [Results Analysis](#results-analysis)
 	- [Important Notes](#important-notes)
 	- [Contributing](#contributing)
 	- [License](#license)
@@ -313,6 +314,29 @@ You can find all of my results in the `Results` directory, but i will show the r
  [ 0  0  0 10  0]  
  [ 0  0  0  0 10]]  
 
+### Results Analysis
+
+An interesting observation is that the `NASNetLarge`, the most resource-intensive model with nearly half a million extracted features, did not perform well, achieving an accuracy of 52.63%.
+
+Unfortunately, even when combining algorithms, the best-performing combination was the combination of K-NN, MLP, and Random Forest. However, none of them yielded satisfactory results, as there is often a significant difference (often greater than 10%) between the classifier with the best result and the second-best.
+
+Regrettably, the attempt to enhance results by creating a data augmentation algorithm (`data_augmentation.py`) proved unsuccessful. The program aimed to generate a noisy copy for each image, but from my experience, it was too noisy. Although the `DenseNet201 model was employed again with the "augmented" data, the effort was futile, as depicted in the following image:
+
+![DenseNet201 with Augmented Data](https://github.com/BrenoFariasdaSilva/Simpsons-Family-Recognizer/blob/main/Results/DenseNet201/AugmentedDenseNet201%20Accuracy.png)
+
+Analyzing the confusion matrix of the best result, which utilized the Multilayer Perceptron (MLP) with non-augmented data and the DenseNet201 feature extraction model, we observe an accuracy of 78.95%. However, accuracy is not a reliable metric for imbalanced datasets. The F1-Score obtained in the best result was 0.79 or 79.00%.
+
+The confusion matrix compares the actual classes of a classification model with the predicted classes. Each cell in the matrix represents the number of instances for a specific class. The values on the main diagonal represent correctly classified instances for each class. Larger values on the diagonal indicate better model performance.
+
+Considering the analysis of the MLP confusion matrix (best result), as shown in Figure ~\ref{fig:DenseNet201MlpRfNb}, we can conclude the following:
+
+- Class 1 (Bart): 3 instances were misclassified out of 35 instances, accounting for 8% error.
+- Class 2 (Homer): 5 instances were misclassified out of 25 instances, representing 20% error.
+- Class 3 (Lisa): 5 instances were misclassified out of 13 instances, with 4 errors attributed to class 2 and 1 to class 1, resulting in 38% error.
+- Class 4 (Maggie): 5 instances were misclassified out of 12 instances, with 4 errors attributed to class 1 and 1 to class 2, resulting in 41% error.
+- Class 5 (Marge): 2 instances were misclassified out of 35 instances, with 1 instance attributed to class 1 and 1 to class 2, resulting in 10% error.
+
+This trend indicates that a lower number of samples per class correlates with a higher percentage of error. However, this may be influenced by instances in the dataset where certain images are mixed with other characters, impacting the models' ability to capture relevant class characteristics. Resolving these issues, particularly in classes with fewer instances, would likely improve accuracy.
 
 ## Important Notes
 
