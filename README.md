@@ -403,6 +403,7 @@ Another thing that could improve the classifiers combination is to the majority 
 
 - [ ] Implement the `XGBoost` algorithm.
 - [ ] Implement the `Face Detection` algorithm, with something like the `YOLO` algorithm.
+- [ ] Improve the `Data Augmentation` algorithm.
 
 ## Contributing
 
