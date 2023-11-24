@@ -402,7 +402,7 @@ Another thing that could improve the classifiers combination is to the majority 
 ## Next Steps
 
 - [ ] Implement the `XGBoost` algorithm.
-- [ ] Implement the `Face Detection` algorithm, with something like the `YOLO` algorithm.
+- [ ] Implement the `Face Detection` algorithm, with something like the `YOLO` algorithm to recognize the faces of the characters and use that info to cut the image and use only the face of the character.
 - [ ] Improve the `Data Augmentation` algorithm.
 
 ## Contributing
