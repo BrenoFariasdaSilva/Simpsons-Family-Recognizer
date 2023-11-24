@@ -7,8 +7,7 @@
 <div align="center">
   
 ---
-
-This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT), Support Vector Machines (SVM), MultiLayer Perceptrons (MLP), Random Forest, Naive Bayes and Combining the Supervised Learning Algorithms to recognize The Simpsons Family Members. The dataset used for this project can be downloaded from [here](https://drive.google.com/drive/folders/12TjdYNLIml8E-k9G5HwZ4wxmeNwXNRCo?usp=share_link), and our results can be found [here](https://github.com/BrenoFariasdaSilva/Simpsons-Family-Recognizer/tree/main/Results), in the `Results` directory of this repository.
+This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT), Support Vector Machines (SVM), MultiLayer Perceptrons (MLP), Random Forest, Naive Bayes and Combining the Supervised Learning Algorithms to recognize The Simpsons Family Members. The `raw dataset` (bmp file format images) used for this project can be downloaded from [here](https://drive.google.com/drive/folders/12TjdYNLIml8E-k9G5HwZ4wxmeNwXNRCo?usp=share_link), and the `features dataset` (txt format file with the extracted features for the raw dataset) can be downloaded from [here](https://drive.google.com/drive/folders/12dlVktROvILU-J8gMT7ee8GUZPfd2yNX?usp=sharing). Lastly, my results can be found in the `Results` directory of this repository or [here](https://github.com/BrenoFariasdaSilva/Simpsons-Family-Recognizer/tree/main/Results).
 
 ---
 
