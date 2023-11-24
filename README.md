@@ -184,6 +184,8 @@ You can find the extracted features datasets from any of the mentioned models [h
 
 ## Algorithms
 
+This section describes the algorithms used in this project and how to use them. Remember that, this project can use two different types of dataset. The first is the `raw dataset` and the second is the `features dataset`. Read the [Dataset](#dataset) section to understand the difference between them, as it impacts the usage of the algorithms.
+
 ### Best Parameters Python Algorithm
 
 This Python script automates the search for optimal parameters across a set of classifiers for character classification in the Simpsons Family dataset. It conducts a grid search for each classifier, identifying the best hyperparameters, and outputs the optimal combination of classifiers. It also outputs the accuracy, F1-Score [0 to 100%], Confusion Matrix [N × N], indicating the percentage of system hits and errors among the N classes, the execution time for each classifier, as well as it's Best Params found by the Grid Search.
