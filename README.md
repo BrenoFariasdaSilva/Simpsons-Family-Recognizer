@@ -41,6 +41,8 @@ This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT
 		- [Naive Bayes](#naive-bayes)
 	- [Combining the Supervised Learning Algorithms](#combining-the-supervised-learning-algorithms)
 	- [Dataset](#dataset)
+		- [Raw Dataset](#raw-dataset)
+		- [Features Dataset](#features-dataset)
 		- [Data Description](#data-description)
 	- [Feature Extraction Models](#feature-extraction-models)
 	- [Algorithms](#algorithms)
@@ -132,7 +134,15 @@ The idea of combining the Supervised Learning Algorithms is to use the best para
 
 ## Dataset
 
-The datasets used for this project can be found [here](https://drive.google.com/drive/folders/12TjdYNLIml8E-k9G5HwZ4wxmeNwXNRCo?usp=share_link).
+There is two types of datasets used in this project, the `raw dataset` and the `features dataset`.  
+
+### Raw Dataset
+
+The raw dataset is a set of images of the Simpsons family members. The images are in the `.bmp` format and are named with the name of the character in the photo followed by a number, so that will be considered the label. Those images are used to extract the features from them, so we can use those features to train the classifiers and then use them to predict the character in the image. You are able to download the raw dataset from [here](https://drive.google.com/drive/folders/12TjdYNLIml8E-k9G5HwZ4wxmeNwXNRCo?usp=share_link). Keep in mind that the raw dataset is very small and to extract the features from the images, you must select or run multiple (if not all) deep learning models that are available in the `feature_extraction.py`, which is very hardware and time intensive, so be aware of that. For comparison, the `DenseNet201` model took about 3 hours to extract the features from the images, so if you want to extract the features from all of the 9 deep learning models, it will took me about 24 hours to finish, using a Ryzen 3800X (8 Cores and 16 Threads) with 32GB of RAM. So, if you are time and hardware limited, i recommend you jump the feature extraction process and download the features dataset, which are explained in the next section. In case you chose to use the raw dataset and extract the features from it, you must place the raw dataset in the `Dataset` directory and extract it. After that, feel free to delete the `.zip` file.
+
+### Features Dataset
+
+The features dataset is a set of `.txt` files with the extracted features from the raw dataset. The features are extracted from the last layer of the pre-trained models, so we can use those features to train the classifiers and then use them to predict the character in the image. If you chose not to extract the features from the raw dataset, you don't need to run the `feature_extraction.py` algorithm, but you must download the features dataset from [here](https://drive.google.com/drive/folders/12dlVktROvILU-J8gMT7ee8GUZPfd2yNX?usp=sharing), place it in the `Dataset` directory and extract it. After that, feel free to delete the `.zip` file.
 
 ### Data Description
 
