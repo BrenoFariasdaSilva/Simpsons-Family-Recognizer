@@ -314,6 +314,8 @@ You can find all of my results in the `Results` directory, but i will show the r
  [ 0  0  0 10  0]  
  [ 0  0  0  0 10]]  
 
+![DenseNet201](https://github.com/BrenoFariasdaSilva/Simpsons-Family-Recognizer/blob/main/Results/DenseNet201/DenseNet201%20Accuracy.png)
+
 ### Results Analysis
 
 An interesting observation is that the `NASNetLarge`, the most resource-intensive model with nearly half a million extracted features, did not perform well, achieving an accuracy of 52.63%.
