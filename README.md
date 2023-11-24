@@ -159,15 +159,15 @@ All of the photos are named with the name of the character in the photo followed
 
 The feature extraction process was tested using various deep learning models, each with a specific number of features. The following list provides an overview:
 
-1. `DenseNet201`: 155520 features.
-2. `EfficientNetB0`: 103680 features.
-3. `InceptionV3`: 1000 features.
-4. `MobileNetV2`: 103680 features.
-5. `NASNetLarge`: 487872 features.
+1. `DenseNet201`: 155.520 features.
+2. `EfficientNetB0`: 103.680 features.
+3. `InceptionV3`: 1.000 features.
+4. `MobileNetV2`: 103.680 features.
+5. `NASNetLarge`: 487.872 features.
 6. `ResNet18`: 512 features.
-7. `ResNet50`: 204800 features.
-8. `VGG16`: 1000 features.
-9. `Xception`: 204800 features.
+7. `ResNet50`: 204.800 features.
+8. `VGG16`: 1.000 features.
+9. `Xception`: 204.800 features.
 
 The chosen layer for extraction is always the last layer of the model. The resulting output is stored in `.txt` files, where all columns, except the last one, correspond to the extracted features, and the last column represents the label of the instance. The main difference between the models used in feature extraction is the quantity of features, as indicated in the list above.
 
