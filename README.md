@@ -340,6 +340,8 @@ Considering the analysis of the MLP confusion matrix (best result), as shown in 
 
 This trend indicates that a lower number of samples per class correlates with a higher percentage of error. However, this may be influenced by instances in the dataset where certain images are mixed with other characters, impacting the models' ability to capture relevant class characteristics. Resolving these issues, particularly in classes with fewer instances, would likely improve accuracy.
 
+Lastly, the results were really good, as the dataset was very small, with poluted images and, when compared to the other students, their best results were around 66% accuracy, so i'm very happy with the results i got, as there is a almost 13% difference between my best result and the best result of the other students. Also, once again, in an ideal world, i would have unlimited time and huge hardware resources to test all of the 9 deep learning models with the `best_parameters.py` algorithm, but i didn't have that, so i had to choose one of them and replicate the parameters to the other 8 deep learning models, so i'm sure that if i had the time and the hardware resources, i would have achieved even better results.
+
 ## Important Notes
 
 In order to improve the accuracy of the models, i tried to implement the a python algorithm that read each image and generated a new image with the face centralized, but it works well for humans, but as The Simpsons characters are not humans, it didn't work as expected. So, i decided to not use it in the project, but you can find it in the following url: [Face Detection Python Algorithm](https://github.com/BrenoFariasdaSilva/Python/tree/main/Faces%20Detection).
