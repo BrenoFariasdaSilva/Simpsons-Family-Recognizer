@@ -55,7 +55,7 @@ This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT
 	- [Setup](#setup)
 		- [Clone the repository](#clone-the-repository)
 		- [Install Dependencies](#install-dependencies)
-		- [Get Dataset](#get-dataset)
+		- [Setup Dataset](#setup-dataset)
 	- [How to run](#how-to-run)
 	- [Results](#results)
 	- [Important Notes](#important-notes)
@@ -266,15 +266,9 @@ cd Simpsons-Family-Recognizer
 make dependencies
 ```
 
-### Get Dataset
+### Setup Dataset
 
-1. Download the dataset from [here](https://drive.google.com/uc?export=download&id=1wVyUmsz150uKjOprxRA_4LtmTXDPRp1o) and place it in this project directory `(/Simpsons-Family-Recognizer)` and run the following command:
-
-```bash
-make dataset
-```
-
-This command will give execution permission to the `Setup-Dataset.sh` ShellScript and execute it. The `Setup-Dataset.sh` ShellScript will download the dataset from a url and unzip it to the `Dataset` directory and, lastly, remove the zip file. With that in mind, it basically does everything for you.
+1. Download any of the processed datasets from [here](https://drive.google.com/drive/folders/12TjdYNLIml8E-k9G5HwZ4wxmeNwXNRCo?usp=share_link) and place it in this project directory `(/Simpsons-Family-Recognizer/Dataset)` and extract it. After that, feel free to delete the `.zip` file.
 
 ## How to run
 
