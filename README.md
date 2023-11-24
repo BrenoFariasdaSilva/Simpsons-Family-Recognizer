@@ -190,7 +190,7 @@ So, Adjust the script's constants and parameters to fit your specific use case.
 #### Output Example
 
 ```bash
-Best Combination: ('Decision Tree', 'Random Forest', 'Support Vector Machine')
+Best Combination: ('K-Nearest Neighbors', 'Multilayer Perceptron' and 'Random Forest')
 Majority Vote Accuracy: 85.2%
 Execution Time: 120.256 Seconds
 
