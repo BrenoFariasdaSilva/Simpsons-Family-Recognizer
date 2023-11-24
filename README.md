@@ -73,7 +73,7 @@ This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT
 ## Introduction
 
 Classification problems in AI involve assigning predefined labels or categories to input data based on its features. The goal is to train models that can generalize patterns from labeled examples to accurately predict the class of new, unseen instances.  
-In this project, we use the K-Nearest Neighbors (K-NN), Decision Trees (DT), Support Vector Machines (SVM), MultiLayer Perceptrons (MLP), Random Forest and Combine those Supervised Learning Algorithms to recognize The Simpsons Family Members. So, this project will extract features from Bart, Homer, Lisa Maggie e Marge characters of the Simpsons family, in order to use all of the previously mentioned algorithms to train them to recognize them from the features we extract with the labels we provide, which character is in the image is in the image name.  
+In this project, we use the K-Nearest Neighbors (K-NN), Decision Trees (DT), Support Vector Machines (SVM), MultiLayer Perceptrons (MLP), Random Forest, Naive Bayes and Combine those Supervised Learning Algorithms to recognize The Simpsons Family Members. So, this project will extract features from Bart, Homer, Lisa Maggie e Marge characters of the Simpsons family, in order to use all of the previously mentioned algorithms to train them to recognize them from the features we extract with the labels we provide, which character is in the image is in the image name.  
 The system will try to predict which image represents which member and will produce as output the accuracy and F1-Score [0 to 100%] and a confusion matrix (N × N) indicating the percentage of system hits and errors among the N classes.
 
 ## Machine Learning Supervised Classifiers
@@ -369,7 +369,7 @@ You can find all of my results in the `Results` directory, but i will show the r
 
 An interesting observation is that the `NASNetLarge`, the most resource-intensive model with nearly half a million extracted features, did not perform well, achieving an accuracy of 52.63%.
 
-Unfortunately, even when combining algorithms, the best-performing combination was the combination of K-NN, MLP, and Random Forest. However, none of them yielded satisfactory results, as there is often a significant difference (often greater than 10%) between the classifier with the best result and the second-best.
+Unfortunately, even when combining algorithms, the best-performing combination was the combination of K-Nearest Neighbors, Multilayer Perceptron, and Random Forest. However, none of them yielded satisfactory results, as there is often a significant difference (often greater than 10%) between the classifier with the best result and the second-best.
 
 Regrettably, the attempt to enhance results by creating a data augmentation algorithm (`data_augmentation.py`) proved unsuccessful. The program aimed to generate a noisy copy for each image, but from my experience, it was too noisy. Although the `DenseNet201 model was employed again with the "augmented" data, the effort was futile, as depicted in the following image:
 
