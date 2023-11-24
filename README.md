@@ -169,7 +169,7 @@ You can find the extracted features datasets from any of the mentioned models [h
 
 ### Best Parameters Python Algorithm
 
-This Python script automates the search for optimal parameters across a set of classifiers for character classification in the Simpsons Family dataset. It conducts a grid search for each classifier, identifying the best hyperparameters, and outputs the optimal combination of classifiers.  
+This Python script automates the search for optimal parameters across a set of classifiers for character classification in the Simpsons Family dataset. It conducts a grid search for each classifier, identifying the best hyperparameters, and outputs the optimal combination of classifiers. It also outputs the accuracy, F1-Score [0 to 100%], Confusion Matrix [N × N], indicating the percentage of system hits and errors among the N classes, the execution time for each classifier, as well as it's Best Params found by the Grid Search.
 This streamlined process is crucial for the final project step, where the specific_parameters.py algorithm combines classifiers with the best parameters using a majority vote for predictions.
 
 #### Usage
