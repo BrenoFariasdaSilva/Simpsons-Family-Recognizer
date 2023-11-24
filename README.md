@@ -43,7 +43,7 @@ This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT
 	- [Combining the Supervised Learning Algorithms](#combining-the-supervised-learning-algorithms)
 	- [Dataset](#dataset)
 		- [Data Description](#data-description)
-	- [Feature Extraction](#feature-extraction)
+	- [Feature Extraction Models](#feature-extraction-models)
 	- [Algorithms](#algorithms)
 		- [Best Parameters Python Algorithm](#best-parameters-python-algorithm)
 			- [Usage](#usage)
@@ -155,7 +155,7 @@ The "Test" folder contains 95 photos of the Simpsons family members.
   
 All of the photos are named with the name of the character in the photo followed by a number, so that will be considered the label.
 
-## Feature Extraction
+## Feature Extraction Models
 
 The feature extraction process was tested using various deep learning models, each with a specific number of features. The following list provides an overview:
 
