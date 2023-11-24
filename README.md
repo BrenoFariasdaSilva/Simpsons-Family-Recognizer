@@ -66,6 +66,7 @@ This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT
 	- [Results](#results)
 		- [Results Analysis](#results-analysis)
 	- [Important Notes](#important-notes)
+	- [Next Steps](#next-steps)
 	- [Contributing](#contributing)
 	- [License](#license)
 
@@ -397,6 +398,11 @@ In order to improve the accuracy of the models, i tried to implement the a pytho
 Also, be aware that this is a very hardware intensive project, so if you want to fully run this project, you will need a very good hardware. I do have a Ryzen 3800X with 16 threads and 32GB of RAM and to run the `best_parameters.py` algorithm for all of the 9 deep learning models, it was predicted to take almost 48 hours to finish, so i only tested the `best_parameters.py` algorithm with the `ResNet18` dataset (which took about 3 hours) and replicated the found parameters to every of the others 8 deep learning models, but be aware that the right thing to do is to run the `best_parameters.py` algorithm for all of the 9 deep learning models and then run the `specific_parameters.py` algorithm with the best parameters found by the Grid Search for each algorithm.
 
 Another thing that could improve the classifiers combination is to the majority vote be now only for the predicted label, but for the top 3 predicted labels, so the algorithm could be more accurate, but only the proper execution would tell us if it would be better or not. Futhermore, i could have used the `XGBoost` algorithm, which is a very powerful algorithm, but i didn't have time to implement it, so i left it for future improvements.
+
+## Next Steps
+
+- [ ] Implement the `XGBoost` algorithm.
+- [ ] Implement the `Face Detection` algorithm, with something like the `YOLO` algorithm.
 
 ## Contributing
 
