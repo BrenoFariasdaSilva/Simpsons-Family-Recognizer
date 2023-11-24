@@ -300,9 +300,19 @@ make specific_parameters
 
 The results of the K-Nearest Neighbors (K-NN), Decision Tree (DT), Support Vector Machine (SVM), Multilayer Perceptron (MLP), Random Forest, Naive Bayes classifiers, as well as the classifiers combination will produce as output the accuracy, F1-Score [0 to 100%], it's Best Params found by the Grid Search, the execution time and a confusion matrix (N × N) indicating the percentage of system hits and errors among the N classes. That results will be shown in the terminal and saved in the `Results` directory.  
 
-You can find all of my results in the `Results` directory, but i will show the results of the methods who gave the best accuracy, which is the following:
+You can find all of my results in the `Results` directory, but i will show the results of the methods who gave the best accuracy, which is the following case:
 
-```bash
+1. Deep Learning Model: `DenseNet201`.
+2. Classifiers: `Multilayer Perceptron (MLP)`.
+3. Accuracy: `78.95%`.
+4. F1-Score: `79%`.
+5. Confusion Matrix:  
+[[ 9  0  0  0  1]  
+ [ 0  9  0  0  1]  
+ [ 0  0  9  0  1]  
+ [ 0  0  0 10  0]  
+ [ 0  0  0  0 10]]  
+
 
 ## Important Notes
 
