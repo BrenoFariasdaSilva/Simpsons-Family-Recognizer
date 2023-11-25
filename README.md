@@ -49,6 +49,8 @@ This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT
 		- [Best Parameters Python Algorithm](#best-parameters-python-algorithm)
 			- [Usage](#usage)
 			- [Output Example](#output-example)
+				- [Classification Report](#classification-report)
+			- [Confusion Matrix](#confusion-matrix)
 		- [Data Augmentation Python Algorithm](#data-augmentation-python-algorithm)
 			- [Usage](#usage-1)
 			- [Output Example](#output-example-1)
@@ -330,6 +332,42 @@ Execution Time: 0.543 Seconds
 ```
 
 Also, it can output, if the constants `SHOW_CLASSIFICATION_REPORT`, `SHOW_CONFUSION_MATRIX` and `SHOW_DATASET_INFORMATION` are set to `True`, the Classification Report, the Confusion Matrix and the Dataset Information, as shown below:
+
+##### Classification Report
+
+The classification report provides a comprehensive summary of a model's performance for each class in a classification problem. It includes the following metrics:
+
+- **Precision**: The ratio of true positive predictions to the total predicted positives. It indicates the accuracy of positive predictions.
+- **Recall (Sensitivity)**: The ratio of true positive predictions to the total actual positives. It measures the model's ability to capture all positive instances.
+- **F1-Score**: The harmonic mean of precision and recall. It balances precision and recall, providing a single metric for model performance.
+- **Support**: The number of actual occurrences of the class in the specified dataset. It is the number of true instances for each class.
+- **Accuracy**: The overall accuracy of the model, indicating the proportion of correctly predicted instances.
+- **Macro Avg**: The average of precision, recall, and F1-Score for all classes.
+- **Weighted Avg**: The weighted average of precision, recall, and F1-Score for all classes.
+
+```bash
+          precision    recall  f1-score   support
+
+Class 0       0.80      0.85      0.82       100
+Class 1       0.75      0.70      0.72        80
+
+accuracy                           0.78       180
+macro avg      0.78      0.77      0.77       180
+weighted avg   0.78      0.78      0.78       180
+```
+
+#### Confusion Matrix
+
+The confusion matrix compares the actual classes of a classification model with the predicted classes. Each cell in the matrix represents the number of instances for a specific class. The values on the main diagonal represent correctly classified instances for each class. Larger values on the diagonal indicate better model performance.
+
+```bash
+Actual/Predicted   Class 0   Class 1   Class 2   Class 3   Class 4
+   Class 0             9         0        0         0         1
+   Class 1             0         9        0         0         1
+   Class 2             0         0        9         0         1
+   Class 3             0         0        0        10         0
+   Class 4             0         0        0         0        10
+```
 
 ### Data Augmentation Python Algorithm
 
