@@ -295,12 +295,6 @@ Best Combination: ('K-Nearest Neighbors', 'Multilayer Perceptron' and 'Random Fo
 Majority Vote Accuracy: 85.2%
 Execution Time: 120.256 Seconds
 
-Decision Tree: 86.5%
-Criterion: gini
-Max Depth: None
-Splitter: best
-Execution Time: 32.543 Seconds
-
 Random Forest: 84.8%
 Max Depth: 30
 Number of Estimators: 100
@@ -311,6 +305,28 @@ C: 10
 Gamma: 0.1
 Kernel: rbf
 Execution Time: 42.035 Seconds
+
+Multilayer Perceptron: 81.4%
+Alpha: 0.0001
+Hidden Layer Sizes: (500, 500, 500, 500)
+Solver: adam
+Execution Time: 320.035 Seconds
+
+K-Nearest Neighbors: 80.3%
+K-Nearbors: 1
+Metric: Euclidean
+Execution Time: 6.035 Seconds
+
+Decision Tree: 65.5%
+Criterion: gini
+Max Depth: None
+Splitter: best
+Execution Time: 1.543 Seconds
+
+Naive Bayes: 65.5%
+Priors: None
+Var Smoothing: 1e-09
+Execution Time: 0.543 Seconds
 ```
 
 ### Data Augmentation Python Algorithm
