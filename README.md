@@ -329,6 +329,8 @@ Var Smoothing: 1e-09
 Execution Time: 0.543 Seconds
 ```
 
+Also, it can output, if the constants `SHOW_CLASSIFICATION_REPORT`, `SHOW_CONFUSION_MATRIX` and `SHOW_DATASET_INFORMATION` are set to `True`, the Classification Report, the Confusion Matrix and the Dataset Information, as shown below:
+
 ### Data Augmentation Python Algorithm
 
 This Python script performs image data augmentation on a set of input images. It utilizes the `imgaug` library to apply various transformations to the images, creating augmented versions for training purposes. The program is designed to work with image datasets used in machine learning projects.  
