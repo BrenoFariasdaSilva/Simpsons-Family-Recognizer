@@ -356,7 +356,7 @@ macro avg      0.78      0.77      0.77       180
 weighted avg   0.78      0.78      0.78       180
 ```
 
-#### Confusion Matrix
+##### Confusion Matrix
 
 The confusion matrix compares the actual classes of a classification model with the predicted classes. Each cell in the matrix represents the number of instances for a specific class. The values on the main diagonal represent correctly classified instances for each class. Larger values on the diagonal indicate better model performance.
 
