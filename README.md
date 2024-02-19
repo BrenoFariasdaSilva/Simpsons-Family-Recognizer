@@ -254,21 +254,31 @@ All of the photos are named with the name of the character in the photo followed
 
 ## Feature Extraction Models
 
-The feature extraction process was tested using various deep learning models, each with a specific number of features. The following list provides an overview:
+The feature extraction process was conducted using various deep learning models, each yielding a specific number of features. This section details the models used and clarifies how the feature dimensions were obtained, especially highlighting the selection of layers that are not 1x1, where applicable. Below is an overview:
 
-1. `DenseNet201`: 155.520 features.
-2. `EfficientNetB0`: 103.680 features.
-3. `InceptionV3`: 1.000 features.
-4. `MobileNetV2`: 103.680 features.
-5. `NASNetLarge`: 487.872 features.
-6. `ResNet18`: 512 features.
-7. `ResNet50`: 204.800 features.
-8. `VGG16`: 1.000 features.
-9. `Xception`: 204.800 features.
+1. **DenseNet201**: 155,520 features. Feature extraction was performed using the output of the penultimate dense layer, which is not a 1x1 layer, allowing for a richer and more detailed representation.
+
+2. **EfficientNetB0**: 103,680 features. Features were obtained from a specific intermediate layer preceding the classification layer, providing a high level of detail and diversity in features.
+
+3. **InceptionV3**: 1,000 features. Features were extracted directly from the output layer, which is a 1x1 layer, suitable for representing the final classification.
+
+4. **MobileNetV2**: 103,680 features. Similar to EfficientNetB0, extraction occurred from an intermediate layer that offers a detailed representation of image characteristics.
+
+5. **NASNetLarge**: 487,872 features. This model exhibits a large number of features due to the use of a deep layer before the classification layer, capturing a broad range of details.
+
+6. **ResNet18**: 512 features. Feature extraction was done using the last global average pooling layer, following standard practice for this model, ensuring the capture of essential information for classification.
+
+7. **ResNet50**: 204,800 features. Features were extracted from a specific deep layer, providing a rich representation of the processed images.
+
+8. **VGG16**: 1,000 features. Extraction was performed from the output layer, which is a 1x1 layer, focusing on the final characteristics for classification.
+
+9. **Xception**: 204,800 features. A similar approach to ResNet50 was used, extracting features from an advanced layer to obtain a detailed representation.
 
 The chosen layer for extraction is always the last layer of the model. The resulting output is stored in `.txt` files, where all columns, except the last one, correspond to the extracted features, and the last column represents the label of the instance. The main difference between the models used in feature extraction is the quantity of features, as indicated in the list above.
 
 You can find the extracted features datasets from any of the mentioned models [here](https://drive.google.com/drive/folders/12TjdYNLIml8E-k9G5HwZ4wxmeNwXNRCo?usp=share_link). Please note that the size of the extracted features file is generally proportional to the number of features extracted from a model.
+
+This approach ensures that each model contributes a unique perspective in the feature extraction process, optimizing the performance of the image recognition system. The specific dimensions of the features were chosen based on each model's ability to capture relevant information for the task at hand, considering both the depth of the representations and the specificity of the used layers.
 
 ## Algorithms
 
