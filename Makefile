@@ -1,17 +1,31 @@
-all: dependencies
+# Name of the virtual environment directory
+VENV := venv
+# Python command to use
+PYTHON := python3
+
+.PHONY: all venv dependencies
+
+all: venv dependencies
+
+venv: $(VENV)/bin/activate
+
+$(VENV)/bin/activate:
+	$(PYTHON) -m venv $(VENV)
+	$(VENV)/bin/pip install --upgrade pip
+	touch $(VENV)/bin/activate
 
 best_parameters:
-	clear; time python3 ./best_parameters.py
+	clear; time $(VENV)/bin/python ./best_parameters.py
 
 data_augmentation:
-	clear; time python3 ./data_augmentation.py
+	clear; time $(VENV)/bin/python ./data_augmentation.py
 
 features_extraction:
-	clear; time python3 ./features_extraction.py
+	clear; time $(VENV)/bin/python ./features_extraction.py
 
 specific_parameters:
-	clear; time python3 ./specific_parameters.py
+	clear; time $(VENV)/bin/python ./specific_parameters.py
 
 dependencies:
-	pip install colorama collection imgaug numpy opencv-python scikit-learn tensorflow tqdm
-	pip install --upgrade threadpoolctl
+	$(VENV)/bin/pip install colorama collection imgaug numpy opencv-python scikit-learn tensorflow tqdm
+	$(VENV)/bin/pip install --upgrade threadpoolctl
