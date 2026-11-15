@@ -23,10 +23,30 @@ This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT
 </div>
 
 <div align="center">
-  
-![RepoBeats Statistics](https://repobeats.axiom.co/api/embed/c1d9310ac47ca95fa592c68214c0b91a81154eda.svg "Repobeats analytics image")
+
+![GitHub Code Size in Bytes](https://img.shields.io/github/languages/code-size/BrenoFariasdaSilva/Simpsons-Family-Recognizer)
+![GitHub Last Commit](https://img.shields.io/github/last-commit/BrenoFariasdaSilva/Simpsons-Family-Recognizer)
+![GitHub License](https://img.shields.io/github/license/BrenoFariasdaSilva/Simpsons-Family-Recognizer)
+![wakatime](https://wakatime.com/badge/user/28f6c354-43b3-4634-8ec1-631893fe27d0/project/018bd988-d987-4ea0-955e-ba21bce66b1c.svg)
+[![GitHub Commits](https://img.shields.io/github/commit-activity/t/BrenoFariasdaSilva/Simpsons-Family-Recognizer/main)](https://github.com/BrenoFariasdaSilva/Simpsons-Family-Recognizer/commits/main)
+[![GitHub Forks](https://img.shields.io/github/forks/BrenoFariasdaSilva/Simpsons-Family-Recognizer)](https://github.com/BrenoFariasdaSilva/Simpsons-Family-Recognizer/network/members)
+![GitHub Language Count](https://img.shields.io/github/languages/count/BrenoFariasdaSilva/Simpsons-Family-Recognizer)
+[![GitHub Stars](https://img.shields.io/github/stars/BrenoFariasdaSilva/Simpsons-Family-Recognizer)](https://github.com/BrenoFariasdaSilva/Simpsons-Family-Recognizer/stargazers)
+[![GitHub Contributors](https://img.shields.io/github/contributors/BrenoFariasdaSilva/Simpsons-Family-Recognizer)](https://github.com/BrenoFariasdaSilva/Simpsons-Family-Recognizer/graphs/contributors)
+[![GitHub Created At](https://img.shields.io/github/created-at/BrenoFariasdaSilva/Simpsons-Family-Recognizer)](https://github.com/BrenoFariasdaSilva/Simpsons-Family-Recognizer)
+[![GitHub Repository Size](https://img.shields.io/github/repo-size/BrenoFariasdaSilva/Simpsons-Family-Recognizer)](https://github.com/BrenoFariasdaSilva/Simpsons-Family-Recognizer)
+[![Open Issues](https://img.shields.io/github/issues/BrenoFariasdaSilva/Simpsons-Family-Recognizer)](https://github.com/BrenoFariasdaSilva/Simpsons-Family-Recognizer/issues)
+[![Closed Issues](https://img.shields.io/github/issues-closed/BrenoFariasdaSilva/Simpsons-Family-Recognizer)](https://github.com/BrenoFariasdaSilva/Simpsons-Family-Recognizer/issues?q=is%3Aissue+is%3Aclosed)
+[![Open Pull Requests](https://img.shields.io/github/issues-pr/BrenoFariasdaSilva/Simpsons-Family-Recognizer)](https://github.com/BrenoFariasdaSilva/Simpsons-Family-Recognizer/pulls)
+[![Closed Pull Requests](https://img.shields.io/github/issues-pr-closed/BrenoFariasdaSilva/Simpsons-Family-Recognizer)](https://github.com/BrenoFariasdaSilva/Simpsons-Family-Recognizer/pulls?q=is%3Apr+is%3Aclosed)
+[![Monthly Commits](https://img.shields.io/github/commit-activity/m/BrenoFariasdaSilva/Simpsons-Family-Recognizer/main)](https://github.com/BrenoFariasdaSilva/Simpsons-Family-Recognizer/commits)
+[![Merged PRs](https://img.shields.io/github/issues-search/BrenoFariasdaSilva/Simpsons-Family-Recognizer?query=is%3Apr%20is%3Amerged&label=merged%20PRs&color=blue)](https://github.com/BrenoFariasdaSilva/Simpsons-Family-Recognizer/pulls?q=is%3Apr+is%3Amerged)
+![GitHub Primary Language](https://img.shields.io/badge/language-Python-3b82f6)
+
+![Repobeats Statistics](https://repobeats.axiom.co/api/embed/c1d9310ac47ca95fa592c68214c0b91a81154eda.svg)
 
 </div>
+
 
 ## Table of Contents
 - [Simpsons-Family-Recognizer. ](#simpsons-family-recognizer-)
