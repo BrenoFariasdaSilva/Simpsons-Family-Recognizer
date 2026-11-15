@@ -25,7 +25,6 @@ This project focuses on using the K-Nearest Neighbors (K-NN), Decision Trees (DT
 [![GitHub Stars](https://img.shields.io/github/stars/BrenoFariasdaSilva/Simpsons-Family-Recognizer)](https://github.com/BrenoFariasdaSilva/Simpsons-Family-Recognizer/stargazers)
 [![GitHub Contributors](https://img.shields.io/github/contributors/BrenoFariasdaSilva/Simpsons-Family-Recognizer)](https://github.com/BrenoFariasdaSilva/Simpsons-Family-Recognizer/graphs/contributors)
 [![GitHub Created At](https://img.shields.io/github/created-at/BrenoFariasdaSilva/Simpsons-Family-Recognizer)](https://github.com/BrenoFariasdaSilva/Simpsons-Family-Recognizer)
-[![GitHub Repository Size](https://img.shields.io/github/repo-size/BrenoFariasdaSilva/Simpsons-Family-Recognizer)](https://github.com/BrenoFariasdaSilva/Simpsons-Family-Recognizer)
 [![Open Issues](https://img.shields.io/github/issues/BrenoFariasdaSilva/Simpsons-Family-Recognizer)](https://github.com/BrenoFariasdaSilva/Simpsons-Family-Recognizer/issues)
 [![Closed Issues](https://img.shields.io/github/issues-closed/BrenoFariasdaSilva/Simpsons-Family-Recognizer)](https://github.com/BrenoFariasdaSilva/Simpsons-Family-Recognizer/issues?q=is%3Aissue+is%3Aclosed)
 [![Open Pull Requests](https://img.shields.io/github/issues-pr/BrenoFariasdaSilva/Simpsons-Family-Recognizer)](https://github.com/BrenoFariasdaSilva/Simpsons-Family-Recognizer/pulls)
